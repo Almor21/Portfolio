@@ -1,4 +1,10 @@
+import Navbar from '@/components/Navbar';
+import { Montserrat } from "next/font/google";
 import './globals.css';
+
+const montserrat = Montserrat({
+	subsets: ['latin']
+});
 
 export default function RootLayout({
 	children,
@@ -7,10 +13,11 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body>
+			<body className={montserrat.className}>
 				<div id='background_container'>
-					<div className='absolute bg-black h-[200vh] w-1/2 rotate-[30deg] -top-[50vh] -left-1/4'></div>
+					<div className='absolute bg-black h-[200vh] w-[50vw] rotate-[30deg] -top-[50vh] -left-[25vw] -z-50'></div>
 				</div>
+				<Navbar />
 				{children}
 			</body>
 		</html>
