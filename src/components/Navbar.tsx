@@ -49,19 +49,20 @@ function Navbar() {
 				onMouseEnter={() => setExpand(true)}
 				onMouseLeave={() => setExpand(false)}
 				style={{
-					x: '-50%',
+					x: '-100%',
 				}}
 				animate={
-					!expand
-						? {
-								width: '8rem',
-						  }
-						: {
-								width: '18rem',
-						  }
+					{
+						x: '-50%',
+						width: !expand ? '8rem' : '18rem'
+					}
 				}
 				transition={{
 					duration: 0.3,
+					x: {
+						delay: 0.6,
+						type:'tween'
+					}
 				}}
 			>
 				<nav className="col-start-2 py-6 px-2 flex flex-col gap-3">

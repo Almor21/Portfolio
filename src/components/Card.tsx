@@ -33,7 +33,7 @@ function Card() {
 	return (
 		<div className="absolute grid grid-cols-[repeat(2,auto)] items-center gap-4 top-[50vh] left-[50vw] -translate-x-1/2 -translate-y-1/2">
 			<motion.div
-				className="relative h-[50vh] w-[50vh] box-border rounded-full overflow-hidden rotate-45 shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5)]"
+				className="relative h-[40vh] w-[40vh] box-border rounded-full overflow-hidden rotate-45 shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5)]"
 				style={{
 					borderColor: 'black black white white',
 				}}
@@ -41,7 +41,7 @@ function Card() {
 					borderWidth: 3,
 				}}
 				transition={{
-					duration: 0.5,
+					duration: 0.3,
 					delay: 1,
 					ease: 'easeOut'
 				}}
@@ -54,16 +54,16 @@ function Card() {
 					ref={imageRef || null}
 				/>
 			</motion.div>
-			<div className="relative grid grid-rows-[1fr_auto_2fr] h-[50vh]">
+			<div className="relative grid grid-rows-[repeat(2,1fr)]">
 				<Image
 					src={'/Presentation.svg'}
 					alt="Presentation"
-					className='h-full w-52'
+					className='h-auto w-48'
 					width={0}
 					height={0}
 				/>
 				<TypeWriter />
-				<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit dolore quis id corrupti, aliquam voluptatem fuga, ea suscipit sed maxime cumque doloremque inventore blanditiis non asperiores!</p>
+				<p className='text-sm h-fit'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit dolore quis id corrupti, aliquam voluptatem fuga, ea suscipit sed maxime cumque doloremque inventore blanditiis non asperiores!</p>
 			</div>
 		</div>
 	);
