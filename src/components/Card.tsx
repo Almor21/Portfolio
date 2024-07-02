@@ -24,7 +24,6 @@ function Card() {
 		const rect = imageRef.current.getBoundingClientRect();
 		const x = rect.left + rect.width / 2;
 
-		console.log(x);
 		if (x != XBackground) {
 			setXBackground(x);
 		}

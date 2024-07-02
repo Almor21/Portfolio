@@ -1,4 +1,5 @@
 import Backgroud from '@/components/Backgroud';
+import CVButton from '@/components/CVButton';
 import Card from '@/components/Card';
 import Header from '@/components/Header';
 
@@ -8,6 +9,7 @@ export default function Home() {
 			<Header />
 			<main className='grid grid-cols-2'>
 				<Card />
+				<CVButton />
 				<Backgroud />
 			</main>
 			<footer></footer>
