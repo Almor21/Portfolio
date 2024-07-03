@@ -13,9 +13,15 @@ function Card() {
 	const setXBackground = useStoreBackground((state) => state.setXBackground);
 
 	useEffect(() => {
-		window.addEventListener('resize', () => {
+		const resizeEvent = () => {
 			setResize((prevState) => !prevState);
-		});
+		};
+		window.addEventListener('resize', resizeEvent);
+
+		return () => {
+			window.removeEventListener('resize', resizeEvent);
+			setXBackground(-1);
+		};
 	}, []);
 
 	useEffect(() => {
@@ -42,7 +48,7 @@ function Card() {
 				transition={{
 					duration: 0.3,
 					delay: 1,
-					ease: 'easeOut'
+					ease: 'easeOut',
 				}}
 			>
 				<Image
@@ -57,12 +63,17 @@ function Card() {
 				<Image
 					src={'/Presentation.svg'}
 					alt="Presentation"
-					className='h-auto w-48'
+					className="h-auto w-48"
 					width={0}
 					height={0}
 				/>
 				<TypeWriter />
-				<p className='text-sm h-fit'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit dolore quis id corrupti, aliquam voluptatem fuga, ea suscipit sed maxime cumque doloremque inventore blanditiis non asperiores!</p>
+				<p className="text-sm h-fit">
+					Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+					Impedit dolore quis id corrupti, aliquam voluptatem fuga, ea
+					suscipit sed maxime cumque doloremque inventore blanditiis
+					non asperiores!
+				</p>
 			</div>
 		</div>
 	);
