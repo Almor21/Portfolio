@@ -6,14 +6,15 @@ import { motion } from 'framer-motion';
 
 function Backgroud() {
 	const XBackground = useStoreBackground((state) => state.XBackground);
+
 	return (
 		<motion.div
 			className="absolute bg-black h-full top-0 -z-50"
 			initial={{
-				width:0
+				width: 0,
 			}}
 			animate={{
-				width: XBackground,
+				width: XBackground === -1 ? '50%' : XBackground,
 			}}
 			transition={{
 				type: 'spring',
