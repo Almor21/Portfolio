@@ -6,6 +6,6 @@ interface bgStates {
 }
 
 export const useStoreBackground = create<bgStates>((set) => ({
-	XBackground: 0,
+	XBackground: -1,
 	setXBackground: (value) => set((state) => ({ XBackground: value })),
 }));

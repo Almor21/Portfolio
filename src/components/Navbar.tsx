@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const OPTIONS = [
 	{
@@ -16,7 +17,7 @@ const OPTIONS = [
 		text: 'About',
 		icon: '/icons/User.svg',
 		alt: 'About Icon',
-		href: '',
+		href: '/about',
 	},
 	{
 		text: 'Skills',
@@ -41,6 +42,7 @@ const OPTIONS = [
 function Navbar() {
 	const [expand, setExpand] = useState(false);
 	const [selected, setSelected] = useState(0);
+	const path = usePathname();
 
 	return (
 		<div className="fixed h-full w-auto flex items-center z-50">
@@ -67,19 +69,20 @@ function Navbar() {
 			>
 				<nav className="col-start-2 py-6 px-2 flex flex-col gap-3">
 					{OPTIONS.map((opt, index) => {
+						const select = opt.href === path;
+
 						return (
 							<Link
 								key={index}
 								href={opt.href}
 								className={
-									(index != selected
+									(select
 										? 'transition-all duration-300 hover:bg-[rgba(205,205,205,0.34)]'
 										: '') +
 									' relative rounded-xl focus:outline-none px-2 py-1'
 								}
-								onClick={() => setSelected(index)}
 							>
-								{index == selected && (
+								{select && (
 									<motion.span
 										layout
 										layoutId="hover"
