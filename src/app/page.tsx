@@ -2,6 +2,7 @@ import Backgroud from '@/components/Backgroud';
 import CVButton from '@/components/CVButton';
 import Card from '@/components/Card';
 import Header from '@/components/Header';
+import ScrollDown from '@/components/ScrollDown';
 
 export default function Home() {
 	return (
@@ -10,6 +11,7 @@ export default function Home() {
 			<main className='grid grid-cols-2'>
 				<Card />
 				<CVButton />
+				<ScrollDown />
 				<Backgroud />
 			</main>
 			<footer></footer>
