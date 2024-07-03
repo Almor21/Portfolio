@@ -8,7 +8,7 @@ function Backgroud() {
 	const XBackground = useStoreBackground((state) => state.XBackground);
 	return (
 		<motion.div
-			className="bg-black h-full row-span-1 col-start-1 -z-50"
+			className="absolute bg-black h-full top-0 -z-50"
 			initial={{
 				width:0
 			}}
