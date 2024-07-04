@@ -76,7 +76,7 @@ function Navbar() {
 								key={index}
 								href={opt.href}
 								className={
-									(select
+									(!select
 										? 'transition-all duration-300 hover:bg-[rgba(205,205,205,0.34)]'
 										: '') +
 									' relative rounded-xl focus:outline-none px-2 py-1'

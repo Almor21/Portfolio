@@ -16,13 +16,13 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${montserrat.className} relative h-[100vh] w-full grid grid-rows-[minmax(100vh,1fr)_auto]`}
+				className={`${montserrat.className} relative w-full grid grid-rows-[100vh_auto]`}
 			>
 				<Navbar />
+				{/* <div className='w-full grid grid-rows-[auto_1fr]'> */}
 				<Header />
-				<main>
-					{children}
-				</main>
+				<main>{children}</main>
+				{/* </div> */}
 				<footer></footer>
 				<Backgroud />
 			</body>

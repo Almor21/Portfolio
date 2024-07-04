@@ -1,8 +1,8 @@
-import CVButton from '@/components/CVButton';
-import Card from '@/components/Card';
-import ScrollDown from '@/components/ScrollDown';
+import CVButton from '@/components/home/CVButton';
+import Card from '@/components/home/Card';
+import ScrollDown from '@/components/home/ScrollDown';
 
-export default function Home() {
+function Home() {
 	return (
 		<>
 			<Card />
@@ -11,3 +11,5 @@ export default function Home() {
 		</>
 	);
 }
+
+export default Home;
