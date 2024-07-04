@@ -1,0 +1,12 @@
+.rotate:hover {
+    transform: rotate(-180deg);
+}
+
+.rotate:hover div {
+    transform: rotate(360deg);
+}
+
+.rotate:hover img {
+    transform: rotate(-180deg);
+    filter: grayscale(0);
+}
