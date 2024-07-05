@@ -37,7 +37,7 @@ function Card() {
 	return (
 		<div className="absolute grid grid-cols-[repeat(2,auto)] items-center gap-4 top-[50vh] left-[50vw] -translate-x-1/2 -translate-y-1/2">
 			<div
-				className="relative h-[40vh] w-[40vh] box-border rounded-full overflow-hidden rotate-45 p-1 shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5)] backdrop-invert"
+				className="relative h-[40vh] w-[40vh] box-border rounded-full overflow-hidden rotate-45 p-1 shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5),2px_2px_8px_2px_rgb(255,255,255,0.5)] backdrop-invert"
 			>
 				<div className='relative h-full w-full'>
 					<Image
