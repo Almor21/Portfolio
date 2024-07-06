@@ -7,3 +7,13 @@ body {
 	min-height: 100vh;
 	background-color: white;
 }
+
+*::-webkit-scrollbar {
+	background-color: rgb(232, 232, 232);
+	border-radius: 99999px;
+	width: 8px;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: black;
+	border-radius: 9999px;
+}

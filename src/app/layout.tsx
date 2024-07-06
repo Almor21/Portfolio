@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar';
 import { Montserrat } from 'next/font/google';
-import './globals.css';
+import '@/styles/globals.css';
 import Header from '@/components/Header';
 import Backgroud from '@/components/Backgroud';
 
@@ -16,12 +16,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${montserrat.className} relative grid grid-rows-[minmax(100vh,auto)_auto]`}
+				className={`${montserrat.className} relative grid grid-rows-[100vh_auto]`}
 			>
 				<Navbar />
-				<div className="w-full grid grid-rows-[auto_1fr]">
+				<div className="w-full grid grid-rows-[auto_minmax(0,1fr)]">
 					<Header />
-					<main>{children}</main>
+					<main className='pl-24 pr-16 py-5'>{children}</main>
 				</div>
 				<footer></footer>
 				<Backgroud />

@@ -39,7 +39,7 @@ const textVariants: Variants = {
 
 function Header() {
 	return (
-		<header className="sticky top-0 flex items-center w-full h-14 px-4">
+		<header className="sticky top-0 z-50 flex items-center w-full h-14 px-4">
 			<motion.div
 				className={`inline-block mr-auto text-white rounded-full p-1`}
 				variants={parentVariants}
