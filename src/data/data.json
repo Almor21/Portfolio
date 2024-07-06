@@ -1,0 +1,165 @@
+{
+	"categories": ["Languages", "Framework", "Library", "Databases", "Tools"],
+	"data": {
+		"JavaScript": {
+			"category": "Languages",
+			"percentage": "90",
+			"note": "A long description about the Languages",
+			"knowledge": ["basics", "Event loop"],
+			"relations": [],
+			"tags": ["Web", "Frontend", "Backend"]
+		},
+		"Java": {
+			"category": "Languages",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"TypeScript": {
+			"category": "Languages",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"SQL": {
+			"category": "Languages",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"C++": {
+			"category": "Languages",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"Python": {
+			"category": "Languages",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"HTML": {
+			"category": "Languages",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"CSS": {
+			"category": "Languages",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"React": {
+			"category": "Framework",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"NextJS": {
+			"category": "Framework",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"ExpressJS": {
+			"category": "Framework",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"Framer Motion": {
+			"category": "Framework",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"Zustand": {
+			"category": "Library",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"Redux Toolkit": {
+			"category": "Library",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"MySQL": {
+			"category": "Databases",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"SQL Server": {
+			"category": "Databases",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"MongoDB": {
+			"category": "Databases",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"Git": {
+			"category": "Tools",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"Vercel": {
+			"category": "Tools",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
+		"NodeJS": {
+			"category": "Tools",
+			"percentage": "60",
+			"note": "A long description about the Languages again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		}
+	}
+}
