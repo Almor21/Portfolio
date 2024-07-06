@@ -23,7 +23,7 @@ const OPTIONS = [
 		text: 'Skills',
 		icon: '/icons/Star.svg',
 		alt: 'Skills Icon',
-		href: '',
+		href: '/skills',
 	},
 	{
 		text: 'Projects',
@@ -45,7 +45,7 @@ function Navbar() {
 	const path = usePathname();
 
 	return (
-		<div className="fixed h-full w-auto flex items-center z-50">
+		<div className="fixed h-full w-auto flex items-center z-40">
 			<motion.div
 				className="grid grid-cols-2 bg-white rounded-3xl z-50"
 				onMouseEnter={() => setExpand(true)}
