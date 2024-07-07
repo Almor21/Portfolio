@@ -1,66 +1,66 @@
 {
-	"categories": ["Languages", "Framework", "Library", "Databases", "Tools"],
+	"categories": ["Language", "Framework", "Library", "Databases", "Tools"],
 	"data": {
 		"JavaScript": {
-			"category": "Languages",
+			"category": "Language",
 			"percentage": "90",
-			"note": "A long description about the Languages",
+			"note": "A long description about the Language",
 			"knowledge": ["basics", "Event loop"],
-			"relations": [],
+			"relations": ["TypeScript", "Framer Motion", "Zustand"],
 			"tags": ["Web", "Frontend", "Backend"]
 		},
 		"Java": {
-			"category": "Languages",
+			"category": "Language",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
 		},
 		"TypeScript": {
-			"category": "Languages",
+			"category": "Language",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
-			"relations": [],
+			"relations": ["JavaScript"],
 			"tags": ["Desktop"]
 		},
 		"SQL": {
-			"category": "Languages",
+			"category": "Language",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
 		},
 		"C++": {
-			"category": "Languages",
+			"category": "Language",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
 		},
 		"Python": {
-			"category": "Languages",
+			"category": "Language",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
 		},
 		"HTML": {
-			"category": "Languages",
+			"category": "Language",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
 		},
 		"CSS": {
-			"category": "Languages",
+			"category": "Language",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -68,7 +68,7 @@
 		"React": {
 			"category": "Framework",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -76,7 +76,7 @@
 		"NextJS": {
 			"category": "Framework",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -84,7 +84,7 @@
 		"ExpressJS": {
 			"category": "Framework",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -92,7 +92,7 @@
 		"Framer Motion": {
 			"category": "Framework",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -100,7 +100,7 @@
 		"Zustand": {
 			"category": "Library",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -108,7 +108,7 @@
 		"Redux Toolkit": {
 			"category": "Library",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -116,7 +116,7 @@
 		"MySQL": {
 			"category": "Databases",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -124,7 +124,7 @@
 		"SQL Server": {
 			"category": "Databases",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -132,7 +132,7 @@
 		"MongoDB": {
 			"category": "Databases",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -140,7 +140,7 @@
 		"Git": {
 			"category": "Tools",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -148,7 +148,7 @@
 		"Vercel": {
 			"category": "Tools",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]
@@ -156,7 +156,7 @@
 		"NodeJS": {
 			"category": "Tools",
 			"percentage": "60",
-			"note": "A long description about the Languages again",
+			"note": "A long description about the Language again",
 			"knowledge": ["basics", "POO"],
 			"relations": [],
 			"tags": ["Desktop"]

@@ -1,28 +1,28 @@
 import React from 'react';
-import Technology from './Technology';
+import { Data } from '@/types/data';
+import SectionTechnology from './SectionTechnology';
 
-type Technology = {
-	percentage: number;
-	category: string;
-	note: string;
-	knowledge: Array<string>;
-	relations: Array<string>;
-	tags: Array<string>;
-};
-
-interface Data {
-	[key: string]: Technology;
-}
-
-function Section({ title, data }: { title: string; data: Data }) {
+function Section({
+	title,
+	data,
+	openTech,
+}: {
+	title: string;
+	data: Data;
+	openTech: (name: string) => Promise<void>;
+}) {
 	return (
 		<>
 			<h1 className="text-gray-400 w-full">{title}</h1>
 			<div className="flex flex-wrap gap-3">
 				{Object.keys(data).map((tech, index) => {
-					const percentage = data[tech].percentage;
 					return (
-						<Technology key={index} name={tech} percentage={percentage} />
+						<SectionTechnology
+							key={index}
+							name={tech}
+							percentage={data[tech].percentage}
+							openTech={openTech}
+						/>
 					);
 				})}
 			</div>
@@ -30,4 +30,4 @@ function Section({ title, data }: { title: string; data: Data }) {
 	);
 }
 
-export default Section;
+export default React.memo(Section);
