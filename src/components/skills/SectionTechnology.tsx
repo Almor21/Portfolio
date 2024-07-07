@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import {
-	motion,
-	AnimatePresence,
-} from 'framer-motion';
-import Modal from '../Modal';
+import { motion, AnimatePresence } from 'framer-motion';
 
-function Technology({
+function SectionTechnology({
 	name,
 	percentage,
+	openTech,
 }: {
 	name: string;
 	percentage: number;
+	openTech: (name: string) => Promise<void>;
 }) {
+	console.log(`SectionTech ${name} Render`);
+
 	const degs = 360 * (percentage / 100);
-	
+
 	const [hover, setHover] = useState(false);
-	const [openModal, setOpenModal] = useState(false);
 
 	return (
 		<div className="relative flex flex-col items-center">
@@ -38,13 +37,16 @@ function Technology({
 					src={`/technologies/${name}.png`}
 					alt={`${name} Icon`}
 					fill={true}
+					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 					className="filter transition-all duration-200 group-hover:blur-[3px]"
 				/>
 				<AnimatePresence>
 					{hover && (
 						<motion.div
 							className="absolute w-3/4 h-3/4 top-1/2 left-1/2 p-2 rounded-full cursor-pointer"
-							onClick={() => setOpenModal(true)}
+							onClick={() => {
+								if (openTech) openTech(name);
+							}}
 							style={{
 								x: '-50%',
 								y: '-50%',
@@ -57,7 +59,7 @@ function Technology({
 								scale: 1,
 							}}
 							exit={{
-								scale: 0
+								scale: 0,
 							}}
 						>
 							<div className="h-full w-full rounded-full bg-white flex justify-center items-center text-sm">
@@ -68,10 +70,8 @@ function Technology({
 				</AnimatePresence>
 			</motion.div>
 			<span>{name}</span>
-
-			<Modal open={openModal} onClose={() => setOpenModal(false)} />
 		</div>
 	);
 }
 
-export default Technology;
+export default SectionTechnology;
