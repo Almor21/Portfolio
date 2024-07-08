@@ -54,14 +54,14 @@ function Searcher() {
 				{data &&
 					categories &&
 					Object.keys(categories).map((categoryName, index) => (
-						<div>
+						<div key={categoryName}>
 							<h1 className="text-gray-400 w-full mb-1">
 								{categoryName}
 							</h1>
 							<div className="flex flex-wrap gap-3">
 								{categories[categoryName].map((tech, index) => (
 									<SectionTechnology
-										key={index}
+										key={tech}
 										name={tech}
 										percentage={data[tech].percentage}
 										openTech={openModalTech}
