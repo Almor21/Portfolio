@@ -4,11 +4,12 @@ import React, { useEffect, useState, useCallback } from 'react';
 import SearchBar from './FilterBar';
 import Section from './Section';
 import ModalTechnology from './ModalTechnology';
-import { Data } from '@/types/data';
+import { Categories, Data } from '@/types/data';
+import SectionTechnology from './SectionTechnology';
 
 function Searcher() {
 	const [data, setData] = useState<Data>();
-	const [categories, setCategories] = useState();
+	const [categories, setCategories] = useState<Categories>();
 
 	const [strSearch, setStrSearch] = useState('');
 
@@ -50,25 +51,35 @@ function Searcher() {
 			<SearchBar value={strSearch} handleChange={setStrSearch} />
 
 			<div className="flex flex-col gap-5 overflow-auto">
-				{categories &&
+				{data &&
+					categories &&
 					Object.keys(categories).map((categoryName, index) => (
-						<Section
-							key={index}
-							title={categoryName}
-							data={categories[categoryName]}
-							openTech={openModalTech}
-						/>
+						<div>
+							<h1 className="text-gray-400 w-full mb-1">
+								{categoryName}
+							</h1>
+							<div className="flex flex-wrap gap-3">
+								{categories[categoryName].map((tech, index) => (
+									<SectionTechnology
+										key={index}
+										name={tech}
+										percentage={data[tech].percentage}
+										openTech={openModalTech}
+									/>
+								))}
+							</div>
+						</div>
 					))}
 			</div>
-				{data && (
-					<ModalTechnology
-						name={techModal}
-						data={data[techModal]}
-						open={Boolean(techModal)}
-						onClose={() => openModalTech('')}
-						openTech={openModalTech}
-					/>
-				)}
+			{data && (
+				<ModalTechnology
+					name={techModal}
+					data={data[techModal]}
+					open={Boolean(techModal)}
+					onClose={() => openModalTech('')}
+					openTech={openModalTech}
+				/>
+			)}
 		</div>
 	);
 }

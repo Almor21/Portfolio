@@ -74,4 +74,4 @@ function SectionTechnology({
 	);
 }
 
-export default SectionTechnology;
+export default React.memo(SectionTechnology);

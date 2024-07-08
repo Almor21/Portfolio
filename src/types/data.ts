@@ -7,6 +7,10 @@ export type Technology = {
 	tags: Array<string>;
 };
 
+export interface Categories {
+	[key: string]: Array<string>;
+}
+
 export interface Data {
 	[key: string]: Technology;
 }

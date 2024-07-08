@@ -1,15 +1,16 @@
+import { Categories } from '@/types/data';
 import { readData } from '@/utils/dataHandler';
 
 export function GET() {
 	const { categories, data } = readData();
+	
+	let responseBody: Categories = {};
 
-	let responseBody = {};
+	categories.forEach((c) => responseBody[`${c}`] = []);
 
 	Object.keys(data).forEach((tech) => {
 		const techCategory = data[tech].category;
-		if (!responseBody[techCategory]) responseBody[techCategory] = {};
-		const category = responseBody[techCategory];
-		category[tech] = data[tech];
+		responseBody[techCategory].push(tech);
 	});
 
 	return new Response(JSON.stringify(responseBody), {

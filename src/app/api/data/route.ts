@@ -1,3 +1,4 @@
+import { Data } from '@/types/data';
 import { readData } from '@/utils/dataHandler';
 
 export function GET() {
