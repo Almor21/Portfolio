@@ -1,11 +1,11 @@
 import { create } from 'zustand';
 
 interface bgStates {
-	XBackground: number;
-	setXBackground: (value: number) => void;
+	XBackground: string;
+	setXBackground: (value: string) => void;
 }
 
 export const useStoreBackground = create<bgStates>((set) => ({
-	XBackground: -1,
+	XBackground: '0',
 	setXBackground: (value) => set((state) => ({ XBackground: value })),
 }));

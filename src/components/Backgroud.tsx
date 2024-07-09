@@ -14,7 +14,7 @@ function Backgroud() {
 				width: 0,
 			}}
 			animate={{
-				width: XBackground === -1 ? '50%' : XBackground,
+				width: XBackground.at(-1) === '%' ? XBackground : parseInt(XBackground),
 			}}
 			transition={{
 				type: 'spring',

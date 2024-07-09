@@ -1,11 +1,15 @@
-import Modal from '@/components/Modal';
-import Searcher from '@/components/skills/Searcher';
 import React from 'react';
+import Searcher from '@/components/skills/Searcher';
+import MoveBackground from '@/components/MoveBackground';
 
 function SkillsPage() {
 	return (
-		<div className="max-h-full grid grid-rows-[minmax(0,1fr)] grid-cols-[repeat(2,1fr)] gap-28">
-			<div className="text-white">
+		<MoveBackground
+			createDiv
+			width="45%"
+			className="max-h-full grid-rows-[minmax(0,1fr)] gap-12"
+		>
+			<div className="justify-self-end w-1/2 flex flex-col items-center text-white">
 				<p>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Possimus illum, nulla corrupti, esse perspiciatis recusandae
@@ -15,7 +19,7 @@ function SkillsPage() {
 				</p>
 			</div>
 			<Searcher />
-		</div>
+		</MoveBackground>
 	);
 }
 
