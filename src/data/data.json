@@ -1,5 +1,6 @@
 {
 	"categories": ["Language", "Framework", "Library", "Databases", "Tools"],
+	"areas": ["Web", "Frontend", "Backend", "Scripting", "Desktop"],
 	"data": {
 		"JavaScript": {
 			"category": "Language",

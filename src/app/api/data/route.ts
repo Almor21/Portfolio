@@ -2,7 +2,7 @@ import { Data } from '@/types/data';
 import { readData } from '@/utils/dataHandler';
 
 export function GET() {
-	const { categories, data } = readData();
+	const { categories, areas,  data } = readData();
 
 	return new Response(JSON.stringify(data), {
 		headers: {
