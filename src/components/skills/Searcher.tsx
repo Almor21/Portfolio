@@ -69,6 +69,7 @@ function Searcher() {
 			<div className="relative flex gap-1">
 				{Array.from({ length: 3 }, (v ,i)=>i).map((index) => (
 					<motion.span
+						key={index}
 						className="inline-block h-3 w-3 rounded-full bg-black"
 						animate={{
 							y: [0, '-100%', 0],
