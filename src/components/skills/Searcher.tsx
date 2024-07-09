@@ -5,9 +5,11 @@ import FilterBar from './FilterBar';
 import SectionTechnology from './SectionTechnology';
 import ModalTechnology from './ModalTechnology';
 import { Categories, Data } from '@/types/data';
+import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 
 function Searcher() {
+	const [loading, setLoading] = useState(true);
 	const [categories, setCategories] = useState<Categories>();
 	const [areas, setAreas] = useState<Array<string>>([]);
 	const [data, setData] = useState<Data>();
@@ -24,6 +26,7 @@ function Searcher() {
 			setCategories(response[1]);
 			setAreas(response[2]);
 			setSelected(response[2]);
+			setLoading(false);
 		});
 	}, []);
 
@@ -61,7 +64,27 @@ function Searcher() {
 		});
 	}
 
-	return (
+	return loading ? (
+		<div className="h-full w-full flex justify-center items-center">
+			<div className="relative flex gap-1">
+				{Array.from({ length: 3 }, (v ,i)=>i).map((index) => (
+					<motion.span
+						className="inline-block h-3 w-3 rounded-full bg-black"
+						animate={{
+							y: [0, '-100%', 0],
+						}}
+						transition={{
+							repeatDelay: 0.8,
+							delay: index*0.2,
+							duration: 1,
+							repeat: Infinity,
+							ease: 'easeInOut'
+						}}
+					/>
+				))}
+			</div>
+		</div>
+	) : (
 		<div className="grid grid-rows-[auto_1fr] gap-8">
 			<FilterBar areas={areas} set={(v) => setSelected(v)} />
 

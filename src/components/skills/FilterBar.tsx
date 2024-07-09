@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 function FilterBar({
 	areas,
@@ -39,7 +40,15 @@ function FilterBar({
 	}, [areas]);
 
 	return (
-		<div className="relative max-w-full flex flex-wrap gap-1 py-2 border-b border-b-black">
+		<motion.div
+			className="relative w-max flex gap-1 py-2 border-b border-b-black"
+			initial={{
+				width: 0,
+			}}
+			animate={{
+				width: areas.length == 0 ? 0 : '',
+			}}
+		>
 			<div
 				className="relative flex justify-start items-center rounded-full px-3 py-1 cursor-pointer transition-all duration-200"
 				style={{
@@ -52,7 +61,7 @@ function FilterBar({
 			</div>
 
 			{areas.map((c, index) => (
-				<div
+				<motion.div
 					key={c}
 					className="relative flex justify-start items-center rounded-full px-2 py-1 cursor-pointer transition-all duration-200"
 					style={{
@@ -61,12 +70,18 @@ function FilterBar({
 							: 'white',
 						color: selectedRef.current[index] ? 'white' : 'black',
 					}}
+					initial={{
+						opacity: 0
+					}}
+					animate={{
+						opacity: 1
+					}}
 					onClick={() => select(index)}
 				>
 					{c}
-				</div>
+				</motion.div>
 			))}
-		</div>
+		</motion.div>
 	);
 }
 
