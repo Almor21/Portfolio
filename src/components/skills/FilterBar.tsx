@@ -1,30 +1,71 @@
-import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 function FilterBar({
-	value,
-	handleChange,
+	areas,
+	set,
 }: {
-	value: string;
-	handleChange: (v: string) => void;
+	areas: Array<string>;
+	set: (v: Array<string>) => void;
 }) {
+	const [all, setAll] = useState(false);
+	const selectedRef = useRef<Array<boolean>>([]);
+
+	const activeAll = () => {
+		if (!all) {
+			selectedRef.current = Array.from(
+				{ length: areas.length },
+				() => false
+			);
+			setAll(true);
+		}
+		set(areas);
+	};
+
+	const select = (i: number) => {
+		selectedRef.current[i] = !selectedRef.current[i];
+
+		if (selectedRef.current.some((v) => v)) {
+			if (all) setAll(false);
+
+			set(areas.filter((v, index) => selectedRef.current[index]));
+		} else {
+			activeAll();
+		}
+	};
+
+	useEffect(() => {
+		selectedRef.current = Array.from({ length: areas.length }, () => false);
+		setAll(true);
+	}, [areas]);
+
 	return (
-		<div className="relative w-full rounded-full overflow-hidden shadow-[0_3px_8px_2px_rgb(0,0,0,0.2)]">
-			<input
-				placeholder="Filter..."
-				className="w-full py-1 px-5 focus:outline-none border-2 border-black rounded-full placeholder:italic placeholder:text-gray-300"
-				value={value}
-				onChange={(e) => handleChange(e.target.value)}
-			/>
-			<div className="absolute right-0 top-0 justify-self-end bg-black h-full p-2 hover:cursor-pointer">
-				<Image
-					src={'/icons/Filter.svg'}
-					alt="Filter Icon"
-					width={0}
-					height={0}
-					className="filter invert h-full w-auto"
-				/>
+		<div className="relative max-w-full flex flex-wrap gap-1 py-2 border-b border-b-black">
+			<div
+				className="relative flex justify-start items-center rounded-full px-3 py-1 cursor-pointer transition-all duration-200"
+				style={{
+					backgroundColor: all ? 'black' : 'white',
+					color: all ? 'white' : 'black',
+				}}
+				onClick={() => activeAll()}
+			>
+				All
 			</div>
+
+			{areas.map((c, index) => (
+				<div
+					key={c}
+					className="relative flex justify-start items-center rounded-full px-2 py-1 cursor-pointer transition-all duration-200"
+					style={{
+						backgroundColor: selectedRef.current[index]
+							? 'black'
+							: 'white',
+						color: selectedRef.current[index] ? 'white' : 'black',
+					}}
+					onClick={() => select(index)}
+				>
+					{c}
+				</div>
+			))}
 		</div>
 	);
 }

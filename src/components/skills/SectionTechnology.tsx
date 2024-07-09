@@ -11,20 +11,26 @@ function SectionTechnology({
 	percentage: number;
 	openTech: (name: string) => Promise<void>;
 }) {
-	console.log(`SectionTech ${name} Render`);
-
 	const degs = 360 * (percentage / 100);
 
 	const [hover, setHover] = useState(false);
 
 	return (
-		<div className="relative flex flex-col items-center">
+		<motion.div
+			className="relative flex flex-col items-center"
+			exit={{
+				scale: 0,
+				transition: {
+					duration: 0.2
+				}
+			}}
+		>
 			<motion.div
 				className="relative w-16 h-16 group"
 				onMouseEnter={() => setHover(true)}
 				onMouseLeave={() => setHover(false)}
 				initial={{
-					scale: 0.5,
+					scale: 0.7,
 				}}
 				whileInView={{
 					scale: 1,
@@ -69,8 +75,8 @@ function SectionTechnology({
 					)}
 				</AnimatePresence>
 			</motion.div>
-			<span>{name}</span>
-		</div>
+			<span className='inline-block w-24 text-wrap text-center'>{name}</span>
+		</motion.div>
 	);
 }
 
