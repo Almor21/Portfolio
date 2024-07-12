@@ -41,7 +41,7 @@ function FilterBar({
 
 	return (
 		<motion.div
-			className="relative w-fit flex flex-wrap gap-1 py-2 border-b border-b-black"
+			className="relative w-auto flex flex-wrap justify-evenly gap-1 py-2 border-b border-b-black"
 			initial={{
 				opacity: 0
 			}}

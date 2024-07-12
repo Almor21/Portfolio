@@ -67,7 +67,7 @@ function Searcher() {
 	return loading ? (
 		<div className="h-full w-full flex justify-center items-center">
 			<div className="relative flex gap-1">
-				{Array.from({ length: 3 }, (v ,i)=>i).map((index) => (
+				{Array.from({ length: 3 }, (v, i) => i).map((index) => (
 					<motion.span
 						key={index}
 						className="inline-block h-3 w-3 rounded-full bg-black"
@@ -76,10 +76,10 @@ function Searcher() {
 						}}
 						transition={{
 							repeatDelay: 0.8,
-							delay: index*0.2,
+							delay: index * 0.2,
 							duration: 1,
 							repeat: Infinity,
-							ease: 'easeInOut'
+							ease: 'easeInOut',
 						}}
 					/>
 				))}
@@ -97,26 +97,23 @@ function Searcher() {
 			>
 				{data &&
 					Object.keys(filterCategories).map((categoryName) => (
-						<div key={categoryName}>
-							<h1 className="text-gray-400 w-full mb-1">
+						<div
+							key={categoryName}
+							className="grid grid-cols-[repeat(auto-fit,minmax(6rem,1fr))] gap-y-3"
+						>
+							<h1 className="text-gray-400 w-full col-span-full my-1">
 								{categoryName}
 							</h1>
-							<div className="flex flex-wrap gap-x-1 gap-y-4">
-								<AnimatePresence>
-									{filterCategories[categoryName].map(
-										(tech) => (
-											<SectionTechnology
-												key={tech}
-												name={tech}
-												percentage={
-													data[tech].percentage
-												}
-												openTech={openModalTech}
-											/>
-										)
-									)}
-								</AnimatePresence>
-							</div>
+							<AnimatePresence>
+								{filterCategories[categoryName].map((tech) => (
+									<SectionTechnology
+										key={tech}
+										name={tech}
+										percentage={data[tech].percentage}
+										openTech={openModalTech}
+									/>
+								))}
+							</AnimatePresence>
 						</div>
 					))}
 			</div>

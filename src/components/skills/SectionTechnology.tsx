@@ -49,7 +49,7 @@ function SectionTechnology({
 				<AnimatePresence>
 					{hover && (
 						<motion.div
-							className="absolute w-3/4 h-3/4 top-1/2 left-1/2 p-2 rounded-full cursor-pointer"
+							className="absolute w-3/4 h-3/4 top-1/2 left-1/2 p-[0.35rem] rounded-full cursor-pointer"
 							onClick={() => {
 								if (openTech) openTech(name);
 							}}
