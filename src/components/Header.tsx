@@ -65,16 +65,16 @@ function Header() {
 			</motion.div>
 			<div className="inline-flex ml-auto gap-2">
 				<Image
-					src={'/icons/Phone.svg'}
+					src={'/icons/Github.svg'}
 					className="h-11 w-11"
-					alt="Linkedin Icon"
+					alt="Github Icon"
 					width={0}
 					height={0}
 				/>
 				<Image
 					src={'/icons/Mail.svg'}
 					className="h-11 w-11"
-					alt="Linkedin Icon"
+					alt="Mail Icon"
 					width={0}
 					height={0}
 				/>
