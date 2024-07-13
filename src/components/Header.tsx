@@ -1,8 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { Variants, motion } from 'framer-motion';
+import { Variants, motion, scroll } from 'framer-motion';
 
 const parentVariants: Variants = {
 	visible: {
@@ -24,7 +24,7 @@ const parentVariants: Variants = {
 const textVariants: Variants = {
 	visible: {
 		width: 'auto',
-		opacity: 1
+		opacity: 1,
 	},
 	hidden: {
 		width: '0',
@@ -32,21 +32,45 @@ const textVariants: Variants = {
 		marginRight: 0,
 		transition: {
 			duration: 0.4,
-			ease: 'easeOut'
-		}
+			ease: 'easeOut',
+		},
 	},
 };
 
 function Header() {
+	console.log('render')
+	const headerRef = useRef<HTMLElement>(null);
+	const [progress, setProgress] = useState(0);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const limit = 50;
+			let value = window.scrollY / limit;
+			value = value > 1 ? 1 : value;
+			setProgress(value);
+		};
+		handleScroll();
+
+		window.addEventListener('scroll', handleScroll);
+	}, []);
+
 	return (
-		<header className="sticky top-0 z-50 flex items-center w-full h-14 px-4">
+		<header
+			className="sticky top-0 z-50 flex items-center w-full h-14 px-4 border-[rgba(255,255,255,0.1)]"
+			style={{
+				borderWidth: progress,
+				backdropFilter: `blur(${3 * progress}px) opacity(${progress})`,
+				boxShadow: `0 4px 30px rgba(0,0,0,${progress / 10})`,
+			}}
+			ref={headerRef || null}
+		>
 			<motion.div
 				className={`inline-block mr-auto text-white rounded-full p-1`}
 				variants={parentVariants}
 				initial="visible"
 				animate="hidden"
 			>
-				<h1 className='flex justify-center items-center'>
+				<h1 className="flex justify-center items-center">
 					E
 					<motion.span
 						className="inline-block mr-1 overflow-hidden"
