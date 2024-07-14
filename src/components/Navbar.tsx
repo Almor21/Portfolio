@@ -25,12 +25,12 @@ const OPTIONS = [
 		alt: 'Skills Icon',
 		href: '/skills',
 	},
-	{
-		text: 'Projects',
-		icon: '/icons/Folder.svg',
-		alt: 'Projects Icon',
-		href: '',
-	},
+	// {
+	// 	text: 'Projects',
+	// 	icon: '/icons/Folder.svg',
+	// 	alt: 'Projects Icon',
+	// 	href: '',
+	// },
 	{
 		text: 'Contact',
 		icon: '/icons/Contact.svg',
@@ -45,29 +45,27 @@ function Navbar() {
 	const path = usePathname();
 
 	return (
-		<div className="fixed h-full w-auto flex items-center z-40">
+		<div className="fixed h-full w-auto flex items-center z-40 overflow-hidden">
 			<motion.div
-				className="grid grid-cols-2 bg-white rounded-3xl z-50"
+				className="bg-white rounded-r-3xl z-50 w-"
 				onMouseEnter={() => setExpand(true)}
 				onMouseLeave={() => setExpand(false)}
 				style={{
 					x: '-100%',
 				}}
-				animate={
-					{
-						x: '-50%',
-						width: !expand ? '8rem' : '18rem'
-					}
-				}
+				animate={{
+					x: 0,
+					width: !expand ? '4rem' : '8.5rem',
+				}}
 				transition={{
 					duration: 0.3,
 					x: {
 						delay: 0.6,
-						type:'tween'
-					}
+						type: 'tween',
+					},
 				}}
 			>
-				<nav className="col-start-2 py-6 px-2 flex flex-col gap-3">
+				<nav className="py-6 px-2 flex flex-col gap-4">
 					{OPTIONS.map((opt, index) => {
 						const select = opt.href === path;
 
@@ -110,7 +108,7 @@ function Navbar() {
 													opacity: 0,
 												}}
 												transition={{
-													duration:0.1
+													duration: 0.1,
 												}}
 											>
 												{opt.text}
