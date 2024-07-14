@@ -38,7 +38,6 @@ const textVariants: Variants = {
 };
 
 function Header() {
-	console.log('render')
 	const headerRef = useRef<HTMLElement>(null);
 	const [progress, setProgress] = useState(0);
 
@@ -58,7 +57,7 @@ function Header() {
 		<header
 			className="sticky top-0 z-50 flex items-center w-full h-14 px-4 border-[rgba(255,255,255,0.1)]"
 			style={{
-				borderWidth: progress,
+				borderBottomWidth: progress,
 				backdropFilter: `blur(${3 * progress}px) opacity(${progress})`,
 				boxShadow: `0 4px 30px rgba(0,0,0,${progress / 10})`,
 			}}
