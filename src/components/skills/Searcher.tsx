@@ -65,7 +65,7 @@ function Searcher() {
 	}
 
 	return loading ? (
-		<div className="h-full w-full flex justify-center items-center">
+		<div className="flex justify-center items-center">
 			<div className="relative flex gap-1">
 				{Array.from({ length: 3 }, (v, i) => i).map((index) => (
 					<motion.span
@@ -86,11 +86,11 @@ function Searcher() {
 			</div>
 		</div>
 	) : (
-		<div className="grid grid-rows-[auto_1fr] gap-8">
+		<div className="grid grid-rows-[auto_1fr] gap-8 px-12">
 			<FilterBar areas={areas} set={(v) => setSelected(v)} />
 
 			<div
-				className="flex flex-col gap-5 overflow-auto"
+				className="flex flex-col h-96 gap-5 overflow-auto"
 				style={{
 					scrollbarGutter: 'stable',
 				}}

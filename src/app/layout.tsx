@@ -15,16 +15,18 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`${montserrat.className} relative grid grid-rows-[100vh_auto]`}
-			>
-				<Navbar />
-				<div className="w-full grid grid-rows-[auto_minmax(0,1fr)]">
-					<Header />
-					<main className='pl-24 pr-16 py-5'>{children}</main>
+			<body className={`${montserrat.className} flex justify-center`}>
+				<div className="relative max-w-[1440px] w-full grid grid-rows-[minmax(100vh,auto)_auto]">
+					<Navbar />
+					<div className="grid grid-rows-[auto_minmax(0,1fr)]">
+						<Header />
+						<main className="relative pl-24 pr-16 flex items-center">
+							{children}
+						</main>
+					</div>
+					<footer className="h-52 bg-gray-800"></footer>
+					<Backgroud />
 				</div>
-				<footer></footer>
-				<Backgroud />
 			</body>
 		</html>
 	);

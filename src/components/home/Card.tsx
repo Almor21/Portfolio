@@ -30,8 +30,8 @@ function Card() {
 
 	return (
 		<MoveBackground width={middle}>
-			<div className="absolute grid grid-cols-[repeat(2,auto)] items-center gap-4 top-[50vh] left-[50vw] -translate-x-1/2 -translate-y-1/2">
-				<div className="relative h-60 w-60 box-border rounded-full overflow-hidden rotate-45 p-1 shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5),2px_2px_8px_2px_rgb(255,255,255,0.5)] backdrop-invert">
+			<div className="absolute grid grid-cols-[repeat(2,auto)] items-center gap-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+				<div className="h-60 w-60 box-border rounded-full overflow-hidden rotate-45 p-1 shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5),2px_2px_8px_2px_rgb(255,255,255,0.5)] backdrop-invert">
 					<div
 						className="relative h-full w-full"
 						ref={imageRef || null}
@@ -54,10 +54,13 @@ function Card() {
 					/>
 					<TypeWriter />
 					<p className="text-sm h-fit">
-						<span className='font-medium'>Welcome to my portfolio!</span> Here you can learn more about
-						who I am, what I do and discover a detailed description
-						of my knowledge and skills. I hope you enjoy browsing my
-						work as much as I enjoyed creating it.
+						<span className="font-medium">
+							Welcome to my portfolio!
+						</span>{' '}
+						Here you can learn more about who I am, what I do and
+						discover a detailed description of my knowledge and
+						skills. I hope you enjoy browsing my work as much as I
+						enjoyed creating it.
 					</p>
 				</div>
 			</div>
