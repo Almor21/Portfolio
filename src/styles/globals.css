@@ -6,6 +6,7 @@ body {
 	position: relative;
 	min-height: 100vh;
 	background-color: white;
+	scrollbar-gutter: stable;
 }
 
 *::-webkit-scrollbar {
@@ -24,10 +25,5 @@ li {
 
 ul {
 	list-style: inside;
-	font-size: 0.8em;
-}
-
-input::selection {
-	background-color: black;
-	color: white;
+	font-size: 0.9em;
 }
