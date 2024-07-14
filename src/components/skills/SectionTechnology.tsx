@@ -17,12 +17,19 @@ function SectionTechnology({
 
 	return (
 		<motion.div
+			layout="position"
 			className="relative flex flex-col items-center"
+			initial={{
+				scale: 0,
+			}}
+			animate={{
+				scale: 1,
+			}}
 			exit={{
 				scale: 0,
-				transition: {
-					duration: 0.2
-				}
+			}}
+			transition={{
+				duration: 0.2,
 			}}
 		>
 			<motion.div
@@ -75,7 +82,9 @@ function SectionTechnology({
 					)}
 				</AnimatePresence>
 			</motion.div>
-			<span className='inline-block w-24 text-wrap text-center'>{name}</span>
+			<span className="inline-block w-24 text-wrap text-center">
+				{name}
+			</span>
 		</motion.div>
 	);
 }
