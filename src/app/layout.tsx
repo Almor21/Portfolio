@@ -18,7 +18,7 @@ export default function RootLayout({
 			<body className={`${montserrat.className} flex justify-center`}>
 				<div className="relative max-w-[1440px] w-full grid grid-rows-[minmax(100vh,auto)_auto]">
 					<Navbar />
-					<div className="grid grid-rows-[auto_minmax(0,1fr)]">
+					<div className="grid grid-rows-[auto_1fr]">
 						<Header />
 						<main className="relative pl-24 pr-16 flex items-center">
 							{children}

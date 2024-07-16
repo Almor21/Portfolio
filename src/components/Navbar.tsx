@@ -47,7 +47,7 @@ function Navbar() {
 	return (
 		<div className="fixed h-full w-auto flex items-center z-40 overflow-hidden">
 			<motion.div
-				className="bg-white rounded-r-3xl z-50 w-"
+				className="bg-white rounded-r-3xl z-50"
 				onMouseEnter={() => setExpand(true)}
 				onMouseLeave={() => setExpand(false)}
 				style={{

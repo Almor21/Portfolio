@@ -15,9 +15,9 @@ function SkillsPage() {
 		<MoveBackground
 			createDiv
 			width="40%"
-			className="grid-rows-[minmax(0,1fr)]"
+			className="h-full p-6"
 		>
-			<DivTransition className="flex justify-center pl-10 pr-16 text-white">
+			<DivTransition className="min-h-full flex justify-center pl-10 pr-16 text-white">
 				<motion.div
 					className="relative flex flex-col justify-between"
 					initial={{
@@ -68,7 +68,7 @@ function SkillsPage() {
 						}}
 					/>
 				</motion.div>
-				<p className="relative z-10 text-justify p-4 rounded-r-lg border border-white bg-black">
+				<p className="relative min-h-full z-10 text-justify p-4 rounded-r-lg border border-white bg-black">
 					I am fascinated by <span className="font-bold">programming</span> and <span className="font-bold">logic challenges.</span>
 					<br />
 					Good skills in logic and algorithmic{' '}
