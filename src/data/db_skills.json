@@ -74,6 +74,14 @@
 			"relations": [],
 			"tags": ["Desktop"]
 		},
+		"Tailwind": {
+			"category": "Framework",
+			"percentage": "60",
+			"note": "A long description about the Language again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
 		"ExpressJS": {
 			"category": "Framework",
 			"percentage": "60",
