@@ -4,23 +4,23 @@ import React, { useEffect, useState, useCallback } from 'react';
 import FilterBar from './FilterBar';
 import SectionTechnology from './SectionTechnology';
 import ModalTechnology from './ModalTechnology';
-import { Categories, Data } from '@/types/data';
+import { Categories, SkillInfo } from '@/types/data';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 
-function Searcher() {
+function Searcher( {} ) {
 	const [loading, setLoading] = useState(true);
 	const [categories, setCategories] = useState<Categories>();
 	const [areas, setAreas] = useState<Array<string>>([]);
-	const [data, setData] = useState<Data>();
+	const [data, setData] = useState<SkillInfo>();
 	const [selected, setSelected] = useState<Array<string>>([]);
 	const [techModal, setTechModal] = useState('');
 
 	useEffect(() => {
 		Promise.all([
-			fetch('/api/data').then((response) => response.json()),
-			fetch('/api/data/categories').then((response) => response.json()),
-			fetch('/api/areas').then((response) => response.json()),
+			fetch('/api/skills/data').then((response) => response.json()),
+			fetch('/api/skills/data/categories').then((response) => response.json()),
+			fetch('/api/skills/areas').then((response) => response.json()),
 		]).then((response) => {
 			setData(response[0]);
 			setCategories(response[1]);
@@ -65,7 +65,7 @@ function Searcher() {
 	}
 
 	return loading ? (
-		<div className="flex justify-center items-center">
+		<div className="h-full flex justify-center items-center">
 			<div className="relative flex gap-1">
 				{Array.from({ length: 3 }, (v, i) => i).map((index) => (
 					<motion.span
@@ -90,7 +90,7 @@ function Searcher() {
 			<FilterBar areas={areas} set={(v) => setSelected(v)} />
 
 			<div
-				className="flex flex-col h-96 gap-5 overflow-auto"
+				className="flex flex-col max-h-96 gap-5 overflow-auto"
 				style={{
 					scrollbarGutter: 'stable',
 				}}

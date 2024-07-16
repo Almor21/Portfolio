@@ -1,8 +1,8 @@
 import { Categories } from '@/types/data';
-import { readData } from '@/utils/dataHandler';
+import { readDBSkills } from '@/utils/dataHandler';
 
 export function GET() {
-	const { categories, areas, data } = readData();
+	const { categories, areas, data } = readDBSkills();
 	
 	let responseBody: Categories = {};
 
