@@ -1,0 +1,27 @@
+{
+	"areas": ["Frontend", "Backend", "OOP"],
+	"data": [
+		{
+			"name": "Portfolio",
+			"notes": "Description about the project Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam magni, exercitationem accusamus doloremque voluptate nam? Laborum ad praesentium repudiandae laboriosam officiis neque accusantium perferendis, commodi voluptas ullam omnis sit officia.",
+			"link": "",
+			"technologies": [
+				"HTML",
+				"Tailwind",
+				"TypeScript",
+				"React",
+				"NextJS",
+				"Framer Motion",
+				"Zustand"
+			],
+			"tags": ["Frontend", "Backend"]
+		},
+		{
+			"name": "Logisim Web",
+			"notes": "Description about the project Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam magni, exercitationem accusamus doloremque voluptate nam? Laborum ad praesentium repudiandae laboriosam officiis neque accusantium perferendis, commodi voluptas ullam omnis sit officia.",
+			"link": "",
+			"technologies": ["JavaScript", "HTML", "CSS"],
+			"tags": ["Frontend", "Backend", "OOP"]
+		}
+	]
+}
