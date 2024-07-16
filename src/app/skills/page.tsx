@@ -17,14 +17,14 @@ function SkillsPage() {
 			width="40%"
 			className="grid-rows-[minmax(0,1fr)]"
 		>
-			<DivTransition className="flex flex-col justify-center pl-10 pr-16 text-white">
+			<DivTransition className="flex justify-center pl-10 pr-16 text-white">
 				<motion.div
-					className="relative flex justify-between"
+					className="relative flex flex-col justify-between"
 					initial={{
-						y: '100%',
+						x: '100%',
 					}}
 					animate={{
-						y: 0,
+						x: 0,
 					}}
 					transition={{
 						delay: 1.1,
@@ -34,44 +34,42 @@ function SkillsPage() {
 					}}
 				>
 					<div
-						className="relative w-2/5 flex justify-center py-1 cursor-pointer"
+						className="relative w-10 h-1/2 flex justify-center items-center cursor-pointer"
 						onClick={() => setOption(0)}
 					>
-						{option == 0 && (
-							<motion.span
-								layoutId="option"
-								className="absolute top-0 left-0 w-full h-full bg-white rounded-t-lg mix-blend-difference"
-								transition={{
-									layout: {
-										duration: 1,
-										ease: [0, 0.9, 0.6, 1],
-									},
-								}}
-							/>
-						)}
-						<span className="inline-block text-2xl">Skills</span>
+						<span className="inline-block mix-blend-difference text-2xl h-min -rotate-90">
+							Skills
+						</span>
 					</div>
 					<div
-						className="relative w-2/5 flex justify-center py-1 cursor-pointer"
+						className="relative w-10 h-1/2 flex justify-center items-center cursor-pointer"
 						onClick={() => setOption(1)}
 					>
-						{option == 1 && (
-							<motion.span
-								layoutId="option"
-								className="absolute top-0 left-0 w-full h-full bg-white rounded-t-lg mix-blend-difference"
-								transition={{
-									layout: {
-										duration: 1,
-										ease: [0, 0.9, 0.6, 1],
-									},
-								}}
-							/>
-						)}
-						<span className="inline-block text-2xl">Projects</span>
+						<span className="inline-block mix-blend-difference text-2xl h-min -rotate-90">
+							Projects
+						</span>
 					</div>
+					<motion.span
+						className="absolute top-0 left-0 w-full h-1/2 bg-white mix-blend-difference"
+						animate={
+							option == 0
+								? {
+										y: 0,
+										borderTopLeftRadius: '0.8rem',
+								  }
+								: {
+										y: '100%',
+										borderBottomLeftRadius: '0.8rem',
+								  }
+						}
+						transition={{
+							duration: 0.3,
+							ease: 'easeOut',
+						}}
+					/>
 				</motion.div>
-				<p className="relative z-10 text-justify p-4 rounded-b-lg border border-white bg-black">
-					I am fascinated by programming and logic challenges.
+				<p className="relative z-10 text-justify p-4 rounded-r-lg border border-white bg-black">
+					I am fascinated by <span className="font-bold">programming</span> and <span className="font-bold">logic challenges.</span>
 					<br />
 					Good skills in logic and algorithmic{' '}
 					<Link
