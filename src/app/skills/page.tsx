@@ -98,7 +98,7 @@ function SkillsPage() {
 					more information.
 				</p>
 			</DivTransition>
-			<Searcher />
+			<Searcher mode={option==0 ? 'skills' : 'projects'} />
 		</MoveBackground>
 	);
 }

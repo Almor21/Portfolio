@@ -2,33 +2,24 @@
 
 import React, { useEffect, useState, useCallback } from 'react';
 import FilterBar from './FilterBar';
-import SectionTechnology from './SectionTechnology';
+import TechnologyCard from './TechnologyCard';
 import ModalTechnology from './ModalTechnology';
-import { Categories, SkillInfo } from '@/types/data';
+import { Categories, SkillInfo, ProjectInfo } from '@/types/data';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
+import ProjectCard from './ProjectCard';
 
-function Searcher( {} ) {
+function Searcher({ mode }: { mode: string }) {
+	console.log('render');
+	const [actualMode, setActualMode] = useState(mode);
+
 	const [loading, setLoading] = useState(true);
 	const [categories, setCategories] = useState<Categories>();
 	const [areas, setAreas] = useState<Array<string>>([]);
-	const [data, setData] = useState<SkillInfo>();
+	const [data, setData] = useState<SkillInfo | ProjectInfo[]>();
+
 	const [selected, setSelected] = useState<Array<string>>([]);
 	const [techModal, setTechModal] = useState('');
-
-	useEffect(() => {
-		Promise.all([
-			fetch('/api/skills/data').then((response) => response.json()),
-			fetch('/api/skills/data/categories').then((response) => response.json()),
-			fetch('/api/skills/areas').then((response) => response.json()),
-		]).then((response) => {
-			setData(response[0]);
-			setCategories(response[1]);
-			setAreas(response[2]);
-			setSelected(response[2]);
-			setLoading(false);
-		});
-	}, []);
 
 	const openModalTech = useCallback(
 		async (name: string) => {
@@ -51,8 +42,16 @@ function Searcher( {} ) {
 		[data]
 	);
 
+	function isSkillInfo(data: any): data is SkillInfo {
+		return data && typeof data === 'object';
+	}
+	function isProjectInfo(data: any): data is ProjectInfo[] {
+		return data && Array.isArray(data);
+	}
+
 	let filterCategories: typeof categories = {};
-	if (data && categories) {
+	let filterProjects: ProjectInfo[] = [];
+	if (actualMode === 'skills' && isSkillInfo(data) && categories) {
 		Object.keys(categories).forEach((c) => {
 			const filter = categories[c].filter((tech) =>
 				data[tech].tags.some((t) => selected.includes(t))
@@ -62,62 +61,132 @@ function Searcher( {} ) {
 				filterCategories[c] = filter;
 			}
 		});
+	} else if (actualMode === 'projects' && isProjectInfo(data)) {
+		filterProjects = data.filter((p) =>
+			p.tags.some((t) => selected.includes(t))
+		);
 	}
 
-	return loading ? (
-		<div className="h-full flex justify-center items-center">
-			<div className="relative flex gap-1">
-				{Array.from({ length: 3 }, (v, i) => i).map((index) => (
-					<motion.span
-						key={index}
-						className="inline-block h-3 w-3 rounded-full bg-black"
-						animate={{
-							y: [0, '-100%', 0],
-						}}
-						transition={{
-							repeatDelay: 0.8,
-							delay: index * 0.2,
-							duration: 1,
-							repeat: Infinity,
-							ease: 'easeInOut',
-						}}
-					/>
-				))}
+	useEffect(() => {
+		const changeMode = async () => {
+			setLoading(true);
+
+			if (mode === 'skills') {
+				Promise.all([
+					fetch('/api/skills/data').then((response) =>
+						response.json()
+					),
+					fetch('/api/skills/data/categories').then((response) =>
+						response.json()
+					),
+					fetch('/api/skills/areas').then((response) =>
+						response.json()
+					),
+				]).then((response) => {
+					setData(response[0]);
+					setCategories(response[1]);
+					setAreas(response[2]);
+					setSelected(response[2]);
+					setActualMode(mode);
+					setLoading(false);
+				});
+			} else if (mode === 'projects') {
+				Promise.all([
+					fetch('/api/projects/data').then((response) =>
+						response.json()
+					),
+					fetch('/api/projects/areas').then((response) =>
+						response.json()
+					),
+				]).then((response) => {
+					setData(response[0]);
+					setAreas(response[1]);
+					setSelected(response[1]);
+					setActualMode(mode);
+					setLoading(false);
+				});
+			}
+		};
+
+		changeMode();
+	}, [mode]);
+
+	if (loading) {
+		return (
+			<div className="h-full flex justify-center items-center">
+				<div className="relative flex gap-1">
+					{Array.from({ length: 3 }, (v, i) => i).map((index) => (
+						<motion.span
+							key={index}
+							className="inline-block h-3 w-3 rounded-full bg-black"
+							animate={{
+								y: [0, '-100%', 0],
+							}}
+							transition={{
+								repeatDelay: 0.8,
+								delay: index * 0.2,
+								duration: 1,
+								repeat: Infinity,
+								ease: 'easeInOut',
+							}}
+						/>
+					))}
+				</div>
 			</div>
-		</div>
-	) : (
+		);
+	}
+
+	return (
 		<div className="grid grid-rows-[auto_1fr] gap-8 px-12">
 			<FilterBar areas={areas} set={(v) => setSelected(v)} />
 
 			<div
-				className="flex flex-col max-h-96 gap-5 overflow-auto"
+				className="px-3 flex flex-col max-h-96 gap-5 overflow-auto"
 				style={{
 					scrollbarGutter: 'stable',
 				}}
 			>
-				{data &&
-					Object.keys(filterCategories).map((categoryName) => (
-						<div
-							key={categoryName}
-							className="grid grid-cols-[repeat(auto-fit,minmax(6rem,1fr))] gap-y-3"
-						>
-							<h1 className="text-gray-400 w-full col-span-full my-1">
-								{categoryName}
-							</h1>
+				{actualMode === 'skills'
+					? isSkillInfo(data) &&
+					  Object.keys(filterCategories).map((categoryName) => (
+							<div
+								key={categoryName}
+								className="grid grid-cols-[repeat(auto-fit,minmax(6rem,1fr))] gap-y-3"
+							>
+								<h1 className="text-gray-400 w-full col-span-full my-1">
+									{categoryName}
+								</h1>
+								<AnimatePresence>
+									{filterCategories[categoryName].map(
+										(tech) => (
+											<TechnologyCard
+												key={tech}
+												name={tech}
+												percentage={
+													data[tech].percentage
+												}
+												openTech={openModalTech}
+											/>
+										)
+									)}
+								</AnimatePresence>
+							</div>
+					  ))
+					: isProjectInfo(data) && (
 							<AnimatePresence>
-								{filterCategories[categoryName].map((tech) => (
-									<SectionTechnology
-										key={tech}
-										name={tech}
-										percentage={data[tech].percentage}
-										openTech={openModalTech}
+								{filterProjects.map((project) => (
+									<ProjectCard
+										key={project.name}
+										name={project.name}
+										notes={project.notes}
+										link={project.link}
+										technologies={project.technologies}
 									/>
 								))}
 							</AnimatePresence>
-						</div>
-					))}
+					  )}
 			</div>
-			{data && (
+			{isSkillInfo(data) && (
 				<ModalTechnology
 					name={techModal}
 					data={data[techModal]}

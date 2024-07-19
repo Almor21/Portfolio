@@ -3,8 +3,8 @@
 	"data": [
 		{
 			"name": "Portfolio",
-			"notes": "Description about the project Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam magni, exercitationem accusamus doloremque voluptate nam? Laborum ad praesentium repudiandae laboriosam officiis neque accusantium perferendis, commodi voluptas ullam omnis sit officia.",
-			"link": "",
+			"notes": "Description about the project Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam magni.",
+			"link": "https://edinsonnoriega.vercel.app",
 			"technologies": [
 				"HTML",
 				"Tailwind",
@@ -18,8 +18,8 @@
 		},
 		{
 			"name": "Logisim Web",
-			"notes": "Description about the project Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam magni, exercitationem accusamus doloremque voluptate nam? Laborum ad praesentium repudiandae laboriosam officiis neque accusantium perferendis, commodi voluptas ullam omnis sit officia.",
-			"link": "",
+			"notes": "Description about the project Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam magni, exercitationem accusamus doloremque voluptate nam? Laborum ad praesentium repudiandae.",
+			"link": "https://edinsonnoriega.vercel.app",
 			"technologies": ["JavaScript", "HTML", "CSS"],
 			"tags": ["Frontend", "Backend", "OOP"]
 		}

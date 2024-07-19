@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
-function SectionTechnology({
+function TechnologyCard({
 	name,
 	percentage,
 	openTech,
@@ -20,13 +20,13 @@ function SectionTechnology({
 			layout="position"
 			className="relative flex flex-col items-center"
 			initial={{
-				scale: 0,
+				opacity: 0,
 			}}
 			animate={{
-				scale: 1,
+				opacity: 1,
 			}}
 			exit={{
-				scale: 0,
+				opacity: 0,
 			}}
 			transition={{
 				duration: 0.2,
@@ -89,4 +89,4 @@ function SectionTechnology({
 	);
 }
 
-export default React.memo(SectionTechnology);
+export default React.memo(TechnologyCard);
