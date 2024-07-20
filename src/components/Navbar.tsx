@@ -25,17 +25,11 @@ const OPTIONS = [
 		alt: 'Skills Icon',
 		href: '/skills',
 	},
-	// {
-	// 	text: 'Projects',
-	// 	icon: '/icons/Folder.svg',
-	// 	alt: 'Projects Icon',
-	// 	href: '',
-	// },
 	{
 		text: 'Contact',
 		icon: '/icons/Contact.svg',
 		alt: 'Contact Icon',
-		href: '',
+		href: '/contact',
 	},
 ];
 

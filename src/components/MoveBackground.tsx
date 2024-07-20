@@ -50,9 +50,7 @@ function MoveBackground({
 		<div
 			style={{
 				display: 'grid',
-				gridTemplateColumns: `minmax(0,${width}) minmax(0,${
-					100 - parseInt(width)
-				}%)`,
+				gridTemplateColumns: `${width} ${100 - parseInt(width)}%`,
 			}}
 			className={className}
 			ref={divRef}

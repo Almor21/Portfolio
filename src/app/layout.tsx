@@ -20,7 +20,7 @@ export default function RootLayout({
 					<Navbar />
 					<div className="grid grid-rows-[auto_1fr]">
 						<Header />
-						<main className="relative pl-24 pr-16 flex items-center">
+						<main className="relative pl-24 flex items-center">
 							{children}
 						</main>
 					</div>
