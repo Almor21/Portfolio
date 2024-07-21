@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import {
+	AnimationPlaybackControls,
 	delay,
 	motion,
 	useAnimate,
@@ -12,20 +13,20 @@ import {
 import Image from 'next/image';
 
 function SendButton() {
+	console.log('rendeer');
 	const [rightLimit, setRightLimit] = useState(0);
 	const btRef = useRef<HTMLDivElement>(null);
 
+	let controls: AnimationPlaybackControls;
+	let blockAnimations = false;
+
 	const x = useMotionValue(0);
-	useMotionValueEvent(x, 'change', () => {
-		console.log(x.get());
-	});
 	const [scope, animate] = useAnimate();
 	const brightness = useTransform(x, [0, rightLimit], [0, 1]);
 
-	const handleDrag = () => {};
-
 	const handleDragEnd = () => {
 		if (x.get() >= rightLimit - 10) {
+			blockAnimations = true;
 			const run = async () => {
 				if (!btRef.current?.parentElement?.offsetWidth) return;
 
@@ -45,11 +46,14 @@ function SendButton() {
 				await Promise.all([
 					animate(x, 0),
 					animate('#text', { opacity: 1 }),
-					animate('#check', { opacity: 0 })
+					animate('#check', { opacity: 0 }),
 				]);
 
-				animate('#check_mask', { scaleX: 1 });
-				animate('#bt_mask', { opacity: 1 });
+				await Promise.all([
+					animate('#check_mask', { scaleX: 1 }),
+					animate('#bt_mask', { opacity: 1 }),
+				]);
+				blockAnimations = false;
 			};
 			run();
 		} else {
@@ -69,6 +73,22 @@ function SendButton() {
 		<div
 			className="relative w-52 h-12 box-content border-2 border-white flex justify-center items-center"
 			ref={scope}
+			onMouseEnter={() => {
+				if (!blockAnimations) {
+					controls = animate(x, [0, 2, 0, 2, 0], {
+						repeat: Infinity,
+						delay: 1,
+						duration: 0.6,
+						repeatDelay: 2,
+					});
+				}
+			}}
+			onMouseLeave={() => {
+				if (controls && !blockAnimations) {
+					controls.stop();
+					x.set(0);
+				}
+			}}
 		>
 			<motion.div
 				className="absolute h-full w-full top-0 left-0 shadow-[0_0_10px_4px_rgba(255,255,255,0.5)]"
@@ -85,7 +105,7 @@ function SendButton() {
 			/>
 			<span
 				id="text"
-				className="relative inline-block text-white z-10 mix-blend-difference"
+				className="relative inline-block text-white z-10 mix-blend-difference select-none"
 				style={{
 					opacity: 1,
 				}}
@@ -117,6 +137,7 @@ function SendButton() {
 					}}
 					dragElastic={0}
 					dragMomentum={false}
+					onDragEnter={() => controls.stop()}
 					onDragEnd={handleDragEnd}
 				>
 					<span className="inline-flex h-full w-full text-2xl items-center justify-center bg-white">
