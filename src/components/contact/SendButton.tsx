@@ -75,7 +75,7 @@ function SendButton() {
 			ref={scope}
 			onMouseEnter={() => {
 				if (!blockAnimations) {
-					controls = animate(x, [0, 2, 0, 2, 0], {
+					controls = animate(x, [0, 3, 0, 3, 0], {
 						repeat: Infinity,
 						delay: 1,
 						duration: 0.6,
