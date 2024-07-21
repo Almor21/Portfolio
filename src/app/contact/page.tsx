@@ -18,7 +18,7 @@ function ContactPage() {
 				<div className="px-16">
 					<div className="flex justify-center">
 						<h1 className="text-6xl font-extrabold">
-							What's
+							What&apos;s
 							<br />
 							up?
 						</h1>
