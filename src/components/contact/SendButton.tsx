@@ -3,17 +3,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {
 	AnimationPlaybackControls,
-	delay,
 	motion,
 	useAnimate,
 	useMotionValue,
-	useMotionValueEvent,
 	useTransform,
 } from 'framer-motion';
 import Image from 'next/image';
 
 function SendButton() {
-	console.log('rendeer');
 	const [rightLimit, setRightLimit] = useState(0);
 	const btRef = useRef<HTMLDivElement>(null);
 
@@ -21,12 +18,11 @@ function SendButton() {
 	let blockAnimations = false;
 
 	const x = useMotionValue(0);
-	const [scope, animate] = useAnimate();
 	const brightness = useTransform(x, [0, rightLimit], [0, 1]);
+	const [scope, animate] = useAnimate();
 
 	const handleDragEnd = () => {
 		if (x.get() >= rightLimit - 10) {
-			blockAnimations = true;
 			const run = async () => {
 				if (!btRef.current?.parentElement?.offsetWidth) return;
 
@@ -58,6 +54,7 @@ function SendButton() {
 			run();
 		} else {
 			animate(x, 0);
+			blockAnimations = false;
 		}
 	};
 
@@ -137,7 +134,10 @@ function SendButton() {
 					}}
 					dragElastic={0}
 					dragMomentum={false}
-					onDragEnter={() => controls.stop()}
+					onDragStart={() => {
+						blockAnimations = true;
+						controls.stop();
+					}}
 					onDragEnd={handleDragEnd}
 				>
 					<span className="inline-flex h-full w-full text-2xl items-center justify-center bg-white">
