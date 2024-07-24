@@ -11,7 +11,7 @@ const OPTIONS = [
 		text: 'Home',
 		icon: '/icons/Home.svg',
 		alt: 'Home Icon',
-		href: '/',
+		href: '/home',
 	},
 	{
 		text: 'About',
@@ -35,11 +35,10 @@ const OPTIONS = [
 
 function Navbar() {
 	const [expand, setExpand] = useState(false);
-	const [selected, setSelected] = useState(0);
 	const path = usePathname();
 
 	return (
-		<div className="fixed h-full w-auto flex items-center z-40 overflow-hidden">
+		<div className="fixed h-full w-auto top-0 left-0 flex items-center z-40 overflow-hidden">
 			<motion.div
 				className="bg-white rounded-r-3xl z-50"
 				onMouseEnter={() => setExpand(true)}

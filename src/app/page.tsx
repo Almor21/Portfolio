@@ -1,15 +1,9 @@
-import CVButton from '@/components/home/CVButton';
-import Card from '@/components/home/Card';
-import ScrollDown from '@/components/home/ScrollDown';
+import React from 'react'
 
-function Home() {
-	return (
-		<div className='relative h-[29rem] w-full'>
-			<Card />
-			<CVButton />
-			<ScrollDown />
-		</div>
-	);
+function page() {
+  return (
+    <div>page</div>
+  )
 }
 
-export default Home;
+export default page
