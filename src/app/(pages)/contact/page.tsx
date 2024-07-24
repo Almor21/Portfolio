@@ -24,8 +24,8 @@ function ContactPage() {
 						Here you can find links to get more information about me
 						or to contact me. If you need additional details, have
 						any recommendations, or just want to chat, feel free to
-						send me a message. I'm always open to any kinds of
-						opportunities, projects or suggestions. I'll get back to
+						send me a message. I&apos;m always open to any kinds of
+						opportunities, projects or suggestions. I&apos;ll get back to
 						you as soon as possible.
 					</p>
 					<div className="flex">
