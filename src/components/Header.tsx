@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { Variants, motion, scroll } from 'framer-motion';
+import { Variants, motion } from 'framer-motion';
 
 const parentVariants: Variants = {
 	visible: {
@@ -55,7 +55,7 @@ function Header() {
 
 	return (
 		<header
-			className="sticky top-0 z-50 flex items-center w-full h-14 px-4 border-[rgba(255,255,255,0.1)]"
+			className="sticky top-0 z-50 flex justify-center w-full border-[rgba(255,255,255,0.1)]"
 			style={{
 				borderBottomWidth: progress,
 				backdropFilter: `blur(${3 * progress}px) opacity(${progress})`,
@@ -63,51 +63,53 @@ function Header() {
 			}}
 			ref={headerRef || null}
 		>
-			<motion.div
-				className={`inline-block mr-auto text-white rounded-full p-1`}
-				variants={parentVariants}
-				initial="visible"
-				animate="hidden"
-			>
-				<h1 className="flex justify-center items-center">
-					E
-					<motion.span
-						className="inline-block mr-1 overflow-hidden"
-						variants={textVariants}
-					>
-						dinson
-					</motion.span>
-					N
-					<motion.span
-						className="inline-block overflow-hidden"
-						variants={textVariants}
-					>
-						oriega
-					</motion.span>
-				</h1>
-			</motion.div>
-			<div className="inline-flex ml-auto gap-2">
-				<Image
-					src={'/icons/Github.svg'}
-					className="h-11 w-11"
-					alt="Github Icon"
-					width={0}
-					height={0}
-				/>
-				<Image
-					src={'/icons/Mail.svg'}
-					className="h-11 w-11"
-					alt="Mail Icon"
-					width={0}
-					height={0}
-				/>
-				<Image
-					src={'/icons/Linkedin.svg'}
-					className="h-11 w-11"
-					alt="Linkedin Icon"
-					width={0}
-					height={0}
-				/>
+			<div className="max-w-[1440px] w-full flex items-center h-14 px-4">
+				<motion.div
+					className={`inline-block mr-auto text-white rounded-full p-1`}
+					variants={parentVariants}
+					initial="visible"
+					animate="hidden"
+				>
+					<h1 className="flex justify-center items-center">
+						E
+						<motion.span
+							className="inline-block mr-1 overflow-hidden"
+							variants={textVariants}
+						>
+							dinson
+						</motion.span>
+						N
+						<motion.span
+							className="inline-block overflow-hidden"
+							variants={textVariants}
+						>
+							oriega
+						</motion.span>
+					</h1>
+				</motion.div>
+				<div className="inline-flex ml-auto gap-2">
+					<Image
+						src={'/icons/Github.svg'}
+						className="h-11 w-11"
+						alt="Github Icon"
+						width={0}
+						height={0}
+					/>
+					<Image
+						src={'/icons/Mail.svg'}
+						className="h-11 w-11"
+						alt="Mail Icon"
+						width={0}
+						height={0}
+					/>
+					<Image
+						src={'/icons/Linkedin.svg'}
+						className="h-11 w-11"
+						alt="Linkedin Icon"
+						width={0}
+						height={0}
+					/>
+				</div>
 			</div>
 		</header>
 	);

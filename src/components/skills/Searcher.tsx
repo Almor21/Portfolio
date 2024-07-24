@@ -10,7 +10,6 @@ import { AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 
 function Searcher({ mode }: { mode: string }) {
-	console.log('render');
 	const [actualMode, setActualMode] = useState(mode);
 
 	const [loading, setLoading] = useState(true);

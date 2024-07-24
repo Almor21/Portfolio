@@ -36,6 +36,9 @@ function MoveBackground({
 			if (!divRef.current) return;
 
 			const rect = divRef.current.getBoundingClientRect();
+			console.log(rect.left)
+			console.log(rect.width)
+			console.log(parseInt(width) / 100)
 			const middle = (
 				rect.left +
 				rect.width * (parseInt(width) / 100)
