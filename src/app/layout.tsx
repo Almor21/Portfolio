@@ -15,18 +15,19 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${montserrat.className} flex justify-center`}>
-				<div className="relative max-w-[1440px] w-full grid grid-rows-[minmax(100vh,auto)_auto]">
-					<Navbar />
-					<div className="grid grid-rows-[auto_1fr]">
-						<Header />
-						<main className="relative pl-24 flex items-center">
-							{children}
-						</main>
-					</div>
-					<footer className="h-52 bg-gray-800"></footer>
-					<Backgroud />
-				</div>
+			<body
+				className={`${montserrat.className} min-h-screen grid grid-rows-[auto_1fr_auto] justify-items-center`}
+				style={{
+					scrollbarGutter: 'stable'
+				}}
+			>
+				<Navbar />
+				<Header />
+				<main className="relative max-w-[1440px] w-full p-8 pl-24 flex items-center">
+					{children}
+				</main>
+				<footer className="h-52 w-full bg-gray-800"></footer>
+				<Backgroud />
 			</body>
 		</html>
 	);
