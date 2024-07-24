@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useAnimate } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 
-function page() {
+function EntryPage() {
 	const [scope, animate] = useAnimate();
 	const router = useRouter();
 
@@ -63,4 +63,4 @@ function page() {
 	);
 }
 
-export default page;
+export default EntryPage;
