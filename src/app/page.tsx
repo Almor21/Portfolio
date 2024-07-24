@@ -4,11 +4,11 @@ import ScrollDown from '@/components/home/ScrollDown';
 
 function Home() {
 	return (
-		<>
+		<div className='relative h-[29rem] w-full'>
 			<Card />
 			<CVButton />
 			<ScrollDown />
-		</>
+		</div>
 	);
 }
 
