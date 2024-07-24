@@ -12,7 +12,7 @@ function SkillsPage() {
 	const [option, setOption] = useState(0);
 
 	return (
-		<MoveBackground createDiv width="40%" className="h-full p-6">
+		<MoveBackground createDiv width="40%" className="px-6">
 			<DivTransition className="min-h-full flex justify-center pl-10 pr-16 text-white">
 				<motion.div
 					className="relative flex flex-col justify-between"
@@ -64,7 +64,7 @@ function SkillsPage() {
 						}}
 					/>
 				</motion.div>
-				<div className="relative min-h-full z-10 text-justify flex flex-col gap-2 justify-around p-4 rounded-r-lg border border-white bg-black">
+				<div className="relative h-[30rem] z-10 text-justify flex flex-col gap-2 justify-around p-4 rounded-r-lg border border-white bg-black">
 					<p>
 						I am fascinated by{' '}
 						<span className="font-bold">programming</span> and{' '}
