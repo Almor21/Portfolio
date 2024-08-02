@@ -20,6 +20,7 @@ function Modal({
 		await animate(scale, 0, { duration: 0.2 });
 
 		dialogRef.current?.close();
+
 		if (onClose) onClose();
 	};
 
@@ -31,11 +32,11 @@ function Modal({
 		} else {
 			close();
 		}
-	}, []);
+	}, [open]);
 
 	return (
 		<motion.dialog
-			className="relative rounded-lg min-h-20 min-w-40 p-8 bg-white backdrop:bg-black backdrop:opacity-40 focus:outline-none shadow-[2px_4px_7px_3px_rgb(0,0,0,0.5)]"
+			className="fixed rounded-lg min-h-20 min-w-40 p-8 bg-white backdrop:bg-black backdrop:opacity-40 focus:outline-none shadow-[2px_4px_7px_3px_rgb(0,0,0,0.5)]"
 			style={{
 				scale,
 			}}
