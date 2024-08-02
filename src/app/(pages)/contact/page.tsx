@@ -1,8 +1,8 @@
+import React from 'react';
 import Form from '@/components/contact/Form';
 import DivTransition from '@/components/DivTransition';
 import MoveBackground from '@/components/MoveBackground';
-import Image from 'next/image';
-import React from 'react';
+import Links from '@/components/contact/Links';
 
 function ContactPage() {
 	return (
@@ -25,23 +25,10 @@ function ContactPage() {
 						or to contact me. If you need additional details, have
 						any recommendations, or just want to chat, feel free to
 						send me a message. I&apos;m always open to any kinds of
-						opportunities, projects or suggestions. I&apos;ll get back to
-						you as soon as possible.
+						opportunities, projects or suggestions. I&apos;ll get
+						back to you as soon as possible.
 					</p>
-					<div className="flex">
-						{Array.from({ length: 3 }).map((v, index) => (
-							<div key={index} className="relative flex p-2 items-center bg-[rgba(0,0,0,0.11)] rounded shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-sm border border-[rgba(0,0,0,0.1)] cursor-pointer grow hover:grow-[3]">
-								<div className="relative h-10 w-10">
-									<Image
-										src={'/icons/Github.svg'}
-										alt="i"
-										fill
-									/>
-								</div>
-								{/* <span className='relative inline-block px-2'>Github</span> */}
-							</div>
-						))}
-					</div>
+					<Links />
 				</div>
 			</MoveBackground>
 		</DivTransition>
