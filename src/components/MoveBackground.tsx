@@ -14,9 +14,9 @@ function MoveBackground({
 	className?: string;
 	width: string;
 }) {
+	const [resize, setResize] = useState(false);
 	const setXBackground = useStoreBackground((state) => state.setXBackground);
 	const divRef = useRef<HTMLDivElement>(null);
-	const [resize, setResize] = useState(false);
 
 	useEffect(() => {
 		if (createDiv) {
@@ -36,9 +36,6 @@ function MoveBackground({
 			if (!divRef.current) return;
 
 			const rect = divRef.current.getBoundingClientRect();
-			console.log(rect.left)
-			console.log(rect.width)
-			console.log(parseInt(width) / 100)
 			const middle = (
 				rect.left +
 				rect.width * (parseInt(width) / 100)
@@ -51,12 +48,12 @@ function MoveBackground({
 
 	return createDiv ? (
 		<div
+			ref={divRef}
+			className={className}
 			style={{
 				display: 'grid',
 				gridTemplateColumns: `${width} ${100 - parseInt(width)}%`,
 			}}
-			className={className}
-			ref={divRef}
 		>
 			{children}
 		</div>
