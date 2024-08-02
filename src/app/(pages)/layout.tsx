@@ -12,7 +12,7 @@ function PagesLayout({
 		<>
 			<Navbar />
 			<Header />
-			<main className="relative max-w-[1440px] w-full p-8 pl-24 flex items-center">
+			<main className="relative max-w-[1440px] w-full min-h-screen p-8 pl-24 flex items-center">
 				{children}
 			</main>
 			<footer className="h-52 w-full bg-gray-800"></footer>
