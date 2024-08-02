@@ -2,46 +2,66 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { Variants, motion } from 'framer-motion';
-
-const parentVariants: Variants = {
-	visible: {
-		border: '1.5px rgb(255,255,255,0) solid',
-		transition: {
-			duration: 1,
-		},
-	},
-	hidden: {
-		borderColor: 'rgb(255,255,255,1)',
-		transition: {
-			duration: 1.8,
-			when: 'afterChildren',
-			delayChildren: 2,
-		},
-	},
-};
-
-const textVariants: Variants = {
-	visible: {
-		width: 'auto',
-		opacity: 1,
-	},
-	hidden: {
-		width: '0',
-		opacity: 0,
-		marginRight: 0,
-		transition: {
-			duration: 0.4,
-			ease: 'easeOut',
-		},
-	},
-};
+import { delay, useAnimate } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 function Header() {
-	const headerRef = useRef<HTMLElement>(null);
 	const [progress, setProgress] = useState(0);
+	const [scope, animate] = useAnimate();
+	const router = useRouter();
 
 	useEffect(() => {
+		const runAnimation = async () => {
+			await animate(
+				'#text span',
+				{
+					width: 0,
+					margin: 0,
+					opacity: 0,
+				},
+				{
+					delay: 1.8,
+					duration: 0.8,
+				}
+			);
+
+			await new Promise((resolve, reject) => {
+				setTimeout(() => resolve(1), 500);
+			});
+
+			await Promise.all([
+				animate(scope.current, {
+					border: '1.35px solid rgb(255,255,255)',
+				},
+				{
+					duration: 1,
+				}),
+				animate(
+					'#text',
+					{
+						opacity: 0,
+					},
+					{
+						duration: 1,
+					}
+				),
+				animate(
+					'#logo',
+					{
+						display: 'block',
+						opacity: 1,
+					},
+					{
+						opacity: {
+							delay: 0.8,
+							duration: 1,
+						},
+					}
+				),
+			]);
+		};
+		runAnimation();
+
 		const handleScroll = () => {
 			const limit = 50;
 			let value = window.scrollY / limit;
@@ -61,32 +81,39 @@ function Header() {
 				backdropFilter: `blur(${3 * progress}px) opacity(${progress})`,
 				boxShadow: `0 4px 30px rgba(0,0,0,${progress / 10})`,
 			}}
-			ref={headerRef || null}
 		>
 			<div className="max-w-[1440px] w-full flex items-center h-14 px-4">
-				<motion.div
+				<div
+					ref={scope}
 					className={`inline-block mr-auto text-white rounded-full p-1`}
-					variants={parentVariants}
-					initial="visible"
-					animate="hidden"
+					style={{
+						border: '1.35px solid transparent',
+					}}
 				>
-					<h1 className="flex justify-center items-center">
-						E
-						<motion.span
-							className="inline-block mr-1 overflow-hidden"
-							variants={textVariants}
+					<div className="relative">
+						<Image
+							id="logo"
+							className="hidden filter invert opacity-0 cursor-pointer z-10 hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.6)]"
+							src={'/Logo.svg'}
+							alt="Logo Image"
+							fill
+							onClick={() => router.push('/')}
+						/>
+						<h1
+							id="text"
+							className="flex justify-center items-center text-lg "
 						>
-							dinson
-						</motion.span>
-						N
-						<motion.span
-							className="inline-block overflow-hidden"
-							variants={textVariants}
-						>
-							oriega
-						</motion.span>
-					</h1>
-				</motion.div>
+							E
+							<span className="inline-block mr-1 overflow-hidden origin-left">
+								dinson
+							</span>
+							N
+							<span className="inline-block overflow-hidden origin-left">
+								oriega
+							</span>
+						</h1>
+					</div>
+				</div>
 				<div className="inline-flex ml-auto gap-2">
 					<Image
 						src={'/icons/Github.svg'}
