@@ -11,11 +11,12 @@ function PagesLayout({
 }>) {
 	return (
 		<>
-			<Navbar />
-			<Header />
-			<main className="relative max-w-[1440px] w-full min-h-screen p-8 pl-24 flex items-center">
-				{children}
-			</main>
+			<div className="min-h-screen max-md:min-h-svh w-full grid grid-rows-[auto_1fr] justify-items-center">
+				<Header />
+				<main className="relative max-w-[1440px] w-full md:p-8 md:pl-24 flex items-center">
+					{children}
+				</main>
+			</div>
 			<Footer />
 			<Backgroud />
 		</>
