@@ -69,7 +69,7 @@ function CVButton() {
 
 	return (
 		<button
-			className="absolute left-1/2 bottom-[8%] w-32 h-9 -translate-x-1/2 flex justify-center items-center rounded-full"
+			className="relative w-32 h-9 flex justify-center items-center rounded-full"
 			ref={scope}
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}

@@ -4,7 +4,7 @@ import ScrollDown from '@/components/home/ScrollDown';
 
 function HomePage() {
 	return (
-		<div className='relative h-[29rem] w-full'>
+		<div className='relative w-full grid gap-8 justify-items-center'>
 			<Card />
 			<CVButton />
 			<ScrollDown />

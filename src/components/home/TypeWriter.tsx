@@ -71,10 +71,10 @@ function TypeWriter() {
 	}, [phase]);
 
 	return (
-		<div className="flex items-center bg-black text-white w-[20.5rem] h-11 text-3xl p-2">
+		<div className="flex items-center bg-black text-white w-full h-11 text-3xl max-md:text-2xl p-2">
 			{text}
 			{cursor && (
-				<span className="inline-block bg-white h-8 w-2 text-nowrap"></span>
+				<span className="inline-block bg-white h-8 max-md:h-6 w-2 text-nowrap"></span>
 			)}
 		</div>
 	);
