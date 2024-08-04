@@ -2,8 +2,9 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import { delay, useAnimate } from 'framer-motion';
+import { useAnimate } from 'framer-motion';
 import { useRouter } from 'next/navigation';
+import Navbar from './Navbar';
 
 function Header() {
 	const [progress, setProgress] = useState(0);
@@ -30,12 +31,15 @@ function Header() {
 			});
 
 			await Promise.all([
-				animate(scope.current, {
-					border: '1.35px solid rgb(255,255,255)',
-				},
-				{
-					duration: 1,
-				}),
+				animate(
+					scope.current,
+					{
+						border: '1.35px solid rgb(255,255,255)',
+					},
+					{
+						duration: 1,
+					}
+				),
 				animate(
 					'#text',
 					{
@@ -75,17 +79,18 @@ function Header() {
 
 	return (
 		<header
-			className="sticky top-0 z-50 flex justify-center w-full border-[rgba(255,255,255,0.1)]"
+			className="sticky w-full top-0 z-50 flex justify-center max-md:bg-black border-[rgba(255,255,255,0.1)]"
 			style={{
 				borderBottomWidth: progress,
 				backdropFilter: `blur(${3 * progress}px) opacity(${progress})`,
 				boxShadow: `0 4px 30px rgba(0,0,0,${progress / 10})`,
 			}}
 		>
-			<div className="max-w-[1440px] w-full flex items-center h-14 px-4">
+			<div className="max-w-[1440px] w-full flex items-center px-4 py-3">
+				<Navbar />
 				<div
 					ref={scope}
-					className={`inline-block mr-auto text-white rounded-full p-1`}
+					className='inline-block mr-auto text-white rounded-full p-1 z-10'
 					style={{
 						border: '1.35px solid transparent',
 					}}
@@ -93,7 +98,7 @@ function Header() {
 					<div className="relative">
 						<Image
 							id="logo"
-							className="hidden filter invert opacity-0 cursor-pointer z-10 hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.6)]"
+							className="hidden filter invert opacity-0 cursor-pointer hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.6)] z-10"
 							src={'/Logo.svg'}
 							alt="Logo Image"
 							fill
@@ -101,7 +106,7 @@ function Header() {
 						/>
 						<h1
 							id="text"
-							className="flex justify-center items-center text-lg "
+							className="flex justify-center items-center md:text-lg"
 						>
 							E
 							<span className="inline-block mr-1 overflow-hidden origin-left">
@@ -114,24 +119,24 @@ function Header() {
 						</h1>
 					</div>
 				</div>
-				<div className="inline-flex ml-auto gap-2">
+				<div className="inline-flex ml-auto gap-2 filter max-md:invert z-10">
 					<Image
 						src={'/icons/Github.svg'}
-						className="h-11 w-11"
+						className="h-11 w-11 max-md:h-9 max-md:w-9"
 						alt="Github Icon"
 						width={0}
 						height={0}
 					/>
 					<Image
 						src={'/icons/Mail.svg'}
-						className="h-11 w-11"
+						className="h-11 w-11 max-md:h-9 max-md:w-9"
 						alt="Mail Icon"
 						width={0}
 						height={0}
 					/>
 					<Image
 						src={'/icons/Linkedin.svg'}
-						className="h-11 w-11"
+						className="h-11 w-11 max-md:h-9 max-md:w-9"
 						alt="Linkedin Icon"
 						width={0}
 						height={0}
