@@ -13,7 +13,7 @@ function PagesLayout({
 		<>
 			<div className="min-h-screen max-md:min-h-svh w-full grid grid-rows-[auto_1fr] justify-items-center">
 				<Header />
-				<main className="relative max-w-[1440px] w-full md:px-8 py-8 md:pl-24 flex items-center">
+				<main className="relative max-w-[1440px] w-full p-8 md:pl-24 flex justify-center items-center">
 					{children}
 				</main>
 			</div>
