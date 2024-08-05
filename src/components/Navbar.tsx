@@ -58,8 +58,7 @@ function Navbar() {
 		<>
 			<MenuButton
 				className="md:hidden mr-3 z-20"
-				onActive={() => setExpand(true)}
-				onDeactive={() => setExpand(false)}
+				onActive={(v) => setExpand(v)}
 			/>
 			<motion.div
 				className="fixed h-screen max-md:h-lvh w-auto max-md:w-full top-0 left-0 max-md:bg-[rgba(0,0,0,0.5)] flex justify-center items-center z-10"
