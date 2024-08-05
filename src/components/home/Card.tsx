@@ -12,7 +12,7 @@ function Card() {
 
 	useEffect(() => {
 		const resizeEvent = () => {
-			if (window.screen.width > 768) setResize((prevState) => !prevState);
+			setResize((prevState) => !prevState);
 		};
 		window.addEventListener('resize', resizeEvent);
 
@@ -25,11 +25,19 @@ function Card() {
 		if (!imageRef.current) return;
 		
 		const screenWidth = window.screen.width;
-		const rect = imageRef.current.getBoundingClientRect();
 		if (screenWidth > 768) {
+			const rect = imageRef.current.getBoundingClientRect();
 			setMiddle((rect.left + rect.width / 2).toString());
 		} else {
-			setMiddle((rect.top + rect.height / 2).toString());
+			let elm: HTMLElement | null = imageRef.current
+			let dis = elm.offsetHeight / 2
+			while (elm !== document.body) {
+				if (!elm) break
+
+				dis += elm.offsetTop
+				elm = elm.parentElement
+			}
+			setMiddle((dis).toString());
 		}
 	}, [resize]);
 
