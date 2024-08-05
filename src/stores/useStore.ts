@@ -1,11 +1,15 @@
 import { create } from 'zustand';
 
 interface bgStates {
-	XBackground: string;
-	setXBackground: (value: string) => void;
+	sizeBackground: string;
+	axis: 'x' | 'y';
+	setSizeBackground: (value: string) => void;
+	setAxis: (value: 'x' | 'y') => void;
 }
 
 export const useStoreBackground = create<bgStates>((set) => ({
-	XBackground: '0',
-	setXBackground: (value) => set((state) => ({ XBackground: value })),
+	sizeBackground: '0',
+	axis: 'x',
+	setSizeBackground: (value) => set((state) => ({ sizeBackground: value })),
+	setAxis: (value) => set((state) => ({ axis: value })),
 }));

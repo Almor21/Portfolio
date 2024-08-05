@@ -15,7 +15,10 @@ function MoveBackground({
 	width: string;
 }) {
 	const [resize, setResize] = useState(false);
-	const setXBackground = useStoreBackground((state) => state.setXBackground);
+	const setSizeBackground = useStoreBackground(
+		(state) => state.setSizeBackground
+	);
+	const axisBackground = useStoreBackground((state) => state.axis);
 	const divRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -35,24 +38,37 @@ function MoveBackground({
 		if (createDiv) {
 			if (!divRef.current) return;
 
-			const rect = divRef.current.getBoundingClientRect();
-			const middle = (
-				rect.left +
-				rect.width * (parseInt(width) / 100)
-			).toString();
-			setXBackground(middle);
+			if (axisBackground === 'x') {
+				const rect = divRef.current.getBoundingClientRect();
+				const middle = (
+					rect.left +
+					rect.width * (parseInt(width) / 100)
+				).toString();
+				setSizeBackground(middle);
+			} else {
+				let elm: HTMLElement | null = divRef.current;
+				let dis = elm.offsetHeight / 2;
+				while (elm !== document.body) {
+					if (!elm) break;
+
+					dis += elm.offsetTop;
+					elm = elm.parentElement;
+				}
+				setSizeBackground(dis.toString());
+			}
 		} else {
-			setXBackground(width);
+			setSizeBackground(width);
 		}
-	}, [resize, width]);
+	}, [resize, width, axisBackground]);
 
 	return createDiv ? (
 		<div
 			ref={divRef}
-			className={className}
-			style={{
-				display: 'grid',
+			className={`${className} grid`}
+			style={axisBackground === 'x' ? {
 				gridTemplateColumns: `${width} ${100 - parseInt(width)}%`,
+			} : {
+				gridAutoFlow: 'row'
 			}}
 		>
 			{children}

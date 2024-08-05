@@ -4,9 +4,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import TypeWriter from './TypeWriter';
 import MoveBackground from '../MoveBackground';
+import { useStoreBackground } from '@/stores/useStore';
 
 function Card() {
 	const imageRef = useRef<HTMLImageElement>(null);
+	const axisBackground = useStoreBackground((state) => state.axis);
 	const [resize, setResize] = useState(false);
 	const [middle, setMiddle] = useState('');
 
@@ -23,23 +25,22 @@ function Card() {
 
 	useEffect(() => {
 		if (!imageRef.current) return;
-		
-		const screenWidth = window.screen.width;
-		if (screenWidth > 768) {
+
+		if (axisBackground === 'x') {
 			const rect = imageRef.current.getBoundingClientRect();
 			setMiddle((rect.left + rect.width / 2).toString());
 		} else {
-			let elm: HTMLElement | null = imageRef.current
-			let dis = elm.offsetHeight / 2
+			let elm: HTMLElement | null = imageRef.current;
+			let dis = elm.offsetHeight / 2;
 			while (elm !== document.body) {
-				if (!elm) break
+				if (!elm) break;
 
-				dis += elm.offsetTop
-				elm = elm.parentElement
+				dis += elm.offsetTop;
+				elm = elm.parentElement;
 			}
-			setMiddle((dis).toString());
+			setMiddle(dis.toString());
 		}
-	}, [resize]);
+	}, [resize, axisBackground]);
 
 	return (
 		<MoveBackground width={middle}>
@@ -58,13 +59,13 @@ function Card() {
 					</div>
 				</div>
 				<div className="relative grid max-w-[20.5rem] max-md:max-w-72">
-					<Image
-						src={'/Presentation.svg'}
-						alt="Presentation"
-						className="h-auto w-48 max-md:w-full"
-						width={0}
-						height={0}
-					/>
+					<div className="relative h-24 w-48 max-md:w-full">
+						<Image
+							src={'/Presentation.svg'}
+							alt="Presentation"
+							fill
+						/>
+					</div>
 					<TypeWriter />
 					<p className="text-sm mt-4 text-justify">
 						<span className="font-medium">
