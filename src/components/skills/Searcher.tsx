@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 
-function Searcher({ mode }: { mode: string }) {
+function Searcher({ className, mode }: { className?: string; mode: string }) {
 	const [actualMode, setActualMode] = useState(mode);
 
 	const [loading, setLoading] = useState(true);
@@ -112,7 +112,7 @@ function Searcher({ mode }: { mode: string }) {
 
 	if (loading) {
 		return (
-			<div className="h-full flex justify-center items-center">
+			<div className="h-[30rem] flex justify-center items-center">
 				<div className="relative flex gap-1">
 					{Array.from({ length: 3 }, (v, i) => i).map((index) => (
 						<motion.span
@@ -136,11 +136,11 @@ function Searcher({ mode }: { mode: string }) {
 	}
 
 	return (
-		<div className="grid grid-rows-[auto_1fr] gap-8 px-12">
+		<div className={`${className} h-[30rem] grid grid-rows-[auto_1fr] gap-8`}>
 			<FilterBar areas={areas} set={(v) => setSelected(v)} />
 
 			<div
-				className="px-3 flex flex-col max-h-96 gap-5 overflow-auto"
+				className="px-3 flex flex-col gap-5 overflow-auto"
 				style={{
 					scrollbarGutter: 'stable',
 				}}

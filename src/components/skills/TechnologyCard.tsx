@@ -33,8 +33,14 @@ function TechnologyCard({
 			}}
 		>
 			<motion.div
-				className="relative w-16 h-16 group"
-				onMouseEnter={() => setHover(true)}
+				className="relative w-16 h-16 group cursor-pointer"
+				onClick={() => {
+					if (openTech) openTech(name);
+				}}
+				onMouseEnter={() => {
+					if (window.matchMedia('(pointer: fine)').matches)
+						setHover(true);
+				}}
 				onMouseLeave={() => setHover(false)}
 				initial={{
 					scale: 0.7,
@@ -51,15 +57,12 @@ function TechnologyCard({
 					alt={`${name} Icon`}
 					fill={true}
 					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-					className="filter transition-all duration-200 group-hover:blur-[3px]"
+					className="filter transition-all duration-200 md:group-hover:blur-[3px]"
 				/>
 				<AnimatePresence>
 					{hover && (
 						<motion.div
-							className="absolute w-3/4 h-3/4 top-1/2 left-1/2 p-[0.35rem] rounded-full cursor-pointer"
-							onClick={() => {
-								if (openTech) openTech(name);
-							}}
+							className="absolute w-3/4 h-3/4 top-1/2 left-1/2 p-[0.35rem] rounded-full"
 							style={{
 								x: '-50%',
 								y: '-50%',

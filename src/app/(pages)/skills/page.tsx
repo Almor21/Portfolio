@@ -12,10 +12,10 @@ function SkillsPage() {
 	const [option, setOption] = useState(0);
 
 	return (
-		<MoveBackground createDiv className="md:grid-cols-[40%_1fr] px-6">
-			<DivTransition className="flex justify-center pl-10 pr-16 text-white">
+		<MoveBackground createDiv className="md:grid-cols-[40%_1fr] items-center">
+			<DivTransition className="flex justify-center md:pl-10 md:pr-16 max-md:pb-8 text-white">
 				<motion.div
-					className="relative flex flex-col justify-between"
+					className="relative flex flex-col justify-between select-none"
 					initial={{
 						x: '100%',
 					}}
@@ -64,7 +64,7 @@ function SkillsPage() {
 						}}
 					/>
 				</motion.div>
-				<div className="relative h-[30rem] z-10 text-justify flex flex-col gap-2 justify-around p-4 rounded-r-lg border border-white bg-black">
+				<div className="relative min-h-[30rem] max-w-96 z-10 text-justify flex flex-col gap-2 justify-around p-4 rounded-r-lg border border-white bg-black">
 					<p>
 						I am fascinated by{' '}
 						<span className="font-bold">programming</span> and{' '}
@@ -101,7 +101,7 @@ function SkillsPage() {
 					</p>
 				</div>
 			</DivTransition>
-			<Searcher mode={option == 0 ? 'skills' : 'projects'} />
+			<Searcher className='md:px-12 max-md:pt-8' mode={option == 0 ? 'skills' : 'projects'} />
 		</MoveBackground>
 	);
 }
