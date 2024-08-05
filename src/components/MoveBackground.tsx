@@ -12,7 +12,7 @@ function MoveBackground({
 	children: React.ReactNode;
 	createDiv?: boolean;
 	className?: string;
-	width: string;
+	width?: string;
 }) {
 	const [resize, setResize] = useState(false);
 	const setSizeBackground = useStoreBackground(
@@ -37,27 +37,26 @@ function MoveBackground({
 	useEffect(() => {
 		if (createDiv) {
 			if (!divRef.current) return;
+			if (!divRef.current.firstElementChild) return;
 
 			if (axisBackground === 'x') {
-				const rect = divRef.current.getBoundingClientRect();
-				const middle = (
-					rect.left +
-					rect.width * (parseInt(width) / 100)
-				).toString();
+				const rect =
+					divRef.current.firstElementChild.getBoundingClientRect();
+				const middle = (rect.left + rect.width).toString();
 				setSizeBackground(middle);
 			} else {
-				let elm: HTMLElement | null = divRef.current;
-				let dis = elm.offsetHeight / 2;
+				let elm: HTMLElement = divRef.current.firstElementChild as HTMLElement;
+				let dis = elm.offsetHeight;
 				while (elm !== document.body) {
 					if (!elm) break;
 
 					dis += elm.offsetTop;
-					elm = elm.parentElement;
+					elm = elm.parentElement as HTMLElement;
 				}
 				setSizeBackground(dis.toString());
 			}
 		} else {
-			setSizeBackground(width);
+			if (width) setSizeBackground(width);
 		}
 	}, [resize, width, axisBackground]);
 
@@ -65,11 +64,15 @@ function MoveBackground({
 		<div
 			ref={divRef}
 			className={`${className} grid`}
-			style={axisBackground === 'x' ? {
-				gridTemplateColumns: `${width} ${100 - parseInt(width)}%`,
-			} : {
-				gridAutoFlow: 'row'
-			}}
+			style={
+				axisBackground === 'x'
+					? {
+							gridAutoFlow: 'column'
+					  }
+					: {
+							gridAutoFlow: 'row',
+					  }
+			}
 		>
 			{children}
 		</div>

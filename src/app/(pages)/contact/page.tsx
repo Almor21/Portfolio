@@ -7,7 +7,7 @@ import Links from '@/components/contact/Links';
 function ContactPage() {
 	return (
 		<DivTransition>
-			<MoveBackground createDiv width="60%">
+			<MoveBackground createDiv className='md:grid-cols-[60%_1fr]'>
 				<div className="flex flex-col gap-10 px-16">
 					<h1 className="text-white text-4xl">Contact</h1>
 					<Form />

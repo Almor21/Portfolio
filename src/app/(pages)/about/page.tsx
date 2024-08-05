@@ -7,7 +7,7 @@ import DivTransition from '@/components/DivTransition';
 function AboutPage() {
 	return (
 		<DivTransition>
-			<MoveBackground createDiv width="50%">
+			<MoveBackground createDiv className='md:grid-cols-2' width="50%">
 				<div className="justify-self-end px-24 flex flex-col gap-6 items-center text-white">
 					<div className="p-1 border-2 border-[white_transparent_white_white] rounded-full transition-all duration-500 group hover:-rotate-180">
 						<div className="p-1 border-2 border-[white_white_white_transparent] rounded-full overflow-hidden transition-all duration-500 group-hover:rotate-[360deg]">
