@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence, useAnimate } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import MenuButton from './MenuButton';
 
 const BREAKPOINT = 768;
 
@@ -38,12 +39,7 @@ const OPTIONS = [
 function Navbar() {
 	const [expand, setExpand] = useState(false);
 	const [screenWidth, setScreenWidth] = useState(0);
-	const [scope, animate] = useAnimate();
 	const path = usePathname();
-
-	const runButtonAnimation = async () => {
-		// animate(':nth-child(1)', { y: -10 });
-	};
 
 	useEffect(() => {
 		const resizeEvent = () => {
@@ -60,18 +56,11 @@ function Navbar() {
 
 	return (
 		<>
-			<div
-				ref={scope}
-				className="relative md:hidden w-9 mr-3 flex flex-col gap-1 z-20"
-				onClick={() => {
-					runButtonAnimation();
-					setExpand(!expand);
-				}}
-			>
-				{Array.from({ length: 3 }).map((v, i) => (
-					<span key={i} className="inline-block w-full h-[0.35rem] bg-white rounded-full" />
-				))}
-			</div>
+			<MenuButton
+				className="md:hidden mr-3 z-20"
+				onActive={() => setExpand(true)}
+				onDeactive={() => setExpand(false)}
+			/>
 			<motion.div
 				className="fixed h-screen max-md:h-lvh w-auto max-md:w-full top-0 left-0 max-md:bg-[rgba(0,0,0,0.5)] flex justify-center items-center z-10"
 				initial={{
