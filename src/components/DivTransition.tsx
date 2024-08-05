@@ -12,7 +12,7 @@ function DivTransition({
 }) {
 	return (
 		<motion.div
-			className={className}
+			className={`${className} relative`}
 			initial={{ x: -10, opacity: 0 }}
 			animate={{ x: 0, opacity: 1 }}
 			transition={{

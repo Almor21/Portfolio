@@ -50,6 +50,7 @@ function MoveBackground({
 				while (elm !== document.body) {
 					if (!elm) break;
 
+					console.log(elm.offsetTop)
 					dis += elm.offsetTop;
 					elm = elm.parentElement as HTMLElement;
 				}
@@ -63,7 +64,7 @@ function MoveBackground({
 	return createDiv ? (
 		<div
 			ref={divRef}
-			className={`${className} grid`}
+			className={`${className} relative grid`}
 			style={
 				axisBackground === 'x'
 					? {
