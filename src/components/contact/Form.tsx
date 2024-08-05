@@ -18,7 +18,6 @@ function Form() {
 				placeholder="Message"
             />
             
-            {/* <button className='bg-white w-1/3 mt-3 p-2 text-xl'>Click</button> */}
             <SendButton />
 		</form>
 	);

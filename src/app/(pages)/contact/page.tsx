@@ -8,11 +8,11 @@ function ContactPage() {
 	return (
 		<DivTransition>
 			<MoveBackground createDiv className='md:grid-cols-[60%_1fr]'>
-				<div className="flex flex-col gap-10 px-16">
+				<div className="flex flex-col gap-10 md:px-16 max-md:pb-8">
 					<h1 className="text-white text-4xl">Contact</h1>
 					<Form />
 				</div>
-				<div className="px-16">
+				<div className="md:px-16 max-md:pt-8">
 					<div className="flex justify-center">
 						<h1 className="text-6xl font-extrabold">
 							What&apos;s

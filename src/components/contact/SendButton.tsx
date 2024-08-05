@@ -122,7 +122,7 @@ function SendButton() {
 			</div>
 			<div className="absolute h-full w-full top-0 left-0 overflow-hidden">
 				<motion.div
-					className="absolute top-0 left-0 w-12 h-12 cursor-pointer z-50"
+					className="absolute top-0 left-0 w-12 h-12 cursor-pointer z-20"
 					style={{
 						x,
 					}}
@@ -136,7 +136,7 @@ function SendButton() {
 					dragMomentum={false}
 					onDragStart={() => {
 						blockAnimations = true;
-						controls.stop();
+						if (controls) controls.stop();
 					}}
 					onDragEnd={handleDragEnd}
 				>
