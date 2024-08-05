@@ -5,33 +5,34 @@ import { AnimationPlaybackControls, motion, useAnimate } from 'framer-motion';
 
 function MenuButton({
 	className,
-	onActive,
+	value,
+	onChange,
 }: {
 	className?: string;
-	onActive?: (v: boolean) => void;
+	value: boolean;
+	onChange?: (v: boolean) => void;
 }) {
-	const [active, setActive] = useState(false);
 	const [scope, animate] = useAnimate();
 
 	useEffect(() => {
 		let controls: AnimationPlaybackControls[];
 
-		if (active) {
+		if (value) {
 			controls = [
 				animate(
 					':first-child',
 					{ y: 0 },
-					{ type: 'spring', duration: 0.2 }
+					{ duration: 0.2 }
 				),
 				animate(
 					':last-child',
 					{ y: 0 },
-					{ type: 'spring', duration: 0.2 }
+					{ duration: 0.2 }
 				),
 				animate(
 					':first-child',
 					{ rotate: 45 },
-					{ type: 'spring', duration: 0.4, delay: 0.2 }
+					{ duration: 0.5, delay: 0.2, type: 'spring', bounce: 0.5 }
 				),
 				animate(
 					':not(:first-child):not(:last-child)',
@@ -41,7 +42,7 @@ function MenuButton({
 				animate(
 					':last-child',
 					{ rotate: -45 },
-					{ type: 'spring', duration: 0.4, delay: 0.2 }
+					{ duration: 0.5, delay: 0.2, type: 'spring', bounce: 0.5 }
 				),
 			];
 		} else {
@@ -49,7 +50,7 @@ function MenuButton({
 				animate(
 					':first-child',
 					{ rotate: 0 },
-					{ type: 'spring', duration: 0.2 }
+					{ duration: 0.2}
 				),
 				animate(
 					':not(:first-child):not(:last-child)',
@@ -59,17 +60,17 @@ function MenuButton({
 				animate(
 					':last-child',
 					{ rotate: 0 },
-					{ type: 'spring', duration: 0.2 }
+					{ duration: 0.2 }
 				),
 				animate(
 					':first-child',
 					{ y: -10 },
-					{ type: 'spring', duration: 0.2, delay: 0.2 }
+					{ duration: 0.5, delay: 0.2, type: 'spring', bounce: 0.5 }
 				),
 				animate(
 					':last-child',
 					{ y: 10 },
-					{ type: 'spring', duration: 0.2, delay: 0.2 }
+					{ duration: 0.5, delay: 0.2, type: 'spring', bounce: 0.5 }
 				),
 			];
 		}
@@ -77,26 +78,25 @@ function MenuButton({
 		return () => {
 			if (controls) controls.forEach((c) => c.stop());
 		};
-	}, [active]);
+	}, [value]);
 
 	return (
 		<div
 			ref={scope}
-			className={`${className} relative w-9 flex`}
+			className={`${className} relative w-8 flex`}
 			onClick={() => {
-				setActive(!active);
-				if (onActive) onActive(!active);
+				if (onChange) onChange(!value);
 			}}
 		>
 			<motion.span
-				className="absolute inline-block w-full h-[0.35rem] bg-white rounded-full"
+				className="absolute inline-block w-full h-[0.3rem] bg-white rounded-full"
 				style={{
 					y: -10,
 				}}
 			/>
-			<span className="inline-block w-full h-[0.35rem] bg-white rounded-full" />
+			<span className="inline-block w-full h-[0.3rem] bg-white rounded-full" />
 			<motion.span
-				className="absolute inline-block w-full h-[0.35rem] bg-white rounded-full"
+				className="absolute inline-block w-full h-[0.3rem] bg-white rounded-full"
 				style={{
 					y: 10,
 				}}
