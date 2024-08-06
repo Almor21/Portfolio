@@ -1,8 +1,6 @@
 'use client';
-import {
-	AnimationPlaybackControls,
-	useAnimate,
-} from 'framer-motion';
+import { isTouchDevice } from '@/utils/deviceProperties';
+import { AnimationPlaybackControls, useAnimate } from 'framer-motion';
 
 import React, { useEffect, useState } from 'react';
 
@@ -10,11 +8,24 @@ function CVButton() {
 	const [scope, animate] = useAnimate();
 	const [hover, setHover] = useState(false);
 
-	useEffect(() => {
-		let controls: Array<AnimationPlaybackControls>;
+	const download = () => {
+		console.log('CV Downloaded');
+	};
 
-		if (hover) {
-			controls = [
+	const touch = async () => {
+		await Promise.all(hoverAnimation('start'));
+		download();
+		await new Promise((resolve, reject) => {
+			setTimeout(() => resolve(1), 800);
+		});
+		await Promise.all(hoverAnimation('stop'));
+	};
+
+	const hoverAnimation = (
+		t: 'start' | 'stop'
+	): Array<AnimationPlaybackControls> => {
+		if (t === 'start') {
+			return [
 				animate(
 					'#span_left, #span_right',
 					{
@@ -49,7 +60,7 @@ function CVButton() {
 				),
 			];
 		} else {
-			controls = [
+			return [
 				animate('#span_left, #span_right', {
 					scaleX: 1,
 				}),
@@ -61,6 +72,16 @@ function CVButton() {
 				}),
 			];
 		}
+	};
+
+	useEffect(() => {
+		let controls: Array<AnimationPlaybackControls>;
+
+		if (hover) {
+			controls = hoverAnimation('start');
+		} else {
+			controls = hoverAnimation('stop');
+		}
 
 		return () => {
 			if (controls) controls.forEach((a) => a.stop());
@@ -71,8 +92,12 @@ function CVButton() {
 		<button
 			className="relative w-32 h-9 flex justify-center items-center rounded-full"
 			ref={scope}
-			onMouseEnter={() => setHover(true)}
+			onMouseEnter={() => {
+				if (!isTouchDevice())
+					setHover(true);
+			}}
 			onMouseLeave={() => setHover(false)}
+			onTouchEnd={() => touch()}
 		>
 			<span
 				id="span_left"
