@@ -1,13 +1,13 @@
 'use client';
 
+import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence, useAnimate } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import { motion, AnimatePresence } from 'framer-motion';
 import MenuButton from './MenuButton';
-
-const BREAKPOINT = 768;
+import useScreenWidth from '@/hook/useScreenWidth';
+import useIsTouchDevice from '@/hook/useIsTouchDevice';
 
 const OPTIONS = [
 	{
@@ -36,38 +36,38 @@ const OPTIONS = [
 	},
 ];
 
+const useMinMode = () => {
+	const screenWidth = useScreenWidth()
+	const isTouch = useIsTouchDevice()
+
+	return isTouch || screenWidth < 768
+}
+
+
 function Navbar() {
 	const [expand, setExpand] = useState(false);
-	const [screenWidth, setScreenWidth] = useState(0);
+	const minMode = useMinMode()
 	const path = usePathname();
-
-	useEffect(() => {
-		const resizeEvent = () => {
-			setScreenWidth(window.screen.width);
-		};
-		resizeEvent();
-
-		window.addEventListener('resize', resizeEvent);
-
-		return () => {
-			window.removeEventListener('resize', resizeEvent);
-		};
-	}, []);
 
 	return (
 		<>
-			<MenuButton
-				className="md:hidden mr-3 z-20"
-				value={expand}
-				onChange={(v) => setExpand(v)}
-			/>
+			{minMode && (
+				<MenuButton
+					className="mr-3 z-20"
+					value={expand}
+					onChange={(v) => setExpand(v)}
+				/>
+			)}
 			<motion.div
-				className="fixed h-screen max-md:h-lvh w-auto max-md:w-full top-0 left-0 max-md:bg-[rgba(0,0,0,0.5)] flex justify-center items-center z-10"
+				className={
+					'fixed h-screen max-md:h-lvh w-auto top-0 left-0 flex justify-center items-center z-10' +
+					(minMode ? ' w-full bg-[rgba(0,0,0,0.5)]' : '')
+				}
 				initial={{
 					x: '-100%',
 				}}
 				animate={
-					screenWidth > BREAKPOINT || expand
+					!minMode || expand
 						? {
 								x: 0,
 						  }
@@ -76,20 +76,23 @@ function Navbar() {
 						  }
 				}
 				transition={{
-					delay: screenWidth > BREAKPOINT ? 0.6 : 0,
+					delay: !minMode ? 0.6 : 0,
 					type: 'tween',
 				}}
 			>
 				<motion.div
-					className="bg-white rounded-r-3xl max-md:rounded-3xl z-50"
+					className={
+						'bg-white rounded-r-3xl z-50' +
+						(minMode ? ' rounded-3xl' : '')
+					}
 					onMouseEnter={() => {
-						if (screenWidth > BREAKPOINT) setExpand(true);
+						if (!minMode) setExpand(true);
 					}}
 					onMouseLeave={() => {
-						if (screenWidth > BREAKPOINT) setExpand(false);
+						if (!minMode) setExpand(false);
 					}}
 					animate={
-						screenWidth > BREAKPOINT
+						!minMode
 							? {
 									width: !expand ? '4rem' : '8.5rem',
 							  }
@@ -110,7 +113,7 @@ function Navbar() {
 									key={index}
 									href={opt.href}
 									className={
-										(!select
+										(!select && !minMode
 											? 'transition-all duration-300 hover:bg-[rgba(205,205,205,0.34)]'
 											: '') +
 										' relative rounded-xl focus:outline-none px-2 py-1'
@@ -127,15 +130,21 @@ function Navbar() {
 										<Image
 											src={opt.icon}
 											alt={opt.alt}
-											className="h-8 w-8 max-md:h-10 max-md:w-10"
+											className={
+												'h-8 w-8' +
+												(minMode ? ' h-10 w-10' : '')
+											}
 											width={0}
 											height={0}
 										/>
 										<AnimatePresence>
-											{(expand ||
-												screenWidth < BREAKPOINT) && (
+											{(expand || minMode) && (
 												<motion.span
-													className="max-md:text-3xl"
+													className={
+														minMode
+															? 'text-3xl'
+															: ''
+													}
 													initial={{
 														opacity: 0,
 													}}
