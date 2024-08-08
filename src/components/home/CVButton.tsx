@@ -1,5 +1,6 @@
 'use client';
-import { isTouchDevice } from '@/utils/deviceProperties';
+
+import useIsTouchDevice from '@/hook/useIsTouchDevice';
 import { AnimationPlaybackControls, useAnimate } from 'framer-motion';
 
 import React, { useEffect, useState } from 'react';
@@ -7,6 +8,7 @@ import React, { useEffect, useState } from 'react';
 function CVButton() {
 	const [scope, animate] = useAnimate();
 	const [hover, setHover] = useState(false);
+	const isTouch = useIsTouchDevice()
 
 	const download = () => {
 		console.log('CV Downloaded');
@@ -93,7 +95,7 @@ function CVButton() {
 			className="relative w-32 h-9 flex justify-center items-center rounded-full"
 			ref={scope}
 			onMouseEnter={() => {
-				if (!isTouchDevice())
+				if (!isTouch)
 					setHover(true);
 			}}
 			onMouseLeave={() => setHover(false)}
