@@ -12,7 +12,7 @@ function SkillsPage() {
 	const [option, setOption] = useState(0);
 
 	return (
-		<MoveBackground createDiv className="md:grid-cols-[40%_1fr] items-center">
+		<MoveBackground createDiv className="md:grid-cols-[40%_1fr] w-full items-center">
 			<DivTransition className="flex justify-center md:pl-10 md:pr-16 max-md:pb-8 text-white">
 				<motion.div
 					className="relative flex flex-col justify-between select-none"
