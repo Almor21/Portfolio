@@ -1,75 +1,14 @@
 import React from 'react';
-import Image from 'next/image';
 import Section from '@/components/about/Section';
 import MoveBackground from '@/components/MoveBackground';
 import DivTransition from '@/components/DivTransition';
+import Presentation from '@/components/about/Presentation';
 
 function AboutPage() {
 	return (
 		<DivTransition>
 			<MoveBackground createDiv className='md:grid-cols-2'>
-				<div className="justify-self-end md:px-24 max-md:pb-8 flex flex-col gap-6 items-center text-white">
-					<div className="p-1 border-2 border-[white_transparent_white_white] rounded-full transition-all duration-500 group hover:-rotate-180">
-						<div className="p-1 border-2 border-[white_white_white_transparent] rounded-full overflow-hidden transition-all duration-500 group-hover:rotate-[360deg]">
-							<div className="relative h-40 w-40">
-								<Image
-									src={'/VoidPhoto.jpeg'}
-									alt="Profile image"
-									fill={true}
-									className="rounded-full filter grayscale transition-all duration-500 group-hover:-rotate-180 group-hover:grayscale-0"
-								/>
-							</div>
-						</div>
-					</div>
-					<div className="text-justify flex flex-col gap-4">
-						<div className="relative group">
-							<div className='absolute left-0 top-0 bg-white h-full w-1 transition-all duration-[400ms] ease-out group-hover:w-4' />
-							<p className='px-5 md:pr-16'>
-								Edinson Noriega, I am 20 years old and I am a{' '}
-								<span className="font-bold">self-taught</span>,
-								<span className="font-bold"> active</span> and{' '}
-								<span className="font-bold">creative</span>{' '}
-								person. I enjoy learning and exploring new
-								skills constantly.
-							</p>
-						</div>
-						<div className="relative group">
-							<div className='absolute right-0 max-md:left-0 top-0 bg-white h-full w-1 transition-all duration-[400ms] ease-out group-hover:w-4' />
-							<p className='px-5 md:pl-16'>
-								<span className="font-bold">
-									Since I was a child
-								</span>
-								, I have been fascinated by the world of
-								programming. This passion has driven me to
-								continuously{' '}
-								<span className="font-bold">improve</span> and{' '}
-								<span className="font-bold">
-									expand my skills
-								</span>
-								.
-							</p>
-						</div>
-						<div className="relative group">
-							<div className='absolute left-0 top-0 bg-white h-full w-1 transition-all duration-[400ms] ease-out group-hover:w-4' />
-							<p className='px-5 md:pr-16'>
-								Currently, I am a{' '}
-								<span className="font-bold">
-									Systems Engineering
-								</span>{' '}
-								student and{' '}
-								<span className="font-bold">
-									Frontend developer
-								</span>
-								, in the process of becoming a Fullstack
-								developer. I have solid knowledge in both{' '}
-								<span className="font-bold">Frontend</span> and{' '}
-								<span className="font-bold">Backend</span>,
-								although I&apos;m more inclined towards
-								frontend.
-							</p>
-						</div>
-					</div>
-				</div>
+				<Presentation />
 				<div className="justify-self-start md:px-16 max-md:pt-8 text-xs flex flex-col gap-5">
 					<Section title="Activities" widthSeparator={1}>
 						<span className="font-bold text-sm">
