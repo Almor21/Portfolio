@@ -3,6 +3,7 @@
 import { useStoreBackground } from '@/stores/useStore';
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import useScreenWidth from '@/hook/useScreenWidth';
 
 function Backgroud() {
 	const sizeBackground = useStoreBackground((state) => state.sizeBackground);
@@ -11,26 +12,15 @@ function Backgroud() {
 		state.setAxis,
 	]);
 	const divRef = useRef<HTMLDivElement>(null);
+	const screenWidth = useScreenWidth()
 
 	useEffect(() => {
-		const updateSize = () => {
-			const screenWidth = window.screen.width;
-
-			if (screenWidth > 768) {
-				setAxis('x');
-			} else {
-				setAxis('y');
-			}
-
-		};
-		updateSize();
-
-		window.addEventListener('resize', updateSize);
-
-		return () => {
-			window.removeEventListener('resize', updateSize);
-		};
-	}, []);
+		if (screenWidth > 768) {
+			setAxis('x')
+		} else {
+			setAxis('y')
+		}
+	}, [screenWidth]);
 
 	return (
 		<motion.div
