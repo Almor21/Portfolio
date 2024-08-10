@@ -1,9 +1,8 @@
 'use client';
 
+import React, { useEffect, useState } from 'react';
 import useIsTouchDevice from '@/hook/useIsTouchDevice';
 import { AnimationPlaybackControls, useAnimate } from 'framer-motion';
-
-import React, { useEffect, useState } from 'react';
 
 function CVButton() {
 	const [scope, animate] = useAnimate();
