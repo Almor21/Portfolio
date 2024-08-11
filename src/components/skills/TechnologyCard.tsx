@@ -6,13 +6,14 @@ function TechnologyCard({
 	name,
 	percentage,
 	openTech,
+	isTouch,
 }: {
 	name: string;
 	percentage: number;
 	openTech: (name: string) => Promise<void>;
+	isTouch?: boolean;
 }) {
 	const degs = 360 * (percentage / 100);
-
 	const [hover, setHover] = useState(false);
 
 	return (
@@ -38,8 +39,7 @@ function TechnologyCard({
 					if (openTech) openTech(name);
 				}}
 				onMouseEnter={() => {
-					if (window.matchMedia('(pointer: fine)').matches)
-						setHover(true);
+					if (!isTouch) setHover(true);
 				}}
 				onMouseLeave={() => setHover(false)}
 				initial={{
@@ -57,7 +57,11 @@ function TechnologyCard({
 					alt={`${name} Icon`}
 					fill={true}
 					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-					className="filter transition-all duration-200 md:group-hover:blur-[3px]"
+					className={
+						!isTouch
+							? 'filter transition-all duration-200 group-hover:blur-[3px]'
+							: ''
+					}
 				/>
 				<AnimatePresence>
 					{hover && (

@@ -5,9 +5,10 @@ import FilterBar from './FilterBar';
 import TechnologyCard from './TechnologyCard';
 import ModalTechnology from './ModalTechnology';
 import { Categories, SkillInfo, ProjectInfo } from '@/types/data';
-import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
+import useIsTouchDevice from '@/hook/useIsTouchDevice';
+import Loader from '@/components/Loader';
 
 function Searcher({ className, mode }: { className?: string; mode: string }) {
 	const [actualMode, setActualMode] = useState(mode);
@@ -19,6 +20,8 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 
 	const [selected, setSelected] = useState<Array<string>>([]);
 	const [techModal, setTechModal] = useState('');
+
+	const isTouch = useIsTouchDevice();
 
 	const openModalTech = useCallback(
 		async (name: string) => {
@@ -112,26 +115,7 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 
 	if (loading) {
 		return (
-			<div className="h-[30rem] flex justify-center items-center">
-				<div className="relative flex gap-1">
-					{Array.from({ length: 3 }, (v, i) => i).map((index) => (
-						<motion.span
-							key={index}
-							className="inline-block h-3 w-3 rounded-full bg-black"
-							animate={{
-								y: [0, '-100%', 0],
-							}}
-							transition={{
-								repeatDelay: 0.8,
-								delay: index * 0.2,
-								duration: 1,
-								repeat: Infinity,
-								ease: 'easeInOut',
-							}}
-						/>
-					))}
-				</div>
-			</div>
+			<Loader className='h-[30rem]' />
 		);
 	}
 
@@ -165,6 +149,7 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 													data[tech].percentage
 												}
 												openTech={openModalTech}
+												isTouch={isTouch}
 											/>
 										)
 									)}
