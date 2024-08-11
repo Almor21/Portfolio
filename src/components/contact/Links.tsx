@@ -137,7 +137,7 @@ function Links() {
 			>
 				<div className="image relative h-full w-full">
 					<Image
-						className="transition-all"
+						className="transition-all duration-200"
 						src={'/icons/Mail.svg'}
 						alt="i"
 						fill
@@ -165,7 +165,7 @@ function Links() {
 			>
 				<div className="image relative h-full w-full">
 					<Image
-						className="transition-all"
+						className="transition-all duration-200"
 						src={'/icons/Linkedin.svg'}
 						alt="i"
 						fill
