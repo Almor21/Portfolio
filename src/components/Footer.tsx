@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Modal from './Modal';
+import ModalAttributions from './ModalAttributions';
 
 const NAVIGATION_LINKS = [
 	{
@@ -117,169 +117,10 @@ function Footer() {
 				</span>
 			</p>
 
-			<Modal
-				title="Attributions"
+			<ModalAttributions
 				open={showModal}
 				onClose={() => setShowModal(false)}
-			>
-				<div className="flex flex-col">
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/ArrowDown.svg'}
-							alt="Arrow Down Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/down-arrow"
-							title="down arrow icons"
-						>
-							Down arrow icons created by Handicon - Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/Check.svg'}
-							alt="Check Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/right"
-							title="right icons"
-						>
-							Right icons created by Pixel perfect - Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/Contact.svg'}
-							alt="Contact Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/contact"
-							title="contact icons"
-						>
-							Contact icons created by Icongeek26 - Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/Folder.svg'}
-							alt="Folder Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/folder"
-							title="folder icons"
-						>
-							Folder icons created by dmitri13 - Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/Github.svg'}
-							alt="Github Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/github"
-							title="github icons"
-						>
-							Github icons created by Freepik - Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/Home.svg'}
-							alt="Home Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/home"
-							title="home icons"
-						>
-							Home icons created by IcoGhost - Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/Linkedin.svg'}
-							alt="Linkedin Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/linkedin"
-							title="linkedin icons"
-						>
-							Linkedin icons created by fauzin idea - Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/Mail.svg'}
-							alt="Mail Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/message-alert"
-							title="message alert icons"
-						>
-							Message alert icons created by VectorPortal -
-							Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/Phone.svg'}
-							alt="Phone Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/phone"
-							title="phone icons"
-						>
-							Phone icons created by Gregor Cresnar - Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/Star.svg'}
-							alt="Star Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/star"
-							title="star icons"
-						>
-							Star icons created by Pixel perfect - Flaticon
-						</a>
-					</div>
-					<div className="grid grid-cols-[auto_1fr] gap-2 items-center">
-						<Image
-							src={'icons/User.svg'}
-							alt="User Icon"
-							width={20}
-							height={20}
-						/>
-						<a
-							href="https://www.flaticon.com/free-icons/user"
-							title="user icons"
-						>
-							User icons created by Freepik - Flaticon
-						</a>
-					</div>
-				</div>
-			</Modal>
+			/>
 		</footer>
 	);
 }
