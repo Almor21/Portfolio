@@ -37,6 +37,7 @@ function ModalAttributions({
 							/>
 							<a
 								href={a.link}
+								target='_blank'
 								title={`${a.name} icons`}
 							>
 								{a.name} icon created by {a.author} - {a.page}

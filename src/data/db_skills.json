@@ -178,6 +178,14 @@
 			"relations": [],
 			"tags": ["Desktop"]
 		},
+		"Prisma": {
+			"category": "Tools",
+			"percentage": "60",
+			"note": "A long description about the Language again",
+			"knowledge": ["basics", "POO"],
+			"relations": [],
+			"tags": ["Desktop"]
+		},
 		"DBeaver": {
 			"category": "Tools",
 			"percentage": "60",
