@@ -1,0 +1,242 @@
+{
+	"data": [
+		{
+			"name": "Down Arrow",
+			"archive": "/icons/ArrowDown.svg",
+			"author": "Handicon",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/down-arrow"
+		},
+		{
+			"name": "Right",
+			"archive": "/icons/Check.svg",
+			"author": "Pixel perfect",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/right"
+		},
+		{
+			"name": "Contact",
+			"archive": "/icons/Contact.svg",
+			"author": "Icongeek26",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/contact"
+		},
+		{
+			"name": "Folder",
+			"archive": "/icons/Folder.svg",
+			"author": "dmitri13",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/folder"
+		},
+		{
+			"name": "Github",
+			"archive": "/icons/Github.svg",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/github"
+		},
+		{
+			"name": "Home",
+			"archive": "/icons/Home.svg",
+			"author": "IcoGhost",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/home"
+		},
+		{
+			"name": "Linkedin",
+			"archive": "/icons/Linkedin.svg",
+			"author": "fauzin idea",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/linkedin"
+		},
+		{
+			"name": "Message alert",
+			"archive": "/icons/Mail.svg",
+			"author": "VectorPortal",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/message-alert"
+		},
+		{
+			"name": "Phone",
+			"archive": "/icons/Phone.svg",
+			"author": "Gregor Cresnar",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/phone"
+		},
+		{
+			"name": "Star",
+			"archive": "/icons/Star.svg",
+			"author": "Pixel perfect",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/star"
+		},
+		{
+			"name": "User",
+			"archive": "/icons/User.svg",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/user"
+		},
+		{
+			"name": "Coding",
+			"archive": "/technologies/C++.png",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/coding"
+		},
+		{
+			"name": "Css",
+			"archive": "/technologies/CSS.png",
+			"author": "Pixel perfect",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/css"
+		},
+		{
+			"name": "DBeaver",
+			"archive": "/technologies/DBeaver.png",
+			"author": "Official DBeaver page",
+			"page": "DBeaver",
+			"link": "https://dbeaver.io/"
+		},
+		{
+			"name": "Docker",
+			"archive": "/technologies/Docker.png",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/docker"
+		},
+		{
+			"name": "Expressjs",
+			"archive": "/technologies/ExpressJS.png",
+			"author": "GNU Operating System",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/expressjs-logo/169185"
+		},
+		{
+			"name": "Framer",
+			"archive": "/technologies/Framer Motion.png",
+			"author": "Feather",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/framer/128855"
+		},
+		{
+			"name": "Git",
+			"archive": "/technologies/Git.png",
+			"author": "pocike",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/git"
+		},
+		{
+			"name": "Html",
+			"archive": "/technologies/HTML.png",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/html"
+		},
+		{
+			"name": "Java",
+			"archive": "/technologies/Java.png",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/java"
+		},
+		{
+			"name": "Javascript",
+			"archive": "/technologies/JavaScript.png",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/javascript"
+		},
+		{
+			"name": "MongoDB",
+			"archive": "/technologies/MongoDB.png",
+			"author": "Roberto Huertas",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/file-type-mongo/130383"
+		},
+		{
+			"name": "MySQL",
+			"archive": "/technologies/MySQL.png",
+			"author": "Julien Monty",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/mysql-original-wordmark-logo/146417"
+		},
+		{
+			"name": "Nextjs",
+			"archive": "/technologies/NextJS.png",
+			"author": "TeenyIcons",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/nextjs/212861"
+		},
+		{
+			"name": "Nodejs",
+			"archive": "/technologies/NodeJS.png",
+			"author": "Julien Monty",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/nodejs-original-wordmark-logo/146412"
+		},
+		{
+			"name": "Python",
+			"archive": "/technologies/Python.png",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/python"
+		},
+		{
+			"name": "React",
+			"archive": "/technologies/React.png",
+			"author": "Julien Monty",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/react-original-logo/146374"
+		},
+		{
+			"name": "Redux",
+			"archive": "/technologies/Redux Toolkit.png",
+			"author": "Julien Monty",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/redux-original-logo/146365"
+		},
+		{
+			"name": "SQL Server",
+			"archive": "/technologies/SQL Server.png",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/sql-server"
+		},
+		{
+			"name": "SQL",
+			"archive": "/technologies/SQL.png",
+			"author": "Nadiinko",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.com/free-icons/sql-server"
+		},
+		{
+			"name": "Tailwind",
+			"archive": "/technologies/Tailwind.png",
+			"author": "Roberto Huertas",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/file-type-tailwind/130128"
+		},
+		{
+			"name": "Typescript",
+			"archive": "/technologies/TypeScript.png",
+			"author": "Julien Monty",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/typescript-original-logo/146317"
+		},
+		{
+			"name": "Vercel",
+			"archive": "/technologies/Vercel.png",
+			"author": "Simpleicons",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/vercel-logo/249276"
+		},
+		{
+			"name": "Zustand",
+			"archive": "/technologies/Zustand.png",
+			"author": "Official Zustand page",
+			"page": "Zustand",
+			"link": "https://zustand-demo.pmnd.rs/"
+		}
+	]
+}

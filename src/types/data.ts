@@ -22,3 +22,11 @@ export interface ProjectInfo {
 	technologies: Array<string>;
 	tags: Array<string>;
 }
+
+export type Attribution = {
+	name: string;
+	archive: string;
+	author: string;
+	page: string;
+	link: string;
+};
