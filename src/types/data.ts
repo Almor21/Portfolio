@@ -30,3 +30,9 @@ export type Attribution = {
 	page: string;
 	link: string;
 };
+
+export type DataEmail = {
+	name: string;
+	email: string;
+	message: string;
+}
