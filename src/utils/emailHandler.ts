@@ -13,7 +13,7 @@ export async function sendEmail(data: DataEmail) {
 	let mailOptions = {
 		from: process.env.GMAIL_ACCOUNT,
 		to: process.env.GMAIL_TO_ACCOUNT,
-		subject: 'Portfolio Message',
+		subject: `Portfolio Message from ${data.name}`,
 		html:
 			'<p>Hello Edinson,</p>' +
 			`<p>You got a new message from ${data.name}:</p>` +
