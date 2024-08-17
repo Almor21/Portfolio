@@ -46,8 +46,8 @@ export async function POST(req: NextRequest) {
 	}
 
 	try {
-		// await sendEmail(data);
-		console.log(data)
+		await sendEmail(data);
+		// console.log(data)
 
 		return new Response(JSON.stringify({ message: 'Successfull' }), {
 			headers: {
