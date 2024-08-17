@@ -9,8 +9,9 @@ import {
 	useTransform,
 } from 'framer-motion';
 import Image from 'next/image';
+import Loader from '../Loader';
 
-function SendButton() {
+function SendButton({ onActive }: { onActive: () => Promise<string> }) {
 	const [rightLimit, setRightLimit] = useState(0);
 	const btRef = useRef<HTMLDivElement>(null);
 
@@ -28,9 +29,14 @@ function SendButton() {
 
 				await animate(x, btRef.current?.parentElement?.offsetWidth);
 				await animate('#text', { opacity: 0 });
+
+				await animate('#loader', { opacity: 1 });
+				const status = (await onActive()) === 'complete' ? 'check' : 'x';
+				await animate('#loader', { opacity: 0 });
+
 				await Promise.all([
-					animate('#check', { opacity: 1 }, { duration: 0.1 }),
-					animate('#check_mask', { scaleX: 0 }, { duration: 0.3 }),
+					animate(`#${status}`, { opacity: 1 }, { duration: 0.1 }),
+					animate(`#${status}_mask`, { scaleX: 0 }, { duration: 0.3 }),
 				]);
 
 				await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -42,11 +48,11 @@ function SendButton() {
 				await Promise.all([
 					animate(x, 0),
 					animate('#text', { opacity: 1 }),
-					animate('#check', { opacity: 0 }),
+					animate(`#${status}`, { opacity: 0 }),
 				]);
 
 				await Promise.all([
-					animate('#check_mask', { scaleX: 1 }),
+					animate(`#${status}_mask`, { scaleX: 1 }),
 					animate('#bt_mask', { opacity: 1 }),
 				]);
 				blockAnimations = false;
@@ -110,6 +116,13 @@ function SendButton() {
 				Send
 			</span>
 			<div
+				id="loader"
+				className="absolute h-6 w-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+				style={{ opacity: 0 }}
+			>
+				<Loader className='h-full' size={1} />
+			</div>
+			<div
 				id="check"
 				className="absolute h-6 w-6 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
 				style={{ opacity: 0 }}
@@ -117,6 +130,18 @@ function SendButton() {
 				<Image src={'/icons/Check.svg'} alt="Check Image" fill={true} />
 				<div
 					id="check_mask"
+					className="absolute h-full w-full top-0 left-0 bg-white origin-right"
+				/>
+			</div>
+			<div
+				id="x"
+				className="absolute h-6 w-6 flex justify-center items-center top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+				style={{ opacity: 0 }}
+			>
+				<span className="absolute h-1 w-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black rotate-45" />
+				<span className="absolute h-1 w-5 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black -rotate-45" />
+				<div
+					id="x_mask"
 					className="absolute h-full w-full top-0 left-0 bg-white origin-right"
 				/>
 			</div>
