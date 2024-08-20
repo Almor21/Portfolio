@@ -36,7 +36,7 @@ function Modal({
 
 	return (
 		<motion.dialog
-			className="fixed rounded-lg min-h-20 min-w-40 p-8 bg-white backdrop:bg-black backdrop:opacity-40 focus:outline-none shadow-[2px_4px_7px_3px_rgb(0,0,0,0.5)]"
+			className="fixed rounded-lg min-h-20 min-w-40 p-8 grid grid-rows-[auto_auto_1fr] bg-white backdrop:bg-black backdrop:opacity-40 focus:outline-none shadow-[2px_4px_7px_3px_rgb(0,0,0,0.5)]"
 			style={{
 				scale,
 			}}
@@ -51,7 +51,14 @@ function Modal({
 			</button>
 			<h1 className="font-medium text-lg">{title}</h1>
 			<div className="w-full h-1 rounded-full bg-gray-200 mt-3 mb-5" />
-			{children}
+			<div
+				className="overflow-auto px-4"
+				style={{
+					scrollbarGutter: 'stable',
+				}}
+			>
+				{children}
+			</div>
 		</motion.dialog>
 	);
 }
