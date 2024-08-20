@@ -4,195 +4,491 @@
 	"data": {
 		"JavaScript": {
 			"category": "Language",
-			"percentage": "90",
-			"note": "A long description about the Language",
-			"knowledge": ["basics", "Event loop"],
-			"relations": ["TypeScript", "Framer Motion", "Zustand"],
+			"percentage": "85",
+			"note": "My favorite language and the one in which I have deepened the most, with a broad and solid knowledge in its various aspects.",
+			"knowledge": [
+				"DOM Manipulation",
+				"Error Handling",
+				"Event Handling",
+				"Modules",
+				"Scope",
+				"Hoisting",
+				"Promises",
+				"Async/Await",
+				"Prototypes",
+				"Classes and OOP",
+				"Fetch",
+				"Garbage Collection",
+				"Context",
+				"Call Stack",
+				"Event Loop",
+				"Execution Context",
+				"Lexical Environment",
+				"Closures"
+			],
+			"relations": [
+				"TypeScript",
+				"HTML",
+				"CSS",
+				"NextJS",
+				"ExpressJS",
+				"Framer Motion",
+				"React",
+				"Zustand",
+				"Redux Toolkit",
+				"NodeJS",
+				"Prisma"
+			],
+			"tags": ["Web", "Frontend", "Backend"]
+		},
+		"TypeScript": {
+			"category": "Language",
+			"percentage": "85",
+			"note": "I love to be thorough and orderly in my work. While I enjoy JavaScript, I feel that it is sometimes too flexible. TypeScript has been the perfect solution to complement my approach, providing tighter and more robust type management.",
+			"knowledge": [
+				"Types",
+				"Interfaces",
+				"Access Modifiers",
+				"Generics",
+				"Conditional Types",
+				"Mapped Types",
+				"Union and Intersection Types",
+				"Type Guards"
+			],
+			"relations": [
+				"JavaScript",
+				"NextJS",
+				"Framer Motion",
+				"React",
+				"Zustand",
+				"Redux Toolkit",
+				"NodeJS",
+				"Prisma"
+			],
 			"tags": ["Web", "Frontend", "Backend"]
 		},
 		"Java": {
 			"category": "Language",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
-		},
-		"TypeScript": {
-			"category": "Language",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": ["JavaScript"],
-			"tags": ["Desktop"]
-		},
-		"SQL": {
-			"category": "Language",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
-		},
-		"C++": {
-			"category": "Language",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "75",
+			"note": "It was the first programming language I learned at the age of 14 while still in school. I have developed solid skills in this language over time.",
+			"knowledge": [
+				"Classes and Objects",
+				"OOP (Inheritance, Polymorphism, Abstraction, Encapsulation)",
+				"Interfaces",
+				"Abstract Classes",
+				"Exception Handling",
+				"Collections (Lists, Sets, Maps, Iterators)",
+				"Threads",
+				"Lambda Expressions and Streams (map, filter, reduce)",
+				"Graphical User Interfaces",
+				"Events",
+				"MySQL Connections"
+			],
+			"relations": ["MySQL"],
+			"tags": ["Desktop", "Backend"]
 		},
 		"Python": {
 			"category": "Language",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
+			"percentage": "80",
+			"note": "I have strong programming logic skills with Python, which I frequently use for scripting due to its simplicity and speed. Additionally, I am proficient in various areas including data analysis, file handling (such as CSVs), and AI.",
+			"knowledge": [
+				"Functions and Lambda Functions",
+				"Data Structures (Lists, Tuples, Dictionaries)",
+				"Modules and Packages",
+				"Error Handling",
+				"Classes and Objects",
+				"OOP (Inheritance, Polymorphism)",
+				"File Manipulation and Path Handling",
+				"Generators",
+				"Regular Expressions",
+				"Data Analysis with Libraries like Pandas, NumPy, SymPy Matplotlib",
+				"Scripting and automation"
+			],
 			"relations": [],
-			"tags": ["Desktop"]
+			"tags": ["Scripting"]
+		},
+		"SQL": {
+			"category": "Language",
+			"percentage": "80",
+			"note": "I have a strong foundation in SQL with solid logical skills to build large or complex queries, always striving to prioritize performance whenever possible.",
+			"knowledge": [
+				"Queries and Table Operations (SELECT, INSERT, UPDATE, DELETE)",
+				"Functions (COUNT, SUM, AVG, etc.)",
+				"Joins (INNER, LEFT, RIGHT, FULL OUTER)",
+				"Subqueries",
+				"UNION, UNION ALL",
+				"Table Creation and Manipulation (CREATE, ALTER, DROP, Constraints)",
+				"Indexes",
+				"Views",
+				"Normalization"
+			],
+			"relations": ["MySQL", "SQL Server", "Prisma", "DBeaver"],
+			"tags": ["Web", "Backend"]
 		},
 		"HTML": {
 			"category": "Language",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "85",
+			"note": "I have a strong understanding of HTML, which enables me to build and structure web content effectively. I am adept at creating well-organized, accessible, and interactive web pages.",
+			"knowledge": [
+				"Document Structure",
+				"Main Tags (<h1>, <div>, <span>, etc.)",
+				"Attributes",
+				"Lists",
+				"Tables",
+				"Forms",
+				"Semantics (<header>, <main>, <footer>, <article>, <section>, <nav>, <aside>)",
+				"Multimedia",
+				"Navigation",
+				"Meta Tags",
+				"Integration with Frameworks"
+			],
+			"relations": ["JavaScript", "CSS", "React"],
+			"tags": ["Web", "Frontend"]
 		},
 		"CSS": {
 			"category": "Language",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
+			"percentage": "85",
+			"note": "I have a strong grasp of CSS, enabling me to create visually appealing and responsive web designs. My skills include styling for various devices and integrating with JavaScript to enhance functionality.",
+			"knowledge": [
+				"Selectors",
+				"Units of Measurement",
+				"Colors and Backgrounds",
+				"Typography and Text Properties",
+				"Pseudo-classes and Pseudo-elements",
+				"Box Model",
+				"Position",
+				"Flexbox",
+				"Grid",
+				"Transition, Transform, Animation",
+				"Media Queries",
+				"Responsive Design",
+				"Variables",
+				"Integration with JavaScript"
+			],
+			"relations": ["JavaScript", "Tailwind"],
+			"tags": ["Web", "Frontend"]
+		},
+		"C++": {
+			"category": "Language",
+			"percentage": "70",
+			"note": "I have a solid understanding of C++ and its core concepts, allowing me to develop efficient and effective solutions in the language.",
+			"knowledge": [
+				"Functions",
+				"Pointers and References",
+				"Classes and Objects",
+				"Access Modifiers",
+				"Object-Oriented Programming (Inheritance, Polymorphism, Abstract Classes)",
+				"Exception Handling"
+			],
 			"relations": [],
 			"tags": ["Desktop"]
 		},
 		"NextJS": {
 			"category": "Framework",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "80",
+			"note": "I have a strong understanding of Next.js, enabling me to efficiently build and deploy modern web applications. My knowledge covers everything from routing, rendering, and lifecycle to API integration, allowing me to create optimized and scalable solutions.",
+			"knowledge": [
+				"App Router and Navigation",
+				"Route Handling (Dynamic routes, Route Groups, Parallel Routes, Intercepting Routes)",
+				"API Routes",
+				"Error Handling",
+				"CSR and SSR",
+				"Rendering Lifecycle",
+				"Integration with Tailwind",
+				"Next.js Optimization Techniques (next/image, next/font)",
+				"Deployment on Vercel"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"Tailwind",
+				"React",
+				"Framer Motion",
+				"NodeJS",
+				"Vercel"
+			],
+			"tags": ["Web", "Frontend", "Backend"]
 		},
 		"Tailwind": {
 			"category": "Framework",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "75",
+			"note": "I have a solid understanding of Tailwind CSS, allowing me to create highly responsive and visually appealing designs efficiently. My skills include integrating Tailwind with various frameworks and implementing advanced design techniques.",
+			"knowledge": [
+				"Integration with Next.js",
+				"Advanced Design with Flexbox and Grid for Responsive Layouts",
+				"Transitions and Animations",
+				"Pseudo-classes"
+			],
+			"relations": ["TypeScript", "CSS", "NextJS", "React"],
+			"tags": ["Web", "Frontend"]
 		},
 		"ExpressJS": {
 			"category": "Framework",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "75",
+			"note": "I am skilled in Express.js, which is my primary technology for backend development. This expertise enables me to build efficient and scalable web applications and create servers.",
+			"knowledge": [
+				"Definition of routes and handling HTTP requests",
+				"Usage of route parameters",
+				"Middleware handling",
+				"Error handling",
+				"Database connection",
+				"CORS configuration"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"SQL",
+				"NodeJS",
+				"Prisma"
+			],
+			"tags": ["Web", "Backend"]
 		},
 		"Framer Motion": {
 			"category": "Framework",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "85",
+			"note": "I have a passion for incorporating animations into my web pages, and I excel at creating both complex and creative animations. My skills extend to developing advanced animation sequences that significantly enhance user experiences, adding dynamic and engaging elements to my projects.",
+			"knowledge": [
+				"Integration with React and NextJS",
+				"Creating animations",
+				"Using interaction events to trigger animations",
+				"Conditional and state-based animations",
+				"Using AnimatePresence for exit animations",
+				"Manual animations with useAnimation",
+				"Scroll animations",
+				"Using variants",
+				"Motion values",
+				"Advanced transition and timing customization",
+				"Optimization techniques to avoid unnecessary re-renders",
+				"Dynamic and reactive animations"
+			],
+			"relations": ["TypeScript", "CSS", "NextJS", "React"],
+			"tags": ["Web", "Frontend"]
 		},
 		"React": {
 			"category": "Library",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "85",
+			"note": "I have solid and extensive expertise working with React, utilizing its powerful features to build dynamic and efficient user interfaces. My skills in React enable me to develop responsive and maintainable applications with a focus on performance and scalability.",
+			"knowledge": [
+				"props, states, and event handling",
+				"Lists and Keys",
+				"Class Components and Functional Components",
+				"Hooks and custom hooks",
+				"Context API",
+				"Rendering",
+				"Lifecycle Methods",
+				"Render Props and HOCs",
+				"Optimization and Performance Techniques (React.memo, lazy, Suspense, useMemo, useCallback)",
+				"React Router",
+				"Portals",
+				"Error Boundaries",
+				"SSR and Hydration in NextJS",
+				"Global State Integration with Context, Redux, and Zustand"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"HTML",
+				"CSS",
+				"NextJS",
+				"Tailwind",
+				"Framer Motion",
+				"Zustand",
+				"Redux Toolkit",
+				"NodeJS"
+			],
+			"tags": ["Web", "Frontend"]
 		},
 		"Zustand": {
 			"category": "Library",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "75",
+			"note": "I have a solid understanding of Zustand for state management in React applications, efficiently utilizing its capabilities to create responsive and well-structured applications.",
+			"knowledge": [
+				"Store Creation",
+				"State Management",
+				"Middleware Integration",
+				"Persisting State",
+				"React Integration",
+				"Async Actions",
+				"TypeScript Support"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"NextJS",
+				"React",
+				"NodeJS"
+			],
+			"tags": ["Web", "Frontend"]
 		},
 		"Redux Toolkit": {
 			"category": "Library",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "75",
+			"note": "While I prefer Zustand for global state management, I am proficient in Redux Toolkit for situations that require more customization or when it's necessary.",
+			"knowledge": [
+				"Store",
+				"Slices",
+				"Reducers and Actions",
+				"Selectors",
+				"Thunks",
+				"Middleware",
+				"TypeScript Integration"
+			],
+			"relations": ["JavaScript", "TypeScript", "React", "NodeJS"],
+			"tags": ["Web", "Frontend"]
 		},
 		"MySQL": {
 			"category": "Databases",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "80",
+			"note": "I have utilized MySQL for connecting with Java, executing queries, and retrieving information. Additionally, I've integrated it with Prisma and TypeScript for streamlined database management.",
+			"knowledge": [
+				"Queries and Table Operations (SELECT, INSERT, UPDATE, DELETE)",
+				"Functions (COUNT, SUM, AVG, etc.)",
+				"Joins (INNER, LEFT, RIGHT, FULL OUTER)",
+				"Subqueries",
+				"UNION, UNION ALL",
+				"Table Creation and Manipulation (CREATE, ALTER, DROP, Constraints)",
+				"Indexes",
+				"Views",
+				"Normalization"
+			],
+			"relations": ["SQL"],
+			"tags": ["Web", "Backend"]
 		},
 		"SQL Server": {
 			"category": "Databases",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
-		},
-		"MongoDB": {
-			"category": "Databases",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "80",
+			"note": "I have utilized MySQL for connecting with Java, executing queries, and retrieving information. Additionally, I've integrated it with Prisma and TypeScript for streamlined database management.",
+			"knowledge": [
+				"Queries and Table Operations (SELECT, INSERT, UPDATE, DELETE)",
+				"Functions (COUNT, SUM, AVG, etc.)",
+				"Joins (INNER, LEFT, RIGHT, FULL OUTER)",
+				"Subqueries",
+				"UNION, UNION ALL",
+				"Table Creation and Manipulation (CREATE, ALTER, DROP, Constraints)",
+				"Indexes",
+				"Views",
+				"Normalization",
+				"Temporary Variables",
+				"Conditional Logic",
+				"Cursors",
+				"Loops"
+			],
+			"relations": ["SQL"],
+			"tags": ["Web", "Backend"]
 		},
 		"Git": {
 			"category": "Tools",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
+			"percentage": "80",
+			"note": "I have a solid understanding of Git, using it to efficiently manage version control across my projects. I am comfortable with a variety of Git commands and workflows to ensure smooth collaboration and code management.",
+			"knowledge": [
+				"Initialize repository",
+				"Clone repository",
+				"Stage changes",
+				"Remove files",
+				"Commit changes",
+				"Amend commit",
+				"Check status",
+				"View commit history",
+				"Manage branches",
+				"Force branch",
+				"Delete branch",
+				"Switch branches",
+				"Merge branches",
+				"Manage remotes",
+				"Fetch from remote",
+				"Push to remote",
+				"Pull from remote",
+				"Reset changes",
+				"Revert commit",
+				"Rebase commits",
+				"Interactive rebase",
+				"Manage tags",
+				"Cherry-pick commit",
+				"Optimize repository"
+			],
 			"relations": [],
-			"tags": ["Desktop"]
+			"tags": ["Web", "Frontend", "Backend"]
 		},
 		"Vercel": {
 			"category": "Tools",
 			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
+			"note": "I am proficient in using Vercel for deploying projects, managing custom domains, and setting up environment variables for efficient development and deployment.",
+			"knowledge": [
+				"Project Deployment",
+				"Custom Domains",
+				"Environment Variables"
+			],
 			"relations": [],
-			"tags": ["Desktop"]
+			"tags": ["Web"]
 		},
 		"NodeJS": {
 			"category": "Tools",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "80",
+			"note": "I use for both frontend and backend development. My expertise spans working with npm, managing modules and the file system, and integrating databases. This versatile technology supports my projects across various stages, ensuring efficient development workflows and robust applications.",
+			"knowledge": [
+				"npm",
+				"Modules",
+				"File System (fs)",
+				"Event Loop",
+				"Environment Variables",
+				"Database Integration"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"NextJS",
+				"ExpressJS",
+				"React"
+			],
+			"tags": ["Web", "Frontend", "Backend"]
 		},
 		"Docker": {
 			"category": "Tools",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
+			"percentage": "75",
+			"note": "I am familiar with Docker and use it to streamline development and deployment processes. My experience includes managing containers, handling images, and orchestrating complex setups.",
+			"knowledge": [
+				"Running Containers",
+				"Docker Images",
+				"Docker CLI Basics",
+				"Dockerfile",
+				"Docker Compose",
+				"Volumes",
+				"Networking",
+				"Environment Variables"
+			],
 			"relations": [],
-			"tags": ["Desktop"]
+			"tags": ["Web", "Backend"]
 		},
 		"Prisma": {
 			"category": "Tools",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "80",
+			"note": "Skilled in managing database interactions and schema definitions, efficiently handling complex data structures, and integrating database tools with TypeScript to enhance project development.",
+			"knowledge": [
+				"Prisma Schema",
+				"Data Models",
+				"Migrations",
+				"CRUD Operations",
+				"Relations",
+				"Queries",
+				"Prisma Client",
+				"TypeScript Integration"
+			],
+			"relations": ["TypeScript", "SQL", "ExpressJS", "NodeJS"],
+			"tags": ["Web", "Backend"]
 		},
 		"DBeaver": {
 			"category": "Tools",
-			"percentage": "60",
-			"note": "A long description about the Language again",
-			"knowledge": ["basics", "POO"],
-			"relations": [],
-			"tags": ["Desktop"]
+			"percentage": "70",
+			"note": "DBeaver is the primary tool for database visualization and management in my workflow. It enables me to efficiently handle data, perform complex queries, and gain valuable insights through its robust features.",
+			"knowledge": [
+				"SQL Query Writing",
+				"Database Schema Management",
+				"Creating and Managing Views",
+				"Using ER Diagrams",
+				"Setting Up Data Source Connections"
+			],
+			"relations": ["SQL", "MySQL", "SQL Server"],
+			"tags": ["Backend"]
 		}
 	}
 }
