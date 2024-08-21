@@ -32,8 +32,8 @@ function ModalTechnology({
 			onClose={onClose}
 		>
 			<div className="max-w-96 max-h-96 grid grid-rows-[auto_auto_1fr_auto] gap-2">
-				<div className="flex justify-between">
-					<div className="relative w-20 h-20">
+				<div className="grid grid-cols-3 max-md:grid-cols-2 justify-items-center gap-2">
+					<div className="relative w-20 h-20 max-md:w-[4.8rem] max-md:h-[4.8rem]">
 						<Image
 							src={`/technologies/${name}.png`}
 							alt={`${name} Icon`}
@@ -43,7 +43,7 @@ function ModalTechnology({
 						/>
 					</div>
 					<div
-						className="p-2 rounded-full w-20 h-20"
+						className="p-2 rounded-full w-20 h-20 max-md:w-[4.8rem] max-md:h-[4.8rem]"
 						style={{
 							background: `conic-gradient(black ${degs}deg, #e6e6e6 0deg)`,
 						}}
@@ -52,9 +52,9 @@ function ModalTechnology({
 							{data.percentage}%
 						</div>
 					</div>
-					<div>
+					<div className='max-md:col-span-2'>
 						<h2 className="mb-1 text-base underline">Areas:</h2>
-						<ul>
+						<ul className='grid max-md:grid-flow-col max-md:list-none'>
 							{data.tags.map((tag, index) => (
 								<li key={index}>{tag}</li>
 							))}
@@ -64,7 +64,7 @@ function ModalTechnology({
 				<p className="text-justify text-sm">{data.note}</p>
 				<div className="overflow-auto">
 					<h2 className="mb-1 text-base underline">Topics</h2>
-					<ul className="columns-2">
+					<ul className="columns-2 max-md:columns-1">
 						{data.knowledge.map((kw, index) => (
 							<li key={index}>{kw}</li>
 						))}
@@ -73,7 +73,7 @@ function ModalTechnology({
 				{data.relations.length != 0 && (
 					<div>
 						<h3 className="text-center text-sm mb-1">Relations</h3>
-						<div className="flex justify-center gap-2">
+						<div className="flex justify-center gap-2 flex-wrap">
 							{data.relations.map((rel, index) => (
 								<Image
 									key={index}
