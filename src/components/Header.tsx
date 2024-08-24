@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useAnimate } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Navbar from './Navbar';
+import Switche from './Switche';
 
 function Header() {
 	const [progress, setProgress] = useState(0);
@@ -120,6 +121,7 @@ function Header() {
 					</div>
 				</div>
 				<div className="inline-flex ml-auto gap-2 filter max-md:invert z-10">
+					<Switche />
 					<Image
 						src={'/icons/Github.svg'}
 						className="h-11 w-11 max-md:h-9 max-md:w-9"
