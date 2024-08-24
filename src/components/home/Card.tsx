@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import TypeWriter from './TypeWriter';
 import MoveBackground from '../MoveBackground';
-import { useStoreBackground } from '@/stores/useStore';
+import useStoreBackground from '@/stores/useStoreBackground';
 
 function Card() {
 	const imageRef = useRef<HTMLImageElement>(null);

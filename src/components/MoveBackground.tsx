@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { useStoreBackground } from '@/stores/useStore';
+import useStoreBackground from '@/stores/useStoreBackground';
 
 function MoveBackground({
 	children,
@@ -45,7 +45,8 @@ function MoveBackground({
 				const middle = (rect.left + rect.width).toString();
 				setSizeBackground(middle);
 			} else {
-				let elm: HTMLElement = divRef.current.firstElementChild as HTMLElement;
+				let elm: HTMLElement = divRef.current
+					.firstElementChild as HTMLElement;
 				let dis = elm.offsetHeight;
 				while (elm !== document.body) {
 					if (!elm) break;

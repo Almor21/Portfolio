@@ -1,7 +1,7 @@
 'use client';
 
-import { useStoreBackground } from '@/stores/useStore';
 import React, { useEffect, useRef, useState } from 'react';
+import useStoreBackground from '@/stores/useStoreBackground';
 import { motion } from 'framer-motion';
 import useScreenWidth from '@/hook/useScreenWidth';
 
@@ -12,13 +12,13 @@ function Backgroud() {
 		state.setAxis,
 	]);
 	const divRef = useRef<HTMLDivElement>(null);
-	const screenWidth = useScreenWidth()
+	const screenWidth = useScreenWidth();
 
 	useEffect(() => {
 		if (screenWidth > 768) {
-			setAxis('x')
+			setAxis('x');
 		} else {
-			setAxis('y')
+			setAxis('y');
 		}
 	}, [screenWidth]);
 
