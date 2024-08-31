@@ -1,95 +1,112 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
 import useStoreFlash from '@/stores/useStoreFlash';
+import useIsTouchDevice from '@/hook/useIsTouchDevice';
 
 function Flashlight() {
-	const { mode, initX, initY, setMode } = useStoreFlash((state) => state);
+	const isTouch = useIsTouchDevice();
+
+	const mode = useStoreFlash((state) => state.mode);
 	const divRef = useRef<HTMLDivElement>(null);
+	const [active, setActive] = useState(false);
 	const [show, setShow] = useState(false);
-	const [x, setX] = useState(0);
-	const [y, setY] = useState(0);
-	const [scroll, setScroll] = useState(0);
+	const mouse = useRef({
+		x: 0,
+		y: 0,
+	});
+	const x = useMotionValue(0);
+	const y = useMotionValue(0);
 	const width = 40;
 	const height = 40;
 
 	useEffect(() => {
 		const enter = () => {
-			setTimeout(() => {
-				setShow(true);
-			}, 150);
+			setShow(true);
 		};
 		const leave = () => {
 			setShow(false);
 		};
-		const handleMove = (e: MouseEvent) => {
-			const mouseX = e.clientX;
-			const mouseY = e.clientY;
+		const updatePosition = () => {
+			const parent = divRef.current?.parentElement;
+			if (!parent) return;
 
+			const parentTop = parent.getBoundingClientRect().top;
+			const parentLeft = parent.getBoundingClientRect().left;
+
+			x.set(mouse.current.x - parentLeft - width / 2);
+			y.set(mouse.current.y - parentTop - height / 2);
+		};
+		const handleMove = (e: MouseEvent) => {
 			setTimeout(() => {
-				setX(mouseX);
-				setY(mouseY);
+				mouse.current = {
+					x: e.clientX,
+					y: e.clientY,
+				};
+				updatePosition();
 			}, 100);
 		};
 		const handleScroll = () => {
-			setScroll(window.scrollY);
+			updatePosition();
 		};
 
 		if (mode === 'on') {
-			setScroll(window.scrollY);
-			document.body.addEventListener('mouseenter', enter);
-			document.body.addEventListener('mouseleave', leave);
-			document.body.addEventListener('mousemove', handleMove);
+			const main = document.querySelector('main');
+			if (!main) return;
+
+			main.addEventListener('mouseenter', enter);
+			main.addEventListener('mouseleave', leave);
+			main.addEventListener('mousemove', handleMove);
 			document.addEventListener('scroll', handleScroll);
-			setX(initX);
-			setY(initY);
-			enter();
+			setActive(true);
+		} else {
+			setActive(false);
 		}
 
 		return () => {
-			document.body.removeEventListener('mouseenter', enter);
-			document.body.removeEventListener('mouseleave', leave);
-			document.body.removeEventListener('mousemove', handleMove);
+			const main = document.querySelector('main');
+			if (!main) return;
+
+			main.removeEventListener('mouseenter', enter);
+			main.removeEventListener('mouseleave', leave);
+			main.removeEventListener('mousemove', handleMove);
 			document.removeEventListener('scroll', handleScroll);
 		};
 	}, [mode]);
 
 	return (
-		<AnimatePresence>
-			{show && (
-				<div
-					className="absolute top-0 left-0 w-full h-full z-[10000] mix-blend-difference"
-					onClick={() => {
-						setMode('off');
-						setShow(false);
-					}}
-				>
-					<motion.div
-						ref={divRef}
-						className="absolute bg-white rounded-full"
-						style={{
-							left: x - width / 2,
-							top: y + scroll - height / 2,
-							width,
-							height,
-						}}
-						initial={{
-							scale: 0,
-						}}
-						animate={{
-							scale: 1,
-						}}
-						exit={{
-							scale: 0,
-						}}
-						transition={{
-							duration: 0.3,
-						}}
-					/>
-				</div>
-			)}
-		</AnimatePresence>
+		active && !isTouch && (
+			<motion.div
+				ref={divRef}
+				className="absolute bg-white rounded-full z-10 mix-blend-difference"
+				style={{
+					left: x,
+					top: y,
+					width,
+					height,
+				}}
+				initial={{
+					scale: 0,
+				}}
+				animate={
+					show
+						? {
+								scale: 1,
+								transition: {
+									duration: 0.3,
+									delay: 0.1
+								},
+						  }
+						: {
+								scale: 0,
+								transition: {
+									duration: 0.3,
+								},
+						  }
+				}
+			/>
+		)
 	);
 }
 

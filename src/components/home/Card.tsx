@@ -44,7 +44,7 @@ function Card() {
 
 	return (
 		<MoveBackground width={middle}>
-			<div className="grid md:grid-flow-col justify-items-center items-center gap-4">
+			<div className="grid md:grid-flow-col justify-items-center items-center gap-4 select-none">
 				<div className="h-60 w-60 box-border rounded-full overflow-hidden md:rotate-45 p-1 shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5),2px_2px_8px_2px_rgb(255,255,255,0.5)] max-md:shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5)] backdrop-invert">
 					<div
 						className="relative h-full w-full"

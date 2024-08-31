@@ -1,6 +1,5 @@
 import { Montserrat } from 'next/font/google';
 import '@/styles/globals.css';
-import Flashlight  from '@/components/Flashlight';
 
 const montserrat = Montserrat({
 	subsets: ['latin'],
@@ -19,7 +18,6 @@ export default function RootLayout({
 					scrollbarGutter: 'stable',
 				}}
 			>
-				<Flashlight />
 				{children}
 			</body>
 		</html>

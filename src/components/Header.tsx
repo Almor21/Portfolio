@@ -80,7 +80,7 @@ function Header() {
 
 	return (
 		<header
-			className="sticky w-full top-0 z-50 flex justify-center max-md:bg-black border-[rgba(255,255,255,0.1)]"
+			className="sticky w-full top-0 z-[1000] flex justify-center max-md:bg-black border-[rgba(255,255,255,0.1)]"
 			style={{
 				borderBottomWidth: progress,
 				backdropFilter: `blur(${3 * progress}px) opacity(${progress})`,
@@ -91,7 +91,7 @@ function Header() {
 				<Navbar />
 				<div
 					ref={scope}
-					className='inline-block mr-auto text-white rounded-full p-1 z-10'
+					className="inline-block mr-auto text-white rounded-full p-1 z-10"
 					style={{
 						border: '1.35px solid transparent',
 					}}
@@ -121,7 +121,6 @@ function Header() {
 					</div>
 				</div>
 				<div className="inline-flex ml-auto gap-2 filter max-md:invert z-10">
-					<Switche />
 					<Image
 						src={'/icons/Github.svg'}
 						className="h-11 w-11 max-md:h-9 max-md:w-9"
@@ -143,6 +142,7 @@ function Header() {
 						width={0}
 						height={0}
 					/>
+					{/* <Switche /> */}
 				</div>
 			</div>
 		</header>
