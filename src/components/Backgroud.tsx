@@ -24,7 +24,7 @@ function Backgroud() {
 
 	return (
 		<motion.div
-			className="absolute md:h-full max-md:w-full top-0 left-0 -z-50 bg-black"
+			className="absolute md:h-full max-md:w-full top-0 left-0 -z-[1000] bg-black"
 			ref={divRef}
 			animate={
 				axis === 'x'

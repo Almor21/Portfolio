@@ -82,7 +82,7 @@ function Navbar() {
 			>
 				<motion.div
 					className={
-						'bg-white rounded-r-3xl z-50' +
+						'bg-white rounded-r-3xl z-[1000]' +
 						(minMode ? ' rounded-3xl' : '')
 					}
 					onMouseEnter={() => {
