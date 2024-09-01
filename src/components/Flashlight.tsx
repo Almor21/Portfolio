@@ -22,6 +22,8 @@ function Flashlight() {
 	const height = 40;
 
 	useEffect(() => {
+		const main = document.querySelector('main');
+
 		const enter = () => {
 			setShow(true);
 		};
@@ -30,13 +32,20 @@ function Flashlight() {
 		};
 		const updatePosition = () => {
 			const parent = divRef.current?.parentElement;
-			if (!parent) return;
+
+			if (!(parent && main)) return;
 
 			const parentTop = parent.getBoundingClientRect().top;
 			const parentLeft = parent.getBoundingClientRect().left;
+			
+			const newX =
+				mouse.current.x > main.clientWidth - width / 2
+					? main.offsetWidth - parentLeft - width
+					: mouse.current.x - parentLeft - width / 2;
+			const newY = mouse.current.y - parentTop - height / 2;
 
-			x.set(mouse.current.x - parentLeft - width / 2);
-			y.set(mouse.current.y - parentTop - height / 2);
+			x.set(newX);
+			y.set(newY);
 		};
 		const handleMove = (e: MouseEvent) => {
 			setTimeout(() => {
@@ -52,7 +61,6 @@ function Flashlight() {
 		};
 
 		if (mode === 'on') {
-			const main = document.querySelector('main');
 			if (!main) return;
 
 			main.addEventListener('mouseenter', enter);
@@ -76,7 +84,8 @@ function Flashlight() {
 	}, [mode]);
 
 	return (
-		active && !isTouch && (
+		active &&
+		!isTouch && (
 			<motion.div
 				ref={divRef}
 				className="absolute bg-white rounded-full z-10 mix-blend-difference"
@@ -95,7 +104,7 @@ function Flashlight() {
 								scale: 1,
 								transition: {
 									duration: 0.3,
-									delay: 0.1
+									delay: 0.1,
 								},
 						  }
 						: {
