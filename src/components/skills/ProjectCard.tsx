@@ -23,7 +23,7 @@ function ProjectCard({
 	return (
 		<motion.div
 			layout="position"
-			className="h-full flex flex-col gap-2"
+			className="h-full max-w-64 flex flex-col gap-2"
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 			style={{
