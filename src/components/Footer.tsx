@@ -47,7 +47,7 @@ function Footer() {
 	const [showModal, setShowModal] = useState(false);
 
 	return (
-		<footer className="w-full bg-gray-950 grid grid-rows-[repeat(2,auto)] justify-items-center z-[1000]">
+		<footer className="w-full bg-gray-950 grid grid-rows-[repeat(2,auto)] justify-items-center z-[999]">
 			<div className="max-w-[1440px] w-full py-7 flex justify-around">
 				<div className="relative flex items-center">
 					<Image

@@ -114,50 +114,60 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 	}, [mode]);
 
 	if (loading) {
-		return (
-			<Loader className='h-[30rem]' />
-		);
+		return <Loader className="h-[30rem]" />;
 	}
 
 	return (
-		<div className={`${className} h-[30rem] grid grid-rows-[auto_1fr] gap-8`}>
+		<div
+			className={`${className} h-[30rem] grid grid-rows-[auto_1fr] gap-8`}
+		>
 			<FilterBar areas={areas} set={(v) => setSelected(v)} />
-
-			<div
-				className="px-3 flex flex-col gap-5 overflow-auto"
-				style={{
-					scrollbarGutter: 'stable',
-				}}
-			>
-				{actualMode === 'skills'
-					? isSkillInfo(data) &&
-					  Object.keys(filterCategories).map((categoryName) => (
+			{actualMode === 'skills'
+				? isSkillInfo(data) && (
+						<div
+							className="px-3 flex flex-col gap-5 overflow-auto"
+							style={{
+								scrollbarGutter: 'stable',
+							}}
+						>
+							{Object.keys(filterCategories).map(
+								(categoryName) => (
+									<div
+										key={categoryName}
+										className="grid grid-cols-[repeat(auto-fit,minmax(6rem,1fr))] gap-y-3"
+									>
+										<h1 className="text-gray-400 w-full col-span-full my-1">
+											{categoryName}
+										</h1>
+										<AnimatePresence>
+											{filterCategories[categoryName].map(
+												(tech) => (
+													<TechnologyCard
+														key={tech}
+														name={tech}
+														percentage={
+															data[tech]
+																.percentage
+														}
+														openTech={openModalTech}
+														isTouch={isTouch}
+													/>
+												)
+											)}
+										</AnimatePresence>
+									</div>
+								)
+							)}
+						</div>
+				  )
+				: isProjectInfo(data) && (
+						<AnimatePresence>
 							<div
-								key={categoryName}
-								className="grid grid-cols-[repeat(auto-fit,minmax(6rem,1fr))] gap-y-3"
+								className="px-3 py-2 grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] items-center gap-5 overflow-auto"
+								style={{
+									scrollbarGutter: 'stable',
+								}}
 							>
-								<h1 className="text-gray-400 w-full col-span-full my-1">
-									{categoryName}
-								</h1>
-								<AnimatePresence>
-									{filterCategories[categoryName].map(
-										(tech) => (
-											<TechnologyCard
-												key={tech}
-												name={tech}
-												percentage={
-													data[tech].percentage
-												}
-												openTech={openModalTech}
-												isTouch={isTouch}
-											/>
-										)
-									)}
-								</AnimatePresence>
-							</div>
-					  ))
-					: isProjectInfo(data) && (
-							<AnimatePresence>
 								{filterProjects.map((project) => (
 									<ProjectCard
 										key={project.name}
@@ -167,9 +177,9 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 										technologies={project.technologies}
 									/>
 								))}
-							</AnimatePresence>
-					  )}
-			</div>
+							</div>
+						</AnimatePresence>
+				  )}
 			{isSkillInfo(data) && (
 				<ModalTechnology
 					name={techModal}
