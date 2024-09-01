@@ -18,12 +18,17 @@ function ProjectCard({
 	openTech?: (name: string) => Promise<void>;
 }) {
 	const [active, setActive] = useState(false);
+	const [hover, setHover] = useState(false);
+
 	return (
 		<motion.div
 			layout="position"
-			className="grid gap-2 cursor-pointer"
-			onMouseEnter={() => setActive(true)}
-			onMouseLeave={() => setActive(false)}
+			className="h-full flex flex-col gap-2"
+			onMouseEnter={() => setHover(true)}
+			onMouseLeave={() => setHover(false)}
+			style={{
+				perspective: '1000px',
+			}}
 			initial={{
 				opacity: 0,
 			}}
@@ -38,20 +43,18 @@ function ProjectCard({
 			}}
 		>
 			<motion.div
-				className="relative h-64 p-3 border-[1.4px] border-gray-950 shadow-[1px_3px_10px_2px_rgba(0,0,0,0.2)]"
+				className="relative h-full p-5 border-[1.4px] border-gray-950 shadow-[1px_3px_10px_2px_rgba(0,0,0,0.2)]"
 				style={{
-					perspective: '1000px',
 					transformStyle: 'preserve-3d',
 				}}
-				animate={
-					active
-						? {
-								rotateY: 180,
-						  }
-						: {}
-				}
+				animate={{
+					transform:
+						(hover ? 'translateZ(30px)' : 'translateZ(0)') +
+						' ' +
+						(active ? 'rotateY(180deg)' : 'rotateY(0deg)'),
+				}}
 				transition={{
-					duration: 0.5,
+					duration: 0.3,
 				}}
 			>
 				<div
@@ -61,22 +64,25 @@ function ProjectCard({
 					}}
 				>
 					<motion.div
-						className="absolute top-0 left-0 w-full"
+						className="absolute top-0 left-0 w-full h-full grid grid-rows-[auto_1fr_auto] items-center gap-2"
 						style={{
 							backfaceVisibility: 'hidden',
 						}}
 					>
-						<div className="w-full flex flex-col gap-4">
-							<div className="relative w-full h-44 flex items-center">
-								<Image
-									src={`/projects/${name}.png`}
-									alt={`${name} Image`}
-									className=" object-cover"
-									fill
-								/>
-							</div>
+						<div className="flex justify-between">
+							<h1 className="text-lg font-semibold">{name}</h1>
+							<button onClick={() => setActive(!active)}>
+								Info
+							</button>
 						</div>
-						<h1 className="text-lg font-semibold">{name}</h1>
+						<div className="relative w-full h-full">
+							<Image
+								src={`/projects/${name}.png`}
+								alt={`${name} Image`}
+								className="object-cover"
+								fill
+							/>
+						</div>
 						<div className="flex gap-2">
 							{technologies.map((tech) => (
 								<Image
@@ -90,14 +96,28 @@ function ProjectCard({
 						</div>
 					</motion.div>
 					<motion.div
-						className="absolute top-0 left-0 h-full flex flex-col justify-center"
+						className="relative h-full grid grid-rows-[auto_1fr_auto] items-center gap-2"
 						style={{
 							rotateY: 180,
 							backfaceVisibility: 'hidden',
 						}}
 					>
-						<h1 className="text-lg font-semibold">{name}</h1>
-						<p className="text-xs">{notes}</p>
+						<div className="flex justify-between">
+							<h1 className="text-lg font-semibold">{name}</h1>
+							<button onClick={() => setActive(!active)}>
+								Info
+							</button>
+						</div>
+						<p className="text-xs border h-full border-black p-1">
+							{notes}
+						</p>
+						<Link
+							href={link}
+							target="_blank"
+							className="underline w-min"
+						>
+							Link
+						</Link>
 					</motion.div>
 				</div>
 			</motion.div>

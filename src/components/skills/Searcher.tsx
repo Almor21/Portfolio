@@ -163,7 +163,7 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 				: isProjectInfo(data) && (
 						<AnimatePresence>
 							<div
-								className="px-3 py-2 grid grid-cols-[repeat(auto-fit,minmax(15rem,1fr))] items-center gap-5 overflow-auto"
+								className="p-3 grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] items-center gap-5 overflow-auto"
 								style={{
 									scrollbarGutter: 'stable',
 								}}
