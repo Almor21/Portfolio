@@ -6,10 +6,12 @@ const merriweather = Merriweather({ weight: '400', subsets: ['latin'] });
 function Section({
 	children,
 	title,
+	className,
 	widthSeparator,
 }: {
 	children: React.ReactNode;
 	title: string;
+	className?: string;
 	widthSeparator: number;
 }) {
 	let width: string;
@@ -42,7 +44,7 @@ function Section({
 				/>
 				<div className="h-2 w-2 bg-black rounded-full -translate-x-1" />
 			</div>
-			<div className="pl-5">{children}</div>
+			<div className={`pl-5 ${className}`}>{children}</div>
 		</div>
 	);
 }
