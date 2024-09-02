@@ -4,13 +4,15 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion, useAnimate } from 'framer-motion';
 import useIsTouchDevice from '@/hook/useIsTouchDevice';
+import Link from 'next/link';
+import { SOCIAL } from '@/config/contactInfo';
 
 function Links() {
 	const [scope, animate] = useAnimate();
 	const [hover, setHover] = useState(-1);
 	const [enterView, setEnterView] = useState(false);
 	const [colorImage1, setColorImage1] = useState(false);
-	const [colorImage2, setColorImage2] = useState(false)
+	const [colorImage2, setColorImage2] = useState(false);
 	const isTouch = useIsTouchDevice();
 
 	const runAnimation = (
@@ -45,9 +47,9 @@ function Links() {
 			animate(`#div${num} .mask`, { scaleX: 0 }, { delay });
 			setTimeout(() => {
 				if (num === 1) {
-					setColorImage1(true)
+					setColorImage1(true);
 				} else if (num === 2) {
-					setColorImage2(true)
+					setColorImage2(true);
 				}
 			}, delay * 1000);
 		} else if (type === 'noactive') {
@@ -63,11 +65,10 @@ function Links() {
 			animate(`#div${num} .image`, { y: 0 }, { delay });
 			animate(`#div${num} .mask`, { scaleX: 1 }, { delay });
 			setTimeout(() => {
-				
 				if (num === 1) {
-					setColorImage1(false)
+					setColorImage1(false);
 				} else if (num === 2) {
-					setColorImage2(false)
+					setColorImage2(false);
 				}
 			}, delay * 1000);
 		}
@@ -111,9 +112,11 @@ function Links() {
 				setEnterView(false);
 			}}
 		>
-			<div
+			<Link
+				href={SOCIAL.github}
+				target="_blank"
 				id="div0"
-				className="h-14 w-14 p-2 backdrop-blur-sm border border-[rgba(0,0,0,0.3)] shadow-none rounded cursor-pointer"
+				className="inline-block h-14 w-14 p-2 backdrop-blur-sm border border-[rgba(0,0,0,0.3)] shadow-none rounded"
 				onMouseEnter={() => {
 					if (!isTouch) setHover(0);
 				}}
@@ -126,7 +129,7 @@ function Links() {
 					<span className="relative z-0">Github</span>
 					<span className="mask absolute inline-block top-0 left-0 bg-white z-10 h-full w-full origin-right" />
 				</div>
-			</div>
+			</Link>
 			<div
 				id="div1"
 				className="relative h-14 w-14 p-2 backdrop-blur-sm border border-[rgba(0,0,0,0.3)] shadow-none rounded cursor-pointer"
@@ -155,7 +158,11 @@ function Links() {
 					<span className="mask absolute inline-block top-0 left-0 bg-white z-10 h-full w-full origin-right" />
 				</div>
 			</div>
-			<div
+			<Link
+				href={
+					SOCIAL.linkedin
+				}
+				target="_blank"
 				id="div2"
 				className="h-14 w-14 p-2 backdrop-blur-sm border border-[rgba(0,0,0,0.3)] shadow-none rounded cursor-pointer"
 				onMouseEnter={() => {
@@ -182,7 +189,7 @@ function Links() {
 					<span className="relative z-0 text-blue-400">Linkedin</span>
 					<span className="mask absolute inline-block top-0 left-0 bg-white z-10 h-full w-full origin-right" />
 				</div>
-			</div>
+			</Link>
 		</motion.div>
 	);
 }

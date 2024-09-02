@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ModalAttributions from './ModalAttributions';
+import Toast from './Toast';
+import { SOCIAL } from '@/config/contactInfo';
 
 const NAVIGATION_LINKS = [
 	{
@@ -27,101 +29,153 @@ const NAVIGATION_LINKS = [
 const SOCIAL_LINKS = [
 	{
 		text: 'Github',
-		link: '#',
+		link: SOCIAL.github,
 	},
 	{
 		text: 'Gmail',
-		link: '#',
+		info: SOCIAL.gmail,
 	},
 	{
 		text: 'Linkedin',
-		link: '#',
+		link: SOCIAL.linkedin,
 	},
 	{
 		text: 'Whatsapp',
-		link: '#',
+		info: SOCIAL.whatsapp,
 	},
 ];
 
 function Footer() {
 	const [showModal, setShowModal] = useState(false);
+	const [toastInfo, setToastInfo] = useState({
+		text: '',
+		isOK: false,
+	});
+	const [notify, setNotify] = useState(false);
 
 	return (
-		<footer className="w-full bg-gray-950 grid grid-rows-[repeat(2,auto)] justify-items-center z-[999]">
-			<div className="max-w-[1440px] w-full py-7 flex justify-around">
-				<div className="relative flex items-center">
-					<Image
-						className="filter invert"
-						src={'/Logo.svg'}
-						alt="Logo Image"
-						width={130}
-						height={130}
-					/>
-				</div>
-				<div className="flex flex-col">
-					<h2 className="font-medium mb-3 text-white">Navigation</h2>
-					<div className="flex flex-col gap-1 text-gray-400 text-sm">
-						{NAVIGATION_LINKS.map((op) => (
-							<div key={op.text} className="relative w-min group">
-								<Link
-									href={op.link}
-									className="relative transition-all duration-200 group-hover:text-gray-200 group-hover:drop-shadow-[0_0_3px_rgb(229,231,235)] z-10"
+		<>
+			<footer className="relative w-full bg-gray-950 grid grid-rows-[repeat(2,auto)] justify-items-center z-[999]">
+				<div className="max-w-[1440px] w-full py-7 flex justify-around">
+					<div className="relative flex items-center">
+						<Image
+							className="filter invert"
+							src={'/Logo.svg'}
+							alt="Logo Image"
+							width={130}
+							height={130}
+						/>
+					</div>
+					<div className="flex flex-col">
+						<h2 className="font-medium mb-3 text-white">
+							Navigation
+						</h2>
+						<div className="flex flex-col gap-1 text-gray-400 text-sm">
+							{NAVIGATION_LINKS.map((op) => (
+								<div
+									key={op.text}
+									className="relative w-min group"
 								>
-									{op.text}
-								</Link>
-								<span className="absolute inline-block h-full w-full top-0 left-0 border-b border-gray-200 transition-all duration-200 scale-x-0 origin-left group-hover:scale-x-100"></span>
-							</div>
-						))}
+									<Link
+										href={op.link}
+										className="relative transition-all duration-200 group-hover:text-gray-200 group-hover:drop-shadow-[0_0_3px_rgb(229,231,235)] z-10"
+									>
+										{op.text}
+									</Link>
+									<span className="absolute inline-block h-full w-full top-0 left-0 border-b border-gray-200 transition-all duration-200 scale-x-0 origin-left group-hover:scale-x-100"></span>
+								</div>
+							))}
+						</div>
+					</div>
+					<div className="flex flex-col">
+						<h2 className="font-medium mb-3 text-white">Social</h2>
+						<div className="flex flex-col gap-1 text-gray-400 text-sm">
+							{SOCIAL_LINKS.map((op) => (
+								<div
+									key={op.text}
+									className="relative w-min group"
+								>
+									{op.link ? (
+										<Link
+											href={op.link}
+											className="relative transition-all duration-200 group-hover:text-gray-200 group-hover:drop-shadow-[0_0_3px_rgb(229,231,235)] z-10"
+											target="_blank"
+										>
+											{op.text}
+										</Link>
+									) : (
+										<button
+											className="relative transition-all duration-200 group-hover:text-gray-200 group-hover:drop-shadow-[0_0_3px_rgb(229,231,235)] z-10"
+											onClick={async () => {
+												try {
+													await navigator.clipboard.writeText(
+														op.info ?? ''
+													);
+													setToastInfo({
+														text: 'Copied!',
+														isOK: true,
+													});
+												} catch (error) {
+													setToastInfo({
+														text: 'Something went wrong!',
+														isOK: false,
+													});
+													console.error(
+														'Error:',
+														error
+													);
+												} finally {
+													setNotify(true);
+												}
+											}}
+										>
+											{op.text}
+										</button>
+									)}
+									<span className="absolute inline-block h-full w-full top-0 left-0 border-b border-gray-200 transition-all duration-200 scale-x-0 origin-left group-hover:scale-x-100"></span>
+								</div>
+							))}
+						</div>
 					</div>
 				</div>
-				<div className="flex flex-col">
-					<h2 className="font-medium mb-3 text-white">Social</h2>
-					<div className="flex flex-col gap-1 text-gray-400 text-sm">
-						{SOCIAL_LINKS.map((op) => (
-							<div key={op.text} className="relative w-min group">
-								<Link
-									href={op.link}
-									className="relative transition-all duration-200 group-hover:text-gray-200 group-hover:drop-shadow-[0_0_3px_rgb(229,231,235)] z-10"
-								>
-									{op.text}
-								</Link>
-								<span className="absolute inline-block h-full w-full top-0 left-0 border-b border-gray-200 transition-all duration-200 scale-x-0 origin-left group-hover:scale-x-100"></span>
-							</div>
-						))}
-					</div>
-				</div>
-			</div>
-			<p className="block w-full py-2 bg-black text-center text-white text-xs">
-				All icons used on this page were taken from{' '}
-				<Link
-					href={'https://www.flaticon.es'}
-					target="_blank"
-					className="underline"
-				>
-					Flaticon
-				</Link>{' '}
-				and{' '}
-				<Link
-					href={'https://icon-icons.com'}
-					target="_blank"
-					className="underline"
-				>
-					Icon-Icons
-				</Link>
-				.{' '}
-				<span
-					className="font-semibold cursor-pointer"
-					onClick={() => setShowModal(true)}
-				>
-					Author attributions
-				</span>
-			</p>
+				<p className="block w-full py-2 bg-black text-center text-white text-xs">
+					All icons used on this page were taken from{' '}
+					<Link
+						href={'https://www.flaticon.es'}
+						target="_blank"
+						className="underline"
+					>
+						Flaticon
+					</Link>{' '}
+					and{' '}
+					<Link
+						href={'https://icon-icons.com'}
+						target="_blank"
+						className="underline"
+					>
+						Icon-Icons
+					</Link>
+					.{' '}
+					<span
+						className="font-semibold cursor-pointer"
+						onClick={() => setShowModal(true)}
+					>
+						Author attributions
+					</span>
+				</p>
 
-			<ModalAttributions
-				open={showModal}
-				onClose={() => setShowModal(false)}
+				<ModalAttributions
+					open={showModal}
+					onClose={() => setShowModal(false)}
+				/>
+			</footer>
+			<Toast
+				notify={notify}
+				text={toastInfo.text}
+				isOK={toastInfo.isOK}
+				onClose={() => setNotify(false)}
 			/>
-		</footer>
+		</>
 	);
 }
 

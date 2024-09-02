@@ -6,11 +6,19 @@ import { useAnimate } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import Navbar from './Navbar';
 import Switche from './Switche';
+import Link from 'next/link';
+import Toast from './Toast';
+import { SOCIAL } from '@/config/contactInfo';
 
 function Header() {
 	const [progress, setProgress] = useState(0);
 	const [scope, animate] = useAnimate();
 	const router = useRouter();
+	const [toastInfo, setToastInfo] = useState({
+		text: '',
+		isOK: false,
+	});
+	const [notify, setNotify] = useState(false);
 
 	useEffect(() => {
 		const runAnimation = async () => {
@@ -79,73 +87,114 @@ function Header() {
 	}, []);
 
 	return (
-		<header
-			className="sticky w-full top-0 z-[1000] flex justify-center max-md:bg-black border-[rgba(255,255,255,0.1)]"
-			style={{
-				borderBottomWidth: progress,
-				backdropFilter: `blur(${3 * progress}px) opacity(${progress})`,
-				boxShadow: `0 4px 30px rgba(0,0,0,${progress / 10})`,
-			}}
-		>
-			<div className="max-w-[1440px] w-full flex items-center px-4 py-3">
-				<Navbar />
-				<div
-					ref={scope}
-					className="inline-block mr-auto text-white rounded-full p-1 z-10"
-					style={{
-						border: '1.35px solid transparent',
-					}}
-				>
-					<div className="relative">
-						<Image
-							id="logo"
-							className="hidden filter invert opacity-0 cursor-pointer hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.6)] z-10"
-							src={'/Logo.svg'}
-							alt="Logo Image"
-							fill
-							onClick={() => router.push('/')}
-						/>
-						<h1
-							id="text"
-							className="flex justify-center items-center md:text-lg"
+		<>
+			<header
+				className="sticky w-full top-0 z-[1000] flex justify-center max-md:bg-black border-[rgba(255,255,255,0.1)]"
+				style={{
+					borderBottomWidth: progress,
+					backdropFilter: `blur(${
+						3 * progress
+					}px) opacity(${progress})`,
+					boxShadow: `0 4px 30px rgba(0,0,0,${progress / 10})`,
+				}}
+			>
+				<div className="max-w-[1440px] w-full flex items-center px-4 py-3">
+					<Navbar />
+					<div
+						ref={scope}
+						className="inline-block mr-auto text-white rounded-full p-1 z-10"
+						style={{
+							border: '1.35px solid transparent',
+						}}
+					>
+						<div className="relative">
+							<Image
+								id="logo"
+								className="hidden filter invert opacity-0 cursor-pointer hover:drop-shadow-[0_0_4px_rgba(255,255,255,0.6)] z-10"
+								src={'/Logo.svg'}
+								alt="Logo Image"
+								fill
+								onClick={() => router.push('/')}
+							/>
+							<h1
+								id="text"
+								className="flex justify-center items-center md:text-lg"
+							>
+								E
+								<span className="inline-block mr-1 overflow-hidden origin-left">
+									dinson
+								</span>
+								N
+								<span className="inline-block overflow-hidden origin-left">
+									oriega
+								</span>
+							</h1>
+						</div>
+					</div>
+					<div className="inline-flex ml-auto gap-2 filter max-md:invert z-10">
+						<Link href={SOCIAL.github} target="_blank">
+							<Image
+								src={'/icons/Github.svg'}
+								className="h-11 w-11 max-md:h-9 max-md:w-9"
+								alt="Github Icon"
+								width={0}
+								height={0}
+							/>
+						</Link>
+						<button
+							onClick={async () => {
+								try {
+									await navigator.clipboard.writeText(
+										SOCIAL.gmail
+									);
+									setToastInfo({
+										text: 'Copied!',
+										isOK: true,
+									});
+								} catch (error) {
+									setToastInfo({
+										text: 'Something went wrong!',
+										isOK: false,
+									});
+									console.error('Error:', error);
+								} finally {
+									setNotify(true);
+								}
+							}}
 						>
-							E
-							<span className="inline-block mr-1 overflow-hidden origin-left">
-								dinson
-							</span>
-							N
-							<span className="inline-block overflow-hidden origin-left">
-								oriega
-							</span>
-						</h1>
+							<Image
+								src={'/icons/Mail.svg'}
+								className="h-11 w-11 max-md:h-9 max-md:w-9"
+								alt="Mail Icon"
+								width={0}
+								height={0}
+							/>
+						</button>
+						<Link
+							href={
+								SOCIAL.linkedin
+							}
+							target="_blank"
+						>
+							<Image
+								src={'/icons/Linkedin.svg'}
+								className="h-11 w-11 max-md:h-9 max-md:w-9"
+								alt="Linkedin Icon"
+								width={0}
+								height={0}
+							/>
+						</Link>
+						{/* <Switche /> */}
 					</div>
 				</div>
-				<div className="inline-flex ml-auto gap-2 filter max-md:invert z-10">
-					<Image
-						src={'/icons/Github.svg'}
-						className="h-11 w-11 max-md:h-9 max-md:w-9"
-						alt="Github Icon"
-						width={0}
-						height={0}
-					/>
-					<Image
-						src={'/icons/Mail.svg'}
-						className="h-11 w-11 max-md:h-9 max-md:w-9"
-						alt="Mail Icon"
-						width={0}
-						height={0}
-					/>
-					<Image
-						src={'/icons/Linkedin.svg'}
-						className="h-11 w-11 max-md:h-9 max-md:w-9"
-						alt="Linkedin Icon"
-						width={0}
-						height={0}
-					/>
-					{/* <Switche /> */}
-				</div>
-			</div>
-		</header>
+			</header>
+			<Toast
+				notify={notify}
+				text={toastInfo.text}
+				isOK={toastInfo.isOK}
+				onClose={() => setNotify(false)}
+			/>
+		</>
 	);
 }
 
