@@ -119,10 +119,7 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 
 	return (
 		<div
-			className={`${className} h-[30rem] grid grid-rows-[auto_1fr] gap-8 overflow-auto`}
-			style={{
-				scrollbarGutter: 'stable',
-			}}
+			className={`${className} h-[30rem] grid grid-rows-[auto_1fr] gap-8`}
 		>
 			<FilterBar areas={areas} set={(v) => setSelected(v)} />
 			{actualMode === 'skills'
@@ -164,18 +161,25 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 						</div>
 				  )
 				: isProjectInfo(data) && (
-						<div className="h-min w-full p-3 grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] justify-items-center items-center gap-5">
-							<AnimatePresence>
-								{filterProjects.map((project) => (
-									<ProjectCard
-										key={project.name}
-										name={project.name}
-										notes={project.notes}
-										link={project.link}
-										technologies={project.technologies}
-									/>
-								))}
-							</AnimatePresence>
+						<div
+							className="h-full overflow-auto"
+							style={{
+								scrollbarGutter: 'stable',
+							}}
+						>
+							<div className="h-min w-full p-3 grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] justify-items-center items-center gap-5">
+								<AnimatePresence>
+									{filterProjects.map((project) => (
+										<ProjectCard
+											key={project.name}
+											name={project.name}
+											notes={project.notes}
+											link={project.link}
+											technologies={project.technologies}
+										/>
+									))}
+								</AnimatePresence>
+							</div>
 						</div>
 				  )}
 			{isSkillInfo(data) && (
