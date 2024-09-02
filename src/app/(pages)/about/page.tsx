@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from '@/components/about/Section';
-import MoveBackground from '@/components/MoveBackground';
-import DivTransition from '@/components/DivTransition';
+import MoveBackground from '@/components/transitions/MoveBackground';
+import DivTransition from '@/components/transitions/DivTransition';
 import Presentation from '@/components/about/Presentation';
 
 function AboutPage() {

@@ -9,7 +9,7 @@ import {
 	useTransform,
 } from 'framer-motion';
 import Image from 'next/image';
-import Loader from '../Loader';
+import Loader from '../ui/Loader';
 
 function SendButton({ onActive }: { onActive: () => Promise<string> }) {
 	const [rightLimit, setRightLimit] = useState(0);

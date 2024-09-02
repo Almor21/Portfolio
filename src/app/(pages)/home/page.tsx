@@ -1,4 +1,4 @@
-import Flashlight from '@/components/Flashlight';
+import Flashlight from '@/components/home/Flashlight';
 import CVButton from '@/components/home/CVButton';
 import Card from '@/components/home/Card';
 import ScrollDown from '@/components/home/ScrollDown';

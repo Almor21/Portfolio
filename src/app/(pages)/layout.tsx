@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '@/components/Header';
-import Backgroud from '@/components/Backgroud';
-import Footer from '@/components/Footer';
+import Header from '@/components/layout/Header';
+import Backgroud from '@/components/layout/Backgroud';
+import Footer from '@/components/layout/Footer';
 
 function PagesLayout({
 	children,

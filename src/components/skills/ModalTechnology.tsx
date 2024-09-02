@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import Image from 'next/image';
-import Modal from '../Modal';
+import Modal from '../ui/Modal';
 import { Technology } from '@/types/data';
 
 function ModalTechnology({

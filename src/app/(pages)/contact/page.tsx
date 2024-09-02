@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from '@/components/contact/Form';
-import DivTransition from '@/components/DivTransition';
-import MoveBackground from '@/components/MoveBackground';
+import DivTransition from '@/components/transitions/DivTransition';
+import MoveBackground from '@/components/transitions/MoveBackground';
 import Links from '@/components/contact/Links';
 
 function ContactPage() {

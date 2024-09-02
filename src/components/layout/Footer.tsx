@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ModalAttributions from './ModalAttributions';
-import Toast from './Toast';
+import Toast from '../ui/Toast';
 import { SOCIAL } from '@/config/contactInfo';
 
 const NAVIGATION_LINKS = [

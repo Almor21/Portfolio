@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import Searcher from '@/components/skills/Searcher';
-import MoveBackground from '@/components/MoveBackground';
-import DivTransition from '@/components/DivTransition';
+import MoveBackground from '@/components/transitions/MoveBackground';
+import DivTransition from '@/components/transitions/DivTransition';
 import Link from 'next/link';
 
 import { motion } from 'framer-motion';

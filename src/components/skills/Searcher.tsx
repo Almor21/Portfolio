@@ -8,7 +8,7 @@ import { Categories, SkillInfo, ProjectInfo } from '@/types/data';
 import { AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import useIsTouchDevice from '@/hook/useIsTouchDevice';
-import Loader from '@/components/Loader';
+import Loader from '@/components/ui/Loader';
 
 function Searcher({ className, mode }: { className?: string; mode: string }) {
 	const [actualMode, setActualMode] = useState(mode);

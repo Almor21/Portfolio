@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Modal from './Modal';
+import Modal from '../ui/Modal';
 import Image from 'next/image';
 import { Attribution } from '@/types/data';
-import Loader from './Loader';
+import Loader from '../ui/Loader';
 
 function ModalAttributions({
 	open,

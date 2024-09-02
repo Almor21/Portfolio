@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import TypeWriter from './TypeWriter';
-import MoveBackground from '../MoveBackground';
+import MoveBackground from '../transitions/MoveBackground';
 import useStoreBackground from '@/stores/useStoreBackground';
 
 function Card() {
