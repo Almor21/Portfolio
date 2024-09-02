@@ -79,7 +79,7 @@ function ProjectCard({
 							<Image
 								src={`/projects/${name}.png`}
 								alt={`${name} Image`}
-								className="object-cover"
+								className="object-contain"
 								fill
 							/>
 						</div>

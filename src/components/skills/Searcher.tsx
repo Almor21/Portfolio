@@ -164,7 +164,7 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 						</div>
 				  )
 				: isProjectInfo(data) && (
-						<div className="h-min p-3 grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] items-center gap-5">
+						<div className="h-min w-full p-3 grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] justify-items-center items-center gap-5">
 							<AnimatePresence>
 								{filterProjects.map((project) => (
 									<ProjectCard
