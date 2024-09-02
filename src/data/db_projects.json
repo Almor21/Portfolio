@@ -3,7 +3,7 @@
 	"data": [
 		{
 			"name": "Portfolio",
-			"notes": "Personal portfolio where I not only showcase my skills and experience but also aim to reflect a part of my personality through a unique design I developed myself, incorporating interesting concepts and animations. I primarily demonstrate some of my frontend web development skills, along with backend functionalities.",
+			"notes": "Personal portfolio where I showcase some of my skills and experience through a unique design I developed myself, incorporating interesting concepts and animations. I primarily demonstrate some of my frontend web development skills, along with backend functionalities to dynamically manage information about the technologies and projects I have developed.",
 			"link": "https://edinsonnoriega.vercel.app",
 			"technologies": [
 				"HTML",
@@ -18,22 +18,8 @@
 		},
 		{
 			"name": "Logisim Web",
-			"notes": "Description about the project Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam magni, exercitationem accusamus doloremque voluptate nam? Laborum ad praesentium repudiandae.",
-			"link": "https://edinsonnoriega.vercel.app",
-			"technologies": ["JavaScript", "HTML", "CSS"],
-			"tags": ["Frontend", "Backend", "OOP"]
-		},
-		{
-			"name": "Logisim Web",
-			"notes": "Description about the project Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam magni, exercitationem accusamus doloremque voluptate nam? Laborum ad praesentium repudiandae.",
-			"link": "https://edinsonnoriega.vercel.app",
-			"technologies": ["JavaScript", "HTML", "CSS"],
-			"tags": ["Frontend", "Backend", "OOP"]
-		},
-		{
-			"name": "Logisim Web",
-			"notes": "Description about the project Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam magni, exercitationem accusamus doloremque voluptate nam? Laborum ad praesentium repudiandae.",
-			"link": "https://edinsonnoriega.vercel.app",
+			"notes": "Web page for developing logic circuits, inspired by Logisim desktop application and built entirely with vanilla JavaScript. I was responsible for the design and implementation of the OOP-based logic and structure of the classes and objects, with the goal to create a solid and scalable foundation for future student contributions and project expansion.",
+			"link": "https://github.com/proyectosingenieriauninorte/LogisimWeb",
 			"technologies": ["JavaScript", "HTML", "CSS"],
 			"tags": ["Frontend", "Backend", "OOP"]
 		}
