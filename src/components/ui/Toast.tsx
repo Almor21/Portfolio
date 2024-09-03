@@ -1,24 +1,41 @@
 'use client';
 
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
 
 const TIME = 2500;
 
 function Toast({
 	notify,
-	text,
+	message,
 	isOK,
 	onClose,
 }: {
 	notify: boolean;
-	text: string;
+	message: string;
 	isOK: boolean;
 	onClose: () => void;
 }) {
+	const controls = useAnimation();
+
 	useEffect(() => {
-		if (notify) setTimeout(() => onClose(), TIME);
+		const run = async () => {
+			if (!notify) return;
+
+			await controls.start({
+				y: 10
+			})
+			await new Promise((resolve, reject) => {
+				setTimeout(() => resolve(1), TIME);
+			})
+			await controls.start({
+				y: '-110%'
+			})
+			onClose()
+		}
+
+		run();
 	}, [notify]);
 
 	return (
@@ -28,10 +45,7 @@ function Toast({
 				x: '-50%',
 				y: '-100%',
 			}}
-			animate={{
-				x: '-50%',
-				y: notify ? 10 : '-110%',
-			}}
+			animate={controls}
 		>
 			<div className="row-start-1 col-start-1 h-5 w-5 p-[0.3rem] justify-self-start flex justify-center items-center bg-black rounded-full">
 				<div className="relative h-full w-full">
@@ -51,7 +65,7 @@ function Toast({
 				</div>
 			</div>
 			<span className="row-start-1 col-start-1 col-end-3 flex justify-center text-base">
-				{text}
+				{message}
 			</span>
 		</motion.div>
 	);

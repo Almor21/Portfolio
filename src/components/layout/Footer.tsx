@@ -171,7 +171,7 @@ function Footer() {
 			</footer>
 			<Toast
 				notify={notify}
-				text={toastInfo.text}
+				message={toastInfo.text}
 				isOK={toastInfo.isOK}
 				onClose={() => setNotify(false)}
 			/>

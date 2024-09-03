@@ -9,16 +9,14 @@ import Switche from '../ui/Switche';
 import Link from 'next/link';
 import Toast from '../ui/Toast';
 import { SOCIAL } from '@/config/contactInfo';
+import useNotify from '@/hook/useNotify';
 
 function Header() {
+	console.log('render')
 	const [progress, setProgress] = useState(0);
 	const [scope, animate] = useAnimate();
 	const router = useRouter();
-	const [toastInfo, setToastInfo] = useState({
-		text: '',
-		isOK: false,
-	});
-	const [notify, setNotify] = useState(false);
+	const notify = useNotify();
 
 	useEffect(() => {
 		const runAnimation = async () => {
@@ -92,9 +90,8 @@ function Header() {
 				className="sticky w-full top-0 z-[1000] flex justify-center max-md:bg-black border-[rgba(255,255,255,0.1)]"
 				style={{
 					borderBottomWidth: progress,
-					backdropFilter: `blur(${
-						3 * progress
-					}px) opacity(${progress})`,
+					backdropFilter: `blur(${3 * progress
+						}px) opacity(${progress})`,
 					boxShadow: `0 4px 30px rgba(0,0,0,${progress / 10})`,
 				}}
 			>
@@ -147,18 +144,10 @@ function Header() {
 									await navigator.clipboard.writeText(
 										SOCIAL.gmail
 									);
-									setToastInfo({
-										text: 'Copied!',
-										isOK: true,
-									});
+									notify('Copied!', 'OK');
 								} catch (error) {
-									setToastInfo({
-										text: 'Something went wrong!',
-										isOK: false,
-									});
+									notify('Something went wrong!', 'FAIL');
 									console.error('Error:', error);
-								} finally {
-									setNotify(true);
 								}
 							}}
 						>
@@ -187,13 +176,7 @@ function Header() {
 						{/* <Switche /> */}
 					</div>
 				</div>
-			</header>
-			<Toast
-				notify={notify}
-				text={toastInfo.text}
-				isOK={toastInfo.isOK}
-				onClose={() => setNotify(false)}
-			/>
+			</header >
 		</>
 	);
 }
