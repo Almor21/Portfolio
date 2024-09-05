@@ -23,9 +23,10 @@ function Flashlight() {
 
 	useEffect(() => {
 		const main = document.querySelector('main');
+		if (!main) return;
 
 		const enter = () => {
-			setShow(true);
+			if (!show) setShow(true);
 		};
 		const leave = () => {
 			setShow(false);
@@ -33,7 +34,7 @@ function Flashlight() {
 		const updatePosition = () => {
 			const parent = divRef.current?.parentElement;
 
-			if (!(parent && main)) return;
+			if (!parent) return;
 
 			const parentTop = parent.getBoundingClientRect().top;
 			const parentLeft = parent.getBoundingClientRect().left;
@@ -61,9 +62,7 @@ function Flashlight() {
 		};
 
 		if (mode === 'on') {
-			if (!main) return;
-
-			main.addEventListener('mouseenter', enter);
+			main.addEventListener('mouseover', enter);
 			main.addEventListener('mouseleave', leave);
 			main.addEventListener('mousemove', handleMove);
 			document.addEventListener('scroll', handleScroll);
@@ -73,10 +72,7 @@ function Flashlight() {
 		}
 
 		return () => {
-			const main = document.querySelector('main');
-			if (!main) return;
-
-			main.removeEventListener('mouseenter', enter);
+			main.removeEventListener('mouseover', enter);
 			main.removeEventListener('mouseleave', leave);
 			main.removeEventListener('mousemove', handleMove);
 			document.removeEventListener('scroll', handleScroll);
