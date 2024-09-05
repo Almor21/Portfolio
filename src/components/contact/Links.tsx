@@ -6,6 +6,7 @@ import { motion, useAnimate } from 'framer-motion';
 import useIsTouchDevice from '@/hook/useIsTouchDevice';
 import Link from 'next/link';
 import { SOCIAL } from '@/config/contactInfo';
+import useNotify from '@/hook/useNotify';
 
 function Links() {
 	const [scope, animate] = useAnimate();
@@ -14,6 +15,7 @@ function Links() {
 	const [colorImage1, setColorImage1] = useState(false);
 	const [colorImage2, setColorImage2] = useState(false);
 	const isTouch = useIsTouchDevice();
+	const notify = useNotify();
 
 	const runAnimation = (
 		num: number,
@@ -130,9 +132,19 @@ function Links() {
 					<span className="mask absolute inline-block top-0 left-0 bg-white z-10 h-full w-full origin-right" />
 				</div>
 			</Link>
-			<div
+			<button
 				id="div1"
 				className="relative h-14 w-14 p-2 backdrop-blur-sm border border-[rgba(0,0,0,0.3)] shadow-none rounded cursor-pointer"
+				onClick={async () => {
+					try {
+						await navigator.clipboard.writeText(SOCIAL.gmail);
+
+						notify('Copied!', 'OK');
+					} catch (error) {
+						notify('Something went wrong!', 'FAIL');
+						console.error('Error:', error);
+					}
+				}}
 				onMouseEnter={() => {
 					if (!isTouch) setHover(1);
 				}}
@@ -157,11 +169,9 @@ function Links() {
 					<span className="relative z-0 text-red-400">Gmail</span>
 					<span className="mask absolute inline-block top-0 left-0 bg-white z-10 h-full w-full origin-right" />
 				</div>
-			</div>
+			</button>
 			<Link
-				href={
-					SOCIAL.linkedin
-				}
+				href={SOCIAL.linkedin}
 				target="_blank"
 				id="div2"
 				className="h-14 w-14 p-2 backdrop-blur-sm border border-[rgba(0,0,0,0.3)] shadow-none rounded cursor-pointer"

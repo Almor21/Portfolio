@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ModalAttributions from './ModalAttributions';
-import Toast from '../ui/Toast';
+import useNotify from '@/hook/useNotify';
 import { SOCIAL } from '@/config/contactInfo';
 
 const NAVIGATION_LINKS = [
@@ -47,11 +47,7 @@ const SOCIAL_LINKS = [
 
 function Footer() {
 	const [showModal, setShowModal] = useState(false);
-	const [toastInfo, setToastInfo] = useState({
-		text: '',
-		isOK: false,
-	});
-	const [notify, setNotify] = useState(false);
+	const notify = useNotify();
 
 	return (
 		<>
@@ -111,21 +107,17 @@ function Footer() {
 													await navigator.clipboard.writeText(
 														op.info ?? ''
 													);
-													setToastInfo({
-														text: 'Copied!',
-														isOK: true,
-													});
+
+													notify('Copied!', 'OK');
 												} catch (error) {
-													setToastInfo({
-														text: 'Something went wrong!',
-														isOK: false,
-													});
+													notify(
+														'Something went wrong!',
+														'FAIL'
+													);
 													console.error(
 														'Error:',
 														error
 													);
-												} finally {
-													setNotify(true);
 												}
 											}}
 										>
@@ -169,12 +161,6 @@ function Footer() {
 					onClose={() => setShowModal(false)}
 				/>
 			</footer>
-			<Toast
-				notify={notify}
-				message={toastInfo.text}
-				isOK={toastInfo.isOK}
-				onClose={() => setNotify(false)}
-			/>
 		</>
 	);
 }

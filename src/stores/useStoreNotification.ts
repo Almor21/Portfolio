@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 
 interface Notification {
+    id: string;
     message: string;
     status: 'OK' | 'FAIL';
 }
@@ -14,7 +15,7 @@ interface NotificationState {
 const useStoreNotification = create<NotificationState>((set) => ({
     notifications: [],
     append: (message, status) =>
-        set((state) => ({ notifications: [...state.notifications, { message, status }] })),
+        set((state) => ({ notifications: [...state.notifications, { id: crypto.randomUUID(), message, status }] })),
     consume: () => set((state) => {
         const newNotifications = [...state.notifications];
         newNotifications.shift();

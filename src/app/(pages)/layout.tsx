@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import Backgroud from '@/components/layout/Backgroud';
 import Footer from '@/components/layout/Footer';
+import ToastGenerator from '@/components/layout/ToastGenerator';
 
 function PagesLayout({
 	children,
@@ -10,6 +11,7 @@ function PagesLayout({
 }>) {
 	return (
 		<>
+			<ToastGenerator />
 			<div className="min-h-screen max-md:min-h-svh w-full grid grid-rows-[auto_1fr] justify-items-center">
 				<Header />
 				<main className="relative max-w-[1440px] w-full p-8 md:pl-24 flex justify-center items-center">

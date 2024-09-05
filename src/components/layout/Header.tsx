@@ -2,17 +2,15 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { useAnimate } from 'framer-motion';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Navbar from './Navbar';
-import Switche from '../ui/Switche';
-import Link from 'next/link';
-import Toast from '../ui/Toast';
-import { SOCIAL } from '@/config/contactInfo';
+import { useAnimate } from 'framer-motion';
 import useNotify from '@/hook/useNotify';
+import Switche from '../ui/Switche';
+import { SOCIAL } from '@/config/contactInfo';
 
 function Header() {
-	console.log('render')
 	const [progress, setProgress] = useState(0);
 	const [scope, animate] = useAnimate();
 	const router = useRouter();

@@ -3,19 +3,21 @@
 import React, { useState } from 'react';
 import SendButton from './SendButton';
 import { animate } from 'framer-motion';
+import useNotify from '@/hook/useNotify';
 
 function Form() {
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
+	const notify = useNotify();
 
 	const sendAction = async () => {
-		let empty = [];
-		if (!name) empty.push('name');
-		if (!email) empty.push('email');
-		if (!message) empty.push('message');
+		let emptyFields = [];
+		if (!name) emptyFields.push('name');
+		if (!email) emptyFields.push('email');
+		if (!message) emptyFields.push('message');
 
-		empty.forEach(async (v) => {
+		emptyFields.forEach(async (v) => {
 			await animate(
 				`#input_${v}`,
 				{
@@ -39,7 +41,10 @@ function Form() {
 			);
 		});
 
-		if (empty.length !== 0) return 'failed';
+		if (emptyFields.length !== 0) {
+			notify('Complete all fields', 'FAIL');
+			return 'failed'
+		};
 
 		const status = await fetch('/api/email', {
 			method: 'POST',
@@ -54,8 +59,10 @@ function Form() {
 		}).then((response) => response.status);
 
 		if (status === 200) {
+			notify('Sent!', 'OK');
 			return 'complete';
 		} else {
+			notify('Something went wrong.', 'FAIL');
 			return 'failed';
 		}
 	};
