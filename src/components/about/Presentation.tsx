@@ -28,7 +28,11 @@ function Presentation() {
 			let dif = 0;
 			let line = 0;
 
+			/* Calculate if half the screen is above the first element */
+
+			// Calculate the difference between the lines
 			if (divRefs.current[0]) {
+				// Get the distance between the first elemnt and bigining of the html
 				let elm: HTMLElement | null = divRefs.current[0];
 				lineFirstElm = elm.offsetTop + elm.offsetHeight / 2;
 				while (elm !== document.body) {
@@ -41,6 +45,8 @@ function Presentation() {
 				dif = lineScreen - lineFirstElm;
 			}
 
+			// If the line is below the first element, the line has to re-calculate it
+			// above the first element
 			if (dif > 0) {
 				let scrollY = window.scrollY;
 				if (scrollY > dif) scrollY = dif;
@@ -128,9 +134,10 @@ function Presentation() {
 						}}
 					>
 						<Image
-							src={'/VoidPhoto.jpeg'}
+							src={'/Profile2.jpg'}
 							alt="Profile image"
 							fill={true}
+							sizes="(max-width: 768px) 100vw, 33vw"
 							className="rounded-full"
 						/>
 					</motion.div>

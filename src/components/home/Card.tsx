@@ -51,10 +51,11 @@ function Card() {
 						ref={imageRef || null}
 					>
 						<Image
-							src="/VoidPhoto.jpeg"
+							src="/Profile1.jpg"
 							alt="Profile image"
 							fill={true}
 							className="md:-rotate-45 rounded-full"
+							sizes="(max-width: 768px) 100vw, 33vw"
 						/>
 					</div>
 				</div>
