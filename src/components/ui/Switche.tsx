@@ -8,7 +8,7 @@ function Switche() {
 	const { mode, setMode } = useStoreFlash((state) => state);
 
 	const handleClick = (e: MouseEvent) => {
-		setMode(mode === 'on' ? 'off' : 'on', e.clientX, e.clientY)
+		setMode(mode === 'on' ? 'off' : 'on')
 	}
 
 	return (
