@@ -1,16 +1,10 @@
 'use client';
 
-import useStoreNotification from '@/stores/useStoreNotification';
 import React from 'react'
+import useStoreNotification from '@/stores/useStoreNotification';
 
 function useNotify() {
-    const append = useStoreNotification((state) => state.append);
-
-    const temp = (message: string, status: 'OK' | 'FAIL') => {
-        console.log('notify');
-        append(message, status);
-    };
-    return temp;
+    return useStoreNotification((state) => state.append);
 }
 
 export default useNotify;
