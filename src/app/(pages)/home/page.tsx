@@ -6,7 +6,7 @@ import ScrollDown from '@/components/home/ScrollDown';
 function HomePage() {
 	return (
 		<div className="relative w-full grid gap-8 justify-items-center">
-			<Flashlight />
+			{/* <Flashlight /> */}
 			<Card />
 			<CVButton />
 			<ScrollDown />
