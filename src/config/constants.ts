@@ -1,0 +1,1 @@
+export const urlCV = '/cv/CV-EdinsonNoriega.pdf';

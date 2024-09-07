@@ -3,14 +3,20 @@
 import React, { useEffect, useState } from 'react';
 import useIsTouchDevice from '@/hook/useIsTouchDevice';
 import { AnimationPlaybackControls, useAnimate } from 'framer-motion';
+import { urlCV } from '@/config/constants';
 
 function CVButton() {
 	const [scope, animate] = useAnimate();
 	const [hover, setHover] = useState(false);
-	const isTouch = useIsTouchDevice()
+	const isTouch = useIsTouchDevice();
 
 	const download = () => {
-		console.log('CV Downloaded');
+		const link = document.createElement('a');
+		link.href = urlCV;
+		link.download = 'CV - Edinson Noriega.pdf';
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
 	};
 
 	const touch = async () => {
@@ -93,9 +99,9 @@ function CVButton() {
 		<button
 			className="relative w-32 h-9 flex justify-center items-center rounded-full z-20 mix-blend-difference"
 			ref={scope}
+			onClick={() => download()}
 			onMouseEnter={() => {
-				if (!isTouch)
-					setHover(true);
+				if (!isTouch) setHover(true);
 			}}
 			onMouseLeave={() => setHover(false)}
 			onTouchEnd={() => touch()}
