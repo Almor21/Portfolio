@@ -38,7 +38,7 @@ function ModalTechnology({
 							src={`/technologies/${name}.png`}
 							alt={`${name} Icon`}
 							fill={true}
-							sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+							sizes="(max-width: 768px) 100vw, 33vw"
 							className="filter transition-all duration-200 group-hover:blur-[3px]"
 						/>
 					</div>
@@ -52,17 +52,18 @@ function ModalTechnology({
 							{data.percentage}%
 						</div>
 					</div>
-					<div className='max-md:col-span-2'>
+					<div className="max-md:col-span-2">
 						<h2 className="mb-1 text-base underline">Areas:</h2>
-						<ul className='grid max-md:grid-flow-col max-md:list-none'>
+						<ul className="grid max-md:grid-flow-col max-md:list-none">
 							{data.tags.map((tag, index) => (
 								<li key={index}>{tag}</li>
 							))}
 						</ul>
 					</div>
 				</div>
-				<p className="text-justify text-sm">{data.note}</p>
-				<div className="overflow-auto">
+				<div className='overflow-auto pr-1'
+				>
+					<p className="text-justify text-sm">{data.note}</p>
 					<h2 className="mb-1 text-base underline">Topics</h2>
 					<ul className="columns-2 max-md:columns-1">
 						{data.knowledge.map((kw, index) => (

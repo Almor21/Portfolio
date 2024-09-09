@@ -34,7 +34,7 @@ function TechnologyCard({
 			}}
 		>
 			<motion.div
-				className="relative w-16 h-16 group cursor-pointer"
+				className="relative group cursor-pointer"
 				onClick={() => {
 					if (openTech) openTech(name);
 				}}
@@ -55,8 +55,8 @@ function TechnologyCard({
 				<Image
 					src={`/technologies/${name}.png`}
 					alt={`${name} Icon`}
-					fill={true}
-					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+					width={64}
+					height={64}
 					className={
 						!isTouch
 							? 'filter transition-all duration-200 group-hover:blur-[3px]'
