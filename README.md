@@ -7,7 +7,7 @@
 
 Personal web portfolio showcasing my best projects and web development skills. Built with a modern and efficient tech stack including **TypeScript**, **Next.js**, **Tailwind CSS**, and **Framer Motion**, this site offers a **minimalist**, **dynamic** and **engaging user experience**, with a **responsive design** that adapts to any device.
 
-The design, entirely created from scratch, focuses on providing an innovative and elegant user experience. I implemented **Zustand** to efficiently manage global state, optimizing the data flow throughout the application. Additionally, I integrated **Framer Motion** to add **dynamic animations**, giving the site a visually appealing and **engaging feel**.
+The design, entirely created from scratch, focuses on providing an innovative and elegant user experience. I implemented **Zustand** to efficiently manage global state, optimizing the data flow throughout the application. Additionally, I integrated **Framer Motion** to add **dynamic animations**, giving the site a visually **engaging** and **interactive feel**.
 
 The portfolio also includes a small backend integration through **API routes** that automate the retrieval and updating of data regarding the technologies I use and the projects I have developed, **facilitating future scalability**.
 
