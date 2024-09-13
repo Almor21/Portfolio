@@ -4,7 +4,7 @@
 		{
 			"name": "Portfolio",
 			"notes": "Personal portfolio where I showcase some of my skills and experience through a unique design I developed myself, incorporating interesting concepts and animations. I primarily demonstrate some of my frontend web development skills, along with backend functionalities to dynamically manage information about the technologies and projects I have developed.",
-			"link": "https://edinsonnoriega.vercel.app",
+			"link": "https://github.com/Almor21/Portfolio",
 			"technologies": [
 				"HTML",
 				"Tailwind",
