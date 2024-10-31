@@ -43,7 +43,7 @@ function ProjectCard({
 			}}
 		>
 			<motion.div
-				className="relative h-full p-5 border-[1.4px] border-gray-950 shadow-[1px_3px_10px_2px_rgba(0,0,0,0.2)]"
+				className="relative h-full border-[1.4px] border-gray-950 shadow-[1px_3px_10px_2px_rgba(0,0,0,0.2)]"
 				style={{
 					transformStyle: 'preserve-3d',
 				}}
@@ -64,26 +64,31 @@ function ProjectCard({
 					}}
 				>
 					<motion.div
-						className="absolute top-0 left-0 w-full h-full grid grid-rows-[auto_1fr_auto] items-center gap-2"
+						className="absolute top-0 left-0 w-full h-full grid grid-rows-[auto_1fr_auto] items-center"
 						style={{
 							backfaceVisibility: 'hidden',
+							transformStyle: 'preserve-3d',
 						}}
 					>
-						<div className="flex justify-between">
-							<h1 className="text-lg font-semibold">{name}</h1>
-							<button onClick={() => setActive(!active)}>
-								Info
-							</button>
+						<div className="py-3">
+							<h1 className="text-lg text-center font-semibold">
+								{name}
+							</h1>
 						</div>
-						<div className="relative w-full h-full">
-							<Image
-								src={`/projects/${name}.png`}
-								alt={`${name} Image`}
-								className="object-contain"
-								fill
-							/>
+						<div
+							className="relative w-full h-full px-5 border-t border-b border-black cursor-pointer"
+							onClick={() => setActive(!active)}
+						>
+							<div className="relative w-full h-full">
+								<Image
+									src={`/projects/${name}.png`}
+									alt={`${name} Image`}
+									className="object-contain"
+									fill
+								/>
+							</div>
 						</div>
-						<div className="flex gap-2">
+						<div className="py-3 flex gap-2 justify-center">
 							{technologies.map((tech) => (
 								<Image
 									key={tech}
@@ -96,28 +101,39 @@ function ProjectCard({
 						</div>
 					</motion.div>
 					<motion.div
-						className="relative h-full grid grid-rows-[auto_1fr_auto] items-center gap-2"
+						className="relative h-full grid grid-rows-[auto_1fr_auto] items-center"
 						style={{
 							rotateY: 180,
 							backfaceVisibility: 'hidden',
 						}}
 					>
-						<div className="flex justify-between">
+						<div className="px-5 py-2 flex justify-between">
 							<h1 className="text-lg font-semibold">{name}</h1>
-							<button onClick={() => setActive(!active)}>
-								Info
-							</button>
+							<Link
+								href={link}
+								target="_blank"
+								className="underline w-min"
+							>
+								Link
+							</Link>
 						</div>
-						<p className="text-xs border h-full border-black p-1">
+						<p
+							className="text-xs h-full px-3 py-1 border-t border-b border-black cursor-pointer"
+							onClick={() => setActive(!active)}
+						>
 							{notes}
 						</p>
-						<Link
-							href={link}
-							target="_blank"
-							className="underline w-min"
-						>
-							Link
-						</Link>
+						<div className="py-3 flex gap-2 justify-center">
+							{technologies.map((tech) => (
+								<Image
+									key={tech}
+									src={`/technologies/${tech}.png`}
+									alt={`${tech} Image`}
+									width={20}
+									height={20}
+								/>
+							))}
+						</div>
 					</motion.div>
 				</div>
 			</motion.div>
