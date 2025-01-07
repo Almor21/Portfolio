@@ -62,7 +62,7 @@ function AboutPage() {
 								<span className="font-bold">
 									Universidad del Norte.{' '}
 								</span>{' '}
-								Barranquilla, Colombia | Jan 2021 - present (8th
+								Barranquilla, Colombia | Jan 2021 - present (9th
 								semester).
 							</p>
 						</div>
