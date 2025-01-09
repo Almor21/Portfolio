@@ -17,9 +17,22 @@
 			"tags": ["Frontend", "Backend"]
 		},
 		{
+			"name": "Biblioteca-API",
+			"notes": "Server developed with Express.js and MongoDB for managing users, books, and reservations in a library. It includes JWT authentication, a permissions system, and functional API routes for CRUD operations. This project was developed to apply and showcase part of my backend knowledge, with a practical, structured, and secure approach.",
+			"link": "https://github.com/Almor21/Biblioteca-API",
+			"technologies": [
+				"NodeJS",
+				"TypeScript",
+				"ExpressJS",
+				"MongoDB",
+				"MongooseJS"
+			],
+			"tags": ["Backend"]
+		},
+		{
 			"name": "Logisim Web",
 			"notes": "Web page for developing logic circuits, inspired by Logisim desktop application and built entirely with vanilla JavaScript. I was responsible for the design and implementation of the OOP-based logic and structure of the classes and objects, with the goal to create a solid and scalable foundation for future student contributions and project expansion.",
-			"link": "https://github.com/proyectosingenieriauninorte/LogisimWeb",
+			"link": "https://github.com/Almor21/LogisimWeb",
 			"technologies": ["JavaScript", "HTML", "CSS"],
 			"tags": ["Frontend", "Backend", "OOP"]
 		}
