@@ -162,6 +162,13 @@
 			"link": "https://icon-icons.com/icon/file-type-mongo/130383"
 		},
 		{
+			"name": "MongooseJS",
+			"archive": "/technologies/MongooseJS.png",
+			"author": "Tech Icons",
+			"page": "Tech Icons",
+			"link": "https://techicons.dev/icons/mongoose"
+		},
+		{
 			"name": "MySQL",
 			"archive": "/technologies/MySQL.png",
 			"author": "Julien Monty",

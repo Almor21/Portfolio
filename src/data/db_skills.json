@@ -1,5 +1,5 @@
 {
-	"categories": ["Language", "Framework", "Library", "Databases", "Tools"],
+	"categories": ["Language", "Framework", "Library", "Databases", "ORM", "Tools"],
 	"areas": ["Web", "Frontend", "Backend", "Scripting", "Desktop"],
 	"data": {
 		"JavaScript": {
@@ -376,6 +376,57 @@
 			"relations": ["SQL"],
 			"tags": ["Web", "Backend"]
 		},
+		"MongoDB": {
+			"category": "Databases",
+			"percentage": "70",
+			"note": "I have strong knowledge of MongoDB, focusing on key areas such as document structure, CRUD operations, indexing, querying, aggregation, and application integration. I am also proficient in installation and configuration, ensuring efficient performance and optimal data management.",
+			"knowledge": [
+				"Document Structure",
+				"CRUD Operations",
+				"Queries",
+				"Indexes",
+				"Operators",
+				"Pagination and Sorting",
+				"Aggregation",
+				"Installation and Configuration",
+				"Application Integration"
+			  ],
+			"relations": ["TypeScript", "MongooseJS", "ExpressJS", "NodeJS"],
+			"tags": ["Web", "Backend"]
+		},
+		"Prisma": {
+			"category": "ORM",
+			"percentage": "80",
+			"note": "Skilled in managing database interactions and schema definitions, efficiently handling complex data structures, and integrating database tools with TypeScript to enhance project development.",
+			"knowledge": [
+				"Prisma Schema",
+				"Data Models",
+				"Migrations",
+				"CRUD Operations",
+				"Relations",
+				"Queries",
+				"Prisma Client",
+				"TypeScript Integration"
+			],
+			"relations": ["TypeScript", "SQL", "ExpressJS", "NodeJS"],
+			"tags": ["Web", "Backend"]
+		},
+		"MongooseJS": {
+			"category": "ORM",
+			"percentage": "60",
+			"note": "I have strong knowledge of Mongoose, focusing on optimizing queries, efficiently structuring data, managing relationships between collections, and implementing best practices to ensure performance and data integrity in MongoDB databases.",
+			"knowledge": [
+				"Models and Schemas",
+				"CRUD Operations",
+				"Use of Operators, Pagination, and Limits",
+				"References between Collections",
+				"Embedded Relationships",
+				"Middlewares",
+				"Indexes"
+			  ],
+			"relations": ["MongoDB", "TypeScript", "SQL", "ExpressJS", "NodeJS"],
+			"tags": ["Web", "Backend"]
+		},
 		"Git": {
 			"category": "Tools",
 			"percentage": "80",
@@ -457,23 +508,6 @@
 				"Environment Variables"
 			],
 			"relations": [],
-			"tags": ["Web", "Backend"]
-		},
-		"Prisma": {
-			"category": "Tools",
-			"percentage": "80",
-			"note": "Skilled in managing database interactions and schema definitions, efficiently handling complex data structures, and integrating database tools with TypeScript to enhance project development.",
-			"knowledge": [
-				"Prisma Schema",
-				"Data Models",
-				"Migrations",
-				"CRUD Operations",
-				"Relations",
-				"Queries",
-				"Prisma Client",
-				"TypeScript Integration"
-			],
-			"relations": ["TypeScript", "SQL", "ExpressJS", "NodeJS"],
 			"tags": ["Web", "Backend"]
 		},
 		"DBeaver": {
