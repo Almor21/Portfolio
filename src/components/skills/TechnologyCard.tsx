@@ -89,7 +89,7 @@ function TechnologyCard({
 					)}
 				</AnimatePresence>
 			</motion.div>
-			<span className="inline-block w-24 text-wrap text-center">
+			<span translate='no' className="inline-block w-24 text-wrap text-center">
 				{name}
 			</span>
 		</motion.div>

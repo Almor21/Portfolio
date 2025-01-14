@@ -49,7 +49,7 @@ function Modal({
 				<span className="absolute h-1 w-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white rotate-45" />
 				<span className="absolute h-1 w-2/3 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white -rotate-45" />
 			</button>
-			<h1 className="font-medium text-lg">{title}</h1>
+			<h1 translate='no' className="font-medium text-lg">{title}</h1>
 			<div className="w-full h-1 rounded-full bg-gray-200 mt-3 mb-5" />
 			<div
 				className="overflow-auto px-4"

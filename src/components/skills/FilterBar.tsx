@@ -49,7 +49,7 @@ function FilterBar({
 				opacity: areas.length == 0 ? 0 : 1,
 			}}
 		>
-			<div
+			<span
 				className="relative flex justify-start items-center rounded-full px-3 py-1 cursor-pointer transition-all duration-200"
 				style={{
 					backgroundColor: all ? 'black' : 'white',
@@ -58,11 +58,12 @@ function FilterBar({
 				onClick={() => activeAll()}
 			>
 				All
-			</div>
+			</span>
 
 			{areas.map((c, index) => (
-				<div
+				<span
 					key={c}
+					translate='no'
 					className="relative flex justify-start items-center rounded-full px-2 py-1 cursor-pointer transition-all duration-200"
 					style={{
 						backgroundColor: selectedRef.current[index]
@@ -73,7 +74,7 @@ function FilterBar({
 					onClick={() => select(index)}
 				>
 					{c}
-				</div>
+				</span>
 			))}
 		</motion.div>
 	);

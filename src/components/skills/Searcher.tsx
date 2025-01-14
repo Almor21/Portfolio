@@ -136,7 +136,7 @@ function Searcher({ className, mode }: { className?: string; mode: string }) {
 										key={categoryName}
 										className="grid grid-cols-[repeat(auto-fit,minmax(6rem,1fr))] gap-y-3"
 									>
-										<h1 className="text-gray-400 w-full col-span-full my-1">
+										<h1 translate='no' className="text-gray-400 w-full col-span-full my-1">
 											{categoryName}
 										</h1>
 										<AnimatePresence>

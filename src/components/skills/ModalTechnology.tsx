@@ -56,7 +56,7 @@ function ModalTechnology({
 						<h2 className="mb-1 text-base underline">Areas:</h2>
 						<ul className="grid max-md:grid-flow-col max-md:list-none">
 							{data.tags.map((tag, index) => (
-								<li key={index}>{tag}</li>
+								<li key={index} translate='no'>{tag}</li>
 							))}
 						</ul>
 					</div>
