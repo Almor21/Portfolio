@@ -37,16 +37,15 @@ const OPTIONS = [
 ];
 
 const useMinMode = () => {
-	const screenWidth = useScreenWidth()
-	const isTouch = useIsTouchDevice()
+	const screenWidth = useScreenWidth();
+	const isTouch = useIsTouchDevice();
 
-	return isTouch || screenWidth < 768
-}
-
+	return isTouch || screenWidth < 768;
+};
 
 function Navbar() {
 	const [expand, setExpand] = useState(false);
-	const minMode = useMinMode()
+	const minMode = useMinMode();
 	const path = usePathname();
 
 	return (
@@ -94,7 +93,7 @@ function Navbar() {
 					animate={
 						!minMode
 							? {
-									width: !expand ? '4rem' : '8.5rem',
+									width: !expand ? '4rem' : '10rem',
 							  }
 							: {
 									width: 'auto',
@@ -140,10 +139,10 @@ function Navbar() {
 										<AnimatePresence>
 											{(expand || minMode) && (
 												<motion.span
-													className={
-														minMode
+													className={'text-nowrap' +
+														(minMode
 															? 'text-3xl'
-															: ''
+															: '')
 													}
 													initial={{
 														opacity: 0,

@@ -70,7 +70,7 @@ function Footer() {
 							{NAVIGATION_LINKS.map((op) => (
 								<div
 									key={op.text}
-									className="relative w-min group"
+									className="relative w-fit group"
 								>
 									<Link
 										href={op.link}
@@ -85,7 +85,7 @@ function Footer() {
 					</div>
 					<div className="flex flex-col">
 						<h2 className="font-medium mb-3 text-white">Social</h2>
-						<div className="flex flex-col gap-1 text-gray-400 text-sm">
+						<div translate='no' className="flex flex-col gap-1 text-gray-400 text-sm">
 							{SOCIAL_LINKS.map((op) => (
 								<div
 									key={op.text}
