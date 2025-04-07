@@ -3,6 +3,7 @@ import Section from '@/components/about/Section';
 import MoveBackground from '@/components/transitions/MoveBackground';
 import DivTransition from '@/components/transitions/DivTransition';
 import Presentation from '@/components/about/Presentation';
+import Link from 'next/link';
 
 function AboutPage() {
 	return (
@@ -11,10 +12,72 @@ function AboutPage() {
 				<Presentation />
 				<div className="justify-self-start md:px-16 max-md:pt-8 text-xs flex flex-col gap-2">
 					<Section
-						title="Activities"
+						title="Experience"
 						className="flex flex-col gap-2"
 						widthSeparator={1}
 					>
+						<div>
+							<h2 className="font-bold text-sm">
+								Fullstack Web Developer (Present)
+							</h2>
+							<h3 className="font-medium text-sm">
+								<Link
+									href="https://ombia.co/"
+									target="_blank"
+									className="underline"
+								>
+									Ombia S.A.S.
+								</Link>
+							</h3>
+							<ul>
+								<li>
+									Developed modern web applications using
+									TypeScript, Next.js, NestJS, React, and
+									Express.js.
+								</li>
+								<li>
+									Built dynamic, accessible, and responsive
+									user interfaces with MUI and Tailwind CSS,
+									focusing on performance and user experience.
+								</li>
+								<li>
+									Designed and implemented robust RESTful APIs
+									using JWT and Passport for secure
+									authentication and scalability.
+								</li>
+								<li>
+									Managed PostgreSQL databases with TypeORM
+									and Sequelize, and performed direct data
+									analysis using raw SQL for insights and
+									troubleshooting.
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h2 className="font-bold text-sm">
+								Frontend & Backend Developer - CRM Project
+							</h2>
+							<h3 className="font-medium text-sm">Freelance</h3>
+							<ul>
+								<li>
+									Designed and developed frontend interfaces
+									using React and Next.js, implementing
+									accessible and responsive layouts from a
+									prototype and consuming API routes to
+									retrieve backend information.
+								</li>
+								<li>
+									Built REST API routes with Express.js on the
+									backend to access, process, and filter data
+									from a database.
+								</li>
+								<li>
+									Analyzed and cleaned data directly in the
+									database using SQL, optimizing data access
+									and management from the backend.
+								</li>
+							</ul>
+						</div>
 						<div>
 							<h2 className="font-bold text-sm">
 								Private lessons
@@ -28,23 +91,6 @@ function AboutPage() {
 								<li>
 									Private tutoring in math, physics, and
 									programming for high school students.
-								</li>
-							</ul>
-						</div>
-						<div>
-							<h2 className="font-bold text-sm">Board Member</h2>
-							<h3 className="font-medium text-sm">
-								ACM Uninorte
-							</h3>
-							<ul>
-								<li>
-									Involved in the coordination and decision
-									making process for the development of
-									events.
-								</li>
-								<li>
-									Work with the management team to establish
-									clear goals and objectives.
 								</li>
 							</ul>
 						</div>
@@ -65,24 +111,6 @@ function AboutPage() {
 								Barranquilla, Colombia | Jan 2021 - present (9th
 								semester).
 							</p>
-						</div>
-						<div>
-							<h2 className="font-bold text-sm">High School</h2>
-							<p>
-								<span className="font-bold">
-									Institución Educativa San Marcos.{' '}
-								</span>{' '}
-								San Marcos | Jan 2015 - Nov 2020
-							</p>
-							<ul>
-								<li>
-									Outstanding student with excellent grades.
-								</li>
-								<li>
-									Winner of academic competitions within the
-									institution.
-								</li>
-							</ul>
 						</div>
 					</Section>
 					<Section title="Achievements" widthSeparator={3}>
