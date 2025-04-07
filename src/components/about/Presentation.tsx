@@ -228,14 +228,15 @@ function Presentation() {
 					/>
 					<p className="px-5 md:pr-16">
 						Currently, I am a{' '}
-						<span className="font-bold">Systems Engineering</span>{' '}
-						student with focus on{' '}
-						<span className="font-bold">web development</span>,
-						in the process of becoming a Fullstack developer. I have
-						solid knowledge in both{' '}
+						<span className="font-bold">Fullstack Developer</span>{' '}
+						with strong knowledge in both{' '}
 						<span className="font-bold">Frontend</span> and{' '}
-						<span className="font-bold">Backend</span>, although
-						I&apos;m more inclined towards frontend.
+						<span className="font-bold">Backend</span> web
+						development, currently finishing my degree in{' '}
+						<span className="font-bold">Systems Engineering</span>.
+						I enjoy working across the entire stack, building robust
+						and scalable applications with{' '}
+						<span className="font-bold">modern technologies</span>.
 					</p>
 				</div>
 			</div>
