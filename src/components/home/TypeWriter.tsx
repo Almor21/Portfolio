@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-const TEXTS = ['Edinson Noriega', 'Web Developer', 'Frontend Developer'];
+const TEXTS = ['Edinson Noriega', 'Web Developer', 'Fullstack Developer'];
 const timeType = 0.05;
 const blinkTime = 0.5;
 const blinkRepetition = 2;
