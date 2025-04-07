@@ -12,7 +12,10 @@ function SkillsPage() {
 	const [option, setOption] = useState(0);
 
 	return (
-		<MoveBackground createDiv className="md:grid-cols-[40%_1fr] w-full items-center">
+		<MoveBackground
+			createDiv
+			className="md:grid-cols-[40%_1fr] w-full items-center"
+		>
 			<DivTransition className="flex justify-center md:pl-10 md:pr-16 max-md:pb-8 text-white">
 				<motion.div
 					className="relative flex flex-col justify-between select-none"
@@ -66,6 +69,16 @@ function SkillsPage() {
 				</motion.div>
 				<div className="relative min-h-[30rem] max-w-96 z-10 text-justify flex flex-col gap-2 justify-around p-4 rounded-r-lg border border-white bg-black">
 					<p>
+						Here you can see the{' '}
+						<span className="font-bold">technologies</span> and{' '}
+						<span className="font-bold">projects</span> I am
+						familiar with. You can{' '}
+						<span className="font-bold">filter them</span> by
+						specific area or{' '}
+						<span className="font-bold">click</span> on one for more
+						information.
+					</p>
+					<p>
 						I am fascinated by{' '}
 						<span className="font-bold">programming</span> and{' '}
 						<span className="font-bold">logic challenges. </span>
@@ -89,19 +102,12 @@ function SkillsPage() {
 						</span>{' '}
 						efficiently.
 					</p>
-					<p>
-						Here you can see the{' '}
-						<span className="font-bold">technologies</span> and{' '}
-						<span className="font-bold">projects</span> I am
-						familiar with. You can{' '}
-						<span className="font-bold">filter them</span> by
-						specific area or{' '}
-						<span className="font-bold">click</span> on one for more
-						information.
-					</p>
 				</div>
 			</DivTransition>
-			<Searcher className='md:px-12 max-md:pt-8' mode={option == 0 ? 'skills' : 'projects'} />
+			<Searcher
+				className="md:px-12 max-md:pt-8"
+				mode={option == 0 ? 'skills' : 'projects'}
+			/>
 		</MoveBackground>
 	);
 }
