@@ -45,7 +45,7 @@ function Card() {
 	return (
 		<MoveBackground width={middle}>
 			<div className="grid md:grid-flow-col justify-items-center items-center gap-4 select-none">
-				<div className="h-60 w-60 box-border rounded-full overflow-hidden md:rotate-45 p-1 shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5),2px_2px_8px_2px_rgb(255,255,255,0.5)] max-md:shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5)] backdrop-invert">
+				<div className="h-80 w-80 box-border rounded-full overflow-hidden md:rotate-45 p-1 shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5),2px_2px_8px_2px_rgb(255,255,255,0.5)] max-md:shadow-[2px_2px_8px_2px_rgb(0,0,0,0.5)] backdrop-invert">
 					<div
 						className="relative h-full w-full"
 						ref={imageRef || null}
@@ -68,7 +68,7 @@ function Card() {
 						/>
 					</div>
 					<TypeWriter />
-					<p className="text-sm mt-4 text-justify">
+					<p className="text-base mt-4 text-justify">
 						<span className="font-medium">
 							Welcome to my portfolio!
 						</span>{' '}
