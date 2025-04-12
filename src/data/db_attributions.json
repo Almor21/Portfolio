@@ -155,6 +155,20 @@
 			"link": "https://www.flaticon.com/free-icons/javascript"
 		},
 		{
+			"name": "JWT",
+			"archive": "/technologies/JWT.png",
+			"author": "jwt.io",
+			"page": "jwt.io",
+			"link": "https://jwt.io"
+		},
+		{
+			"name": "Material UI",
+			"archive": "/technologies/MaterialUI.png",
+			"author": "Simpleicons",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/mui-logo/248416"
+		},
+		{
 			"name": "MongoDB",
 			"archive": "/technologies/MongoDB.png",
 			"author": "Roberto Huertas",
@@ -183,11 +197,25 @@
 			"link": "https://icon-icons.com/icon/nextjs/212861"
 		},
 		{
+			"name": "Nestjs",
+			"archive": "/technologies/NestJS.png",
+			"author": "Roberto Huertas",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/file-type-nest-middleware-ts/130362"
+		},
+		{
 			"name": "Nodejs",
 			"archive": "/technologies/NodeJS.png",
 			"author": "Julien Monty",
 			"page": "Icon icons",
 			"link": "https://icon-icons.com/icon/nodejs-original-wordmark-logo/146412"
+		},
+		{
+			"name": "PassportJS",
+			"archive": "/technologies/PassportJS.png",
+			"author": "passportjs.org",
+			"page": "passportjs.org",
+			"link": "https://www.passportjs.org"
 		},
 		{
 			"name": "Prisma",
@@ -218,6 +246,13 @@
 			"link": "https://icon-icons.com/icon/redux-original-logo/146365"
 		},
 		{
+			"name": "Sequelize",
+			"archive": "/technologies/Sequelize.png",
+			"author": "Julien Monty",
+			"page": "Icon icons",
+			"link": "https://icon-icons.com/icon/sequelize-original-logo/146348"
+		},
+		{
 			"name": "SQL Server",
 			"archive": "/technologies/SQL Server.png",
 			"author": "Freepik",
@@ -237,6 +272,13 @@
 			"author": "Roberto Huertas",
 			"page": "Icon icons",
 			"link": "https://icon-icons.com/icon/file-type-tailwind/130128"
+		},
+		{
+			"name": "TypeORM",
+			"archive": "/technologies/TypeORM.png",
+			"author": "typeorm.io",
+			"page": "typeorm.io",
+			"link": "https://typeorm.io"
 		},
 		{
 			"name": "Typescript",
