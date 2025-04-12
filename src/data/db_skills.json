@@ -1,6 +1,19 @@
 {
-	"categories": ["Language", "Framework", "Library", "Databases", "ORM", "Tools"],
-	"areas": ["Web", "Frontend", "Backend", "Scripting", "Desktop"],
+	"categories": [
+		"Language",
+		"Framework",
+		"Library",
+		"Databases",
+		"ORM",
+		"Tools"
+	],
+	"areas": [
+		"Web",
+		"Frontend",
+		"Backend",
+		"Scripting",
+		"Desktop"
+	],
 	"data": {
 		"JavaScript": {
 			"category": "Language",
@@ -32,14 +45,23 @@
 				"CSS",
 				"NextJS",
 				"ExpressJS",
+				"NestJS",
 				"Framer Motion",
 				"React",
 				"Zustand",
 				"Redux Toolkit",
 				"NodeJS",
-				"Prisma"
+				"Prisma",
+				"JWT",
+				"MaterialUI",
+				"PassportJS",
+				"Sequelize"
 			],
-			"tags": ["Web", "Frontend", "Backend"]
+			"tags": [
+				"Web",
+				"Frontend",
+				"Backend"
+			]
 		},
 		"TypeScript": {
 			"category": "Language",
@@ -58,14 +80,23 @@
 			"relations": [
 				"JavaScript",
 				"NextJS",
+				"NestJS",
 				"Framer Motion",
 				"React",
 				"Zustand",
 				"Redux Toolkit",
 				"NodeJS",
-				"Prisma"
+				"Prisma",
+				"JWT",
+				"MaterialUI",
+				"PassportJS",
+				"Sequelize"
 			],
-			"tags": ["Web", "Frontend", "Backend"]
+			"tags": [
+				"Web",
+				"Frontend",
+				"Backend"
+			]
 		},
 		"Java": {
 			"category": "Language",
@@ -84,8 +115,13 @@
 				"Events",
 				"MySQL Connections"
 			],
-			"relations": ["MySQL"],
-			"tags": ["Desktop", "Backend"]
+			"relations": [
+				"MySQL"
+			],
+			"tags": [
+				"Desktop",
+				"Backend"
+			]
 		},
 		"Python": {
 			"category": "Language",
@@ -105,7 +141,9 @@
 				"Scripting and automation"
 			],
 			"relations": [],
-			"tags": ["Scripting"]
+			"tags": [
+				"Scripting"
+			]
 		},
 		"SQL": {
 			"category": "Language",
@@ -122,8 +160,18 @@
 				"Views",
 				"Normalization"
 			],
-			"relations": ["MySQL", "SQL Server", "Prisma", "DBeaver"],
-			"tags": ["Web", "Backend"]
+			"relations": [
+				"MySQL",
+				"SQL Server",
+				"Prisma",
+				"DBeaver",
+				"TypeORM",
+				"Sequelize"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
 		},
 		"HTML": {
 			"category": "Language",
@@ -142,8 +190,15 @@
 				"Meta Tags",
 				"Integration with Frameworks"
 			],
-			"relations": ["JavaScript", "CSS", "React"],
-			"tags": ["Web", "Frontend"]
+			"relations": [
+				"JavaScript",
+				"CSS",
+				"React"
+			],
+			"tags": [
+				"Web",
+				"Frontend"
+			]
 		},
 		"CSS": {
 			"category": "Language",
@@ -165,8 +220,15 @@
 				"Variables",
 				"Integration with JavaScript"
 			],
-			"relations": ["JavaScript", "Tailwind"],
-			"tags": ["Web", "Frontend"]
+			"relations": [
+				"JavaScript",
+				"Tailwind",
+				"MaterialUI"
+			],
+			"tags": [
+				"Web",
+				"Frontend"
+			]
 		},
 		"C++": {
 			"category": "Language",
@@ -181,7 +243,9 @@
 				"Exception Handling"
 			],
 			"relations": [],
-			"tags": ["Desktop"]
+			"tags": [
+				"Desktop"
+			]
 		},
 		"NextJS": {
 			"category": "Framework",
@@ -202,12 +266,54 @@
 				"JavaScript",
 				"TypeScript",
 				"Tailwind",
+				"MaterialUI",
 				"React",
 				"Framer Motion",
 				"NodeJS",
 				"Vercel"
 			],
-			"tags": ["Web", "Frontend", "Backend"]
+			"tags": [
+				"Web",
+				"Frontend"
+			]
+		},
+		"NestJS": {
+			"category": "Framework",
+			"percentage": "70",
+			"note": "I have a solid understanding of NestJS, covering everything from modular architecture, controllers, services, and middleware to authentication and advanced request handling. My experience allows me to build scalable and maintainable APIs with best practices, leveraging tools like TypeORM, DTOs, and validation layers to ensure robust backend logic.",
+			"knowledge": [
+				"Nest CLI and Project Structure",
+				"Modules, Controllers and Services",
+				"Dependency Injection",
+				"DTOs and TypeScript Typing",
+				"Validation with class-validator",
+				"Routing and Route Handlers",
+				"Basic Middleware",
+				"Pipes, Guards and Interceptors",
+				"Custom Providers",
+				"Exception Filters and Error Handling",
+				"JWT Authentication and Passport",
+				"Database Integration with ORM (TypeORM/Prisma)",
+				"Environment Variables and ConfigService",
+				"Swagger API Documentation",
+				"Unit Testing with Jest",
+				"Advanced Middleware (Authentication, Logging)"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"NodeJS",
+				"ExpressJS",
+				"Prisma",
+				"Typeorm",
+				"Sequelize",
+				"JWT",
+				"PassportJS"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
 		},
 		"Tailwind": {
 			"category": "Framework",
@@ -219,8 +325,17 @@
 				"Transitions and Animations",
 				"Pseudo-classes"
 			],
-			"relations": ["TypeScript", "CSS", "NextJS", "React"],
-			"tags": ["Web", "Frontend"]
+			"relations": [
+				"TypeScript",
+				"CSS",
+				"NextJS",
+				"React",
+				"TypeORM"
+			],
+			"tags": [
+				"Web",
+				"Frontend"
+			]
 		},
 		"ExpressJS": {
 			"category": "Framework",
@@ -237,11 +352,19 @@
 			"relations": [
 				"JavaScript",
 				"TypeScript",
+				"NestJS",
+				"PassportJS",
+				"JWT",
+				"Prisma",
 				"SQL",
 				"NodeJS",
-				"Prisma"
+				"Sequelize",
+				"TypeORM"
 			],
-			"tags": ["Web", "Backend"]
+			"tags": [
+				"Web",
+				"Backend"
+			]
 		},
 		"Framer Motion": {
 			"category": "Framework",
@@ -261,8 +384,16 @@
 				"Optimization techniques to avoid unnecessary re-renders",
 				"Dynamic and reactive animations"
 			],
-			"relations": ["TypeScript", "CSS", "NextJS", "React"],
-			"tags": ["Web", "Frontend"]
+			"relations": [
+				"TypeScript",
+				"CSS",
+				"NextJS",
+				"React"
+			],
+			"tags": [
+				"Web",
+				"Frontend"
+			]
 		},
 		"React": {
 			"category": "Library",
@@ -289,14 +420,55 @@
 				"TypeScript",
 				"HTML",
 				"CSS",
+				"MaterialUI",
 				"NextJS",
 				"Tailwind",
 				"Framer Motion",
 				"Zustand",
 				"Redux Toolkit",
-				"NodeJS"
+				"NodeJS",
+				"JWT"
 			],
-			"tags": ["Web", "Frontend"]
+			"tags": [
+				"Web",
+				"Frontend"
+			]
+		},
+		"MaterialUI": {
+			"category": "Library",
+			"percentage": "75",
+			"note": "I have an advanced command of Material UI, from its core components and responsive layout system to custom theming and complex interface design. My experience includes theme customization, full TypeScript integration, and the creation of reusable UI components that scale across projects with consistency and performance in mind.",
+			"knowledge": [
+				"Installation and Setup",
+				"Core Components (Button, TextField, Typography, etc.)",
+				"Layout System (Box, Grid, Container)",
+				"Spacing Utilities",
+				"Basic Styling with sx prop",
+				"Default Theming",
+				"Icons with @mui/icons-material",
+				"Custom Themes with createTheme and ThemeProvider",
+				"Advanced Styling with sx, styled, and makeStyles",
+				"Responsive Design and Breakpoints",
+				"Complex Components (Accordion, Dialog, Tabs, etc.)",
+				"Form Elements (FormControl, Select, Checkbox, etc.)",
+				"DataGrid and Interactive Tables",
+				"Validation with React Hook Form or Formik",
+				"Global Theme Overrides",
+				"Custom Components with MUI Design System",
+				"Full TypeScript Integration"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"NodeJS",
+				"React",
+				"NextJS",
+				"CSS"
+			],
+			"tags": [
+				"Web",
+				"Frontend"
+			]
 		},
 		"Zustand": {
 			"category": "Library",
@@ -318,7 +490,10 @@
 				"React",
 				"NodeJS"
 			],
-			"tags": ["Web", "Frontend"]
+			"tags": [
+				"Web",
+				"Frontend"
+			]
 		},
 		"Redux Toolkit": {
 			"category": "Library",
@@ -333,8 +508,88 @@
 				"Middleware",
 				"TypeScript Integration"
 			],
-			"relations": ["JavaScript", "TypeScript", "React", "NodeJS"],
-			"tags": ["Web", "Frontend"]
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"React",
+				"NodeJS"
+			],
+			"tags": [
+				"Web",
+				"Frontend"
+			]
+		},
+		"PassportJS": {
+			"category": "Library",
+			"percentage": "75",
+			"note": "I have a deep understanding of Passport.js, from local and JWT strategies to modular and scalable authentication flows. I’ve integrated it with NestJS using PassportStrategy, and I leverage Guards and decorators to build secure, maintainable applications. I’m comfortable working with multiple strategies in a single app and customizing authentication flows to fit complex requirements.",
+			"knowledge": [
+				"User Serialization and Deserialization",
+				"Local Strategy (passport-local)",
+				"Session Handling with Cookies",
+				"Basic Usage with Express",
+				"JWT Strategy (passport-jwt)",
+				"Google OAuth Strategy",
+				"Custom Serialization/Deserialization",
+				"passport.authenticate Middleware",
+				"Modular Strategy Configuration",
+				"Route Protection and Access Control",
+				"Integration with express-session",
+				"Session Persistence after Login",
+				"NestJS Integration with @nestjs/passport",
+				"Logout and Auth Error Handling",
+				"Multiple Strategies in the Same App",
+				"Deep Integration with @nestjs/passport and PassportStrategy",
+				"Advanced Use of NestJS Guards and Decorators"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"NodeJS",
+				"ExpressJS",
+				"NestJS",
+				"JWT"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
+		},
+		"JWT": {
+			"category": "Library",
+			"percentage": "70",
+			"note": "I have a solid understanding of JWT, including token generation, verification, and secure storage. I've implemented authentication flows in both Express and NestJS using @nestjs/jwt, along with proper guard usage and token expiration strategies. My focus is on building secure and maintainable systems that leverage JWT effectively for authorization and user session handling.",
+			"knowledge": [
+				"Using jsonwebtoken (sign, verify)",
+				"Token structure (Header, Payload, Signature)",
+				"Token generation on login",
+				"Token verification in requests",
+				"Token expiration (expiresIn)",
+				"Safe token storage (localStorage, httpOnly cookies)",
+				"Token decoding (decode)",
+				"JWT auth middleware in Express",
+				"Authorization headers (Bearer token)",
+				"Refresh Token implementation",
+				"Error handling (expired, invalid tokens)",
+				"NestJS JWT Integration with @nestjs/jwt",
+				"Auth guards with JWT in NestJS",
+				"Separation of concerns (auth service vs guards)",
+				"Route protection by roles using token payload",
+				"Environment-based secret management"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"NodeJS",
+				"ExpressJS",
+				"NestJS",
+				"PassportJS"
+			],
+			"tags": [
+				"Web",
+				"Frontend",
+				"Backend"
+			]
 		},
 		"MySQL": {
 			"category": "Databases",
@@ -351,8 +606,13 @@
 				"Views",
 				"Normalization"
 			],
-			"relations": ["SQL"],
-			"tags": ["Web", "Backend"]
+			"relations": [
+				"SQL"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
 		},
 		"SQL Server": {
 			"category": "Databases",
@@ -373,8 +633,13 @@
 				"Cursors",
 				"Loops"
 			],
-			"relations": ["SQL"],
-			"tags": ["Web", "Backend"]
+			"relations": [
+				"SQL"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
 		},
 		"MongoDB": {
 			"category": "Databases",
@@ -390,9 +655,42 @@
 				"Aggregation",
 				"Installation and Configuration",
 				"Application Integration"
-			  ],
-			"relations": ["TypeScript", "MongooseJS", "ExpressJS", "NodeJS"],
-			"tags": ["Web", "Backend"]
+			],
+			"relations": [
+				"TypeScript",
+				"MongooseJS",
+				"ExpressJS",
+				"NodeJS"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
+		},
+		"MongooseJS": {
+			"category": "ORM",
+			"percentage": "60",
+			"note": "I have strong knowledge of Mongoose, focusing on optimizing queries, efficiently structuring data, managing relationships between collections, and implementing best practices to ensure performance and data integrity in MongoDB databases.",
+			"knowledge": [
+				"Models and Schemas",
+				"CRUD Operations",
+				"Use of Operators, Pagination, and Limits",
+				"References between Collections",
+				"Embedded Relationships",
+				"Middlewares",
+				"Indexes"
+			],
+			"relations": [
+				"MongoDB",
+				"TypeScript",
+				"SQL",
+				"ExpressJS",
+				"NodeJS"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
 		},
 		"Prisma": {
 			"category": "ORM",
@@ -408,24 +706,92 @@
 				"Prisma Client",
 				"TypeScript Integration"
 			],
-			"relations": ["TypeScript", "SQL", "ExpressJS", "NodeJS"],
-			"tags": ["Web", "Backend"]
+			"relations": [
+				"TypeScript",
+				"SQL",
+				"ExpressJS",
+				"NodeJS",
+				"NestJS"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
 		},
-		"MongooseJS": {
+		"Sequelize": {
 			"category": "ORM",
-			"percentage": "60",
-			"note": "I have strong knowledge of Mongoose, focusing on optimizing queries, efficiently structuring data, managing relationships between collections, and implementing best practices to ensure performance and data integrity in MongoDB databases.",
+			"percentage": "70",
+			"note": "I have a solid understanding of Sequelize, including model definitions, relations, migrations, and advanced querying. My experience covers seamless integration with NestJS using SequelizeModule, and I follow a structured approach to managing data flow, ensuring consistency and scalability across applications.",
 			"knowledge": [
-				"Models and Schemas",
-				"CRUD Operations",
-				"Use of Operators, Pagination, and Limits",
-				"References between Collections",
-				"Embedded Relationships",
-				"Middlewares",
-				"Indexes"
-			  ],
-			"relations": ["MongoDB", "TypeScript", "SQL", "ExpressJS", "NodeJS"],
-			"tags": ["Web", "Backend"]
+				"Installation and Basic Setup with sequelize and sequelize-cli",
+				"Database Connection (PostgreSQL, MySQL, SQLite)",
+				"Model Definition (sequelize.define, Model.init)",
+				"Basic TypeScript Typing",
+				"Basic CRUD Operations (findAll, create, update, destroy)",
+				"Simple Relationships (belongsTo, hasMany)",
+				"Migrations with sequelize-cli",
+				"Advanced Relationships (belongsToMany, hasOne)",
+				"Scopes and Custom Scopes",
+				"Model Hooks (beforeCreate, afterUpdate)",
+				"Model Validations",
+				"Transactions",
+				"Advanced Querying with Operators",
+				"Include and Nested Includes",
+				"Raw Queries (sequelize.query)",
+				"Indexes and Constraints",
+				".sequelizerc and Env-based Config",
+				"NestJS Integration (@nestjs/sequelize, SequelizeModule)"
+			],
+			"relations": [
+				"JavaScript",
+				"TypeScript",
+				"SQL",
+				"ExpressJS",
+				"NodeJS",
+				"NestJS"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
+		},
+		"TypeORM": {
+			"category": "ORM",
+			"percentage": "75",
+			"note": "I have a strong command of TypeORM, covering everything from entity modeling, relationships, and migrations to advanced features like lifecycle hooks and repository injection with NestJS. I build reliable and scalable database layers with full TypeScript support, leveraging QueryBuilder, soft deletes, and custom configurations tailored to different environments.",
+			"knowledge": [
+				"Installation and Basic Setup",
+				"Entity Definition with Decorators",
+				"TypeScript Typing for Entities",
+				"Basic Repository Operations (find, save, delete)",
+				"Simple Relations (@ManyToOne, @OneToMany)",
+				"Basic Migrations",
+				"Database Connection (Postgres, MySQL, SQLite)",
+				"Complex Relations (@ManyToMany, JoinTable)",
+				"QueryBuilder for Custom Queries",
+				"DataSource and EntityManager Usage",
+				"Transactions",
+				"Lazy and Eager Loading",
+				"Advanced Migrations and Sync",
+				"Config with ormconfig or DataSource",
+				"Indexes and Constraints (@Index, @Unique)",
+				"Embedded Entities",
+				"Soft Deletes (@DeleteDateColumn)",
+				"Lifecycle Hooks (@BeforeInsert, @AfterUpdate)",
+				"Conditional and Filtered Relations",
+				"NestJS Integration with InjectRepository"
+			],
+			"relations": [
+				"TypeScript",
+				"SQL",
+				"ExpressJS",
+				"NodeJS",
+				"NestJS"
+			],
+			"tags": [
+				"Web",
+				"Backend"
+			]
 		},
 		"Git": {
 			"category": "Tools",
@@ -458,7 +824,11 @@
 				"Optimize repository"
 			],
 			"relations": [],
-			"tags": ["Web", "Frontend", "Backend"]
+			"tags": [
+				"Web",
+				"Frontend",
+				"Backend"
+			]
 		},
 		"Vercel": {
 			"category": "Tools",
@@ -470,7 +840,9 @@
 				"Environment Variables"
 			],
 			"relations": [],
-			"tags": ["Web"]
+			"tags": [
+				"Web"
+			]
 		},
 		"NodeJS": {
 			"category": "Tools",
@@ -491,7 +863,11 @@
 				"ExpressJS",
 				"React"
 			],
-			"tags": ["Web", "Frontend", "Backend"]
+			"tags": [
+				"Web",
+				"Frontend",
+				"Backend"
+			]
 		},
 		"Docker": {
 			"category": "Tools",
@@ -508,7 +884,10 @@
 				"Environment Variables"
 			],
 			"relations": [],
-			"tags": ["Web", "Backend"]
+			"tags": [
+				"Web",
+				"Backend"
+			]
 		},
 		"DBeaver": {
 			"category": "Tools",
@@ -521,8 +900,14 @@
 				"Using ER Diagrams",
 				"Setting Up Data Source Connections"
 			],
-			"relations": ["SQL", "MySQL", "SQL Server"],
-			"tags": ["Backend"]
+			"relations": [
+				"SQL",
+				"MySQL",
+				"SQL Server"
+			],
+			"tags": [
+				"Backend"
+			]
 		}
 	}
 }
