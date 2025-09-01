@@ -6,13 +6,42 @@
 			"notes": "Personal portfolio where I showcase some of my skills and experience through a unique design I developed myself, incorporating interesting concepts and animations. I primarily demonstrate some of my frontend web development skills, along with backend functionalities to dynamically manage information about the technologies and projects I have developed.",
 			"link": "https://github.com/Almor21/Portfolio",
 			"technologies": [
-				"HTML",
 				"Tailwind",
 				"TypeScript",
 				"React",
 				"NextJS",
 				"Framer Motion",
 				"Zustand"
+			],
+			"tags": ["Frontend", "Backend"]
+		},
+		{
+			"name": "NearbyEatsAPI",
+			"notes": "A REST API built with NestJS and deployed using Docker, designed to manage users and allow them to search for nearby restaurants through integration with the Google Places API. It implements secure authentication with JWT, user action logging, and connects to a PostgreSQL database using TypeORM. The project is fully containerized with Docker Compose, including both the API and the database, and features a history system to track user interactions.",
+			"link": "https://github.com/Almor21/nearby-eats-api",
+			"technologies": [
+				"TypeScript",
+				"NestJS",
+				"JWT",
+				"PostgreSQL",
+				"TypeORM",
+				"Docker"
+			],
+			"tags": ["Backend"]
+		},
+		{
+			"name": "BrandRegistration",
+			"notes": "A full-stack web application for brand registration, built with a FastAPI backend, a Next.js frontend, and a PostgreSQL database. The project is fully containerized with Docker Compose, allowing the entire application (backend, frontend, and database) to be run with a single command. It supports both development and production modes, includes database migrations, and leverages Turborepo for efficient monorepo management during development.",
+			"link": "https://github.com/Almor21/brand-registration",
+			"technologies": [
+				"TypeScript",
+				"Python",
+				"React",
+				"NextJS",
+				"MaterialUI",
+				"FastAPI",
+				"PostgreSQL",
+				"Docker"
 			],
 			"tags": ["Frontend", "Backend"]
 		},

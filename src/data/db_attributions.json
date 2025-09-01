@@ -120,6 +120,13 @@
 			"link": "https://icon-icons.com/icon/expressjs-logo/169185"
 		},
 		{
+			"name": "FastAPI",
+			"archive": "/technologies/FastAPI.png",
+			"author": "FastAPI",
+			"page": "https://fastapi.tiangolo.com/",
+			"link": "https://fastapi.tiangolo.com/"
+		},
+		{
 			"name": "Framer",
 			"archive": "/technologies/Framer Motion.png",
 			"author": "Feather",
@@ -216,6 +223,13 @@
 			"author": "passportjs.org",
 			"page": "passportjs.org",
 			"link": "https://www.passportjs.org"
+		},
+		{
+			"name": "PostgresSQL",
+			"archive": "/technologies/PostgresSQL.png",
+			"author": "Freepik",
+			"page": "Flaticon",
+			"link": "https://www.flaticon.es/icono-gratis/postgre_5968342?term=postgres&page=1&position=1&origin=search&related_id=5968342"
 		},
 		{
 			"name": "Prisma",

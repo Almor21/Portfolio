@@ -7,13 +7,7 @@
 		"ORM",
 		"Tools"
 	],
-	"areas": [
-		"Web",
-		"Frontend",
-		"Backend",
-		"Scripting",
-		"Desktop"
-	],
+	"areas": ["Web", "Frontend", "Backend", "Scripting", "Desktop"],
 	"data": {
 		"JavaScript": {
 			"category": "Language",
@@ -57,11 +51,7 @@
 				"PassportJS",
 				"Sequelize"
 			],
-			"tags": [
-				"Web",
-				"Frontend",
-				"Backend"
-			]
+			"tags": ["Web", "Frontend", "Backend"]
 		},
 		"TypeScript": {
 			"category": "Language",
@@ -92,11 +82,7 @@
 				"PassportJS",
 				"Sequelize"
 			],
-			"tags": [
-				"Web",
-				"Frontend",
-				"Backend"
-			]
+			"tags": ["Web", "Frontend", "Backend"]
 		},
 		"Java": {
 			"category": "Language",
@@ -115,13 +101,8 @@
 				"Events",
 				"MySQL Connections"
 			],
-			"relations": [
-				"MySQL"
-			],
-			"tags": [
-				"Desktop",
-				"Backend"
-			]
+			"relations": ["MySQL"],
+			"tags": ["Desktop", "Backend"]
 		},
 		"Python": {
 			"category": "Language",
@@ -140,10 +121,8 @@
 				"Data Analysis with Libraries like Pandas, NumPy, SymPy Matplotlib",
 				"Scripting and automation"
 			],
-			"relations": [],
-			"tags": [
-				"Scripting"
-			]
+			"relations": ["FastAPI"],
+			"tags": ["Scripting"]
 		},
 		"SQL": {
 			"category": "Language",
@@ -161,6 +140,7 @@
 				"Normalization"
 			],
 			"relations": [
+				"PostgreSQL",
 				"MySQL",
 				"SQL Server",
 				"Prisma",
@@ -168,10 +148,7 @@
 				"TypeORM",
 				"Sequelize"
 			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"tags": ["Web", "Backend"]
 		},
 		"HTML": {
 			"category": "Language",
@@ -190,15 +167,8 @@
 				"Meta Tags",
 				"Integration with Frameworks"
 			],
-			"relations": [
-				"JavaScript",
-				"CSS",
-				"React"
-			],
-			"tags": [
-				"Web",
-				"Frontend"
-			]
+			"relations": ["JavaScript", "CSS", "React"],
+			"tags": ["Web", "Frontend"]
 		},
 		"CSS": {
 			"category": "Language",
@@ -220,15 +190,8 @@
 				"Variables",
 				"Integration with JavaScript"
 			],
-			"relations": [
-				"JavaScript",
-				"Tailwind",
-				"MaterialUI"
-			],
-			"tags": [
-				"Web",
-				"Frontend"
-			]
+			"relations": ["JavaScript", "Tailwind", "MaterialUI"],
+			"tags": ["Web", "Frontend"]
 		},
 		"C++": {
 			"category": "Language",
@@ -243,9 +206,7 @@
 				"Exception Handling"
 			],
 			"relations": [],
-			"tags": [
-				"Desktop"
-			]
+			"tags": ["Desktop"]
 		},
 		"NextJS": {
 			"category": "Framework",
@@ -272,10 +233,7 @@
 				"NodeJS",
 				"Vercel"
 			],
-			"tags": [
-				"Web",
-				"Frontend"
-			]
+			"tags": ["Web", "Frontend"]
 		},
 		"NestJS": {
 			"category": "Framework",
@@ -310,10 +268,7 @@
 				"JWT",
 				"PassportJS"
 			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"tags": ["Web", "Backend"]
 		},
 		"Tailwind": {
 			"category": "Framework",
@@ -325,17 +280,8 @@
 				"Transitions and Animations",
 				"Pseudo-classes"
 			],
-			"relations": [
-				"TypeScript",
-				"CSS",
-				"NextJS",
-				"React",
-				"TypeORM"
-			],
-			"tags": [
-				"Web",
-				"Frontend"
-			]
+			"relations": ["TypeScript", "CSS", "NextJS", "React", "TypeORM"],
+			"tags": ["Web", "Frontend"]
 		},
 		"ExpressJS": {
 			"category": "Framework",
@@ -361,10 +307,29 @@
 				"Sequelize",
 				"TypeORM"
 			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"tags": ["Web", "Backend"]
+		},
+		"FastAPI": {
+			"category": "Framework",
+			"percentage": "75",
+			"note": "FastAPI is my preferred framework for building Python backends due to its clean structure and modern design, which I find similar to Express.js—a framework I greatly enjoy working with. Its speed, type hinting support, and straightforward integration make it an excellent choice for developing robust and scalable APIs.",
+			"knowledge": [
+				"Route handling and dynamic parameters",
+				"Data validation and serialization with Pydantic",
+				"Automatic API documentation with Swagger",
+				"Project modularization with routers (APIRouter)",
+				"Dependency injection with Depends",
+				"Custom middlewares",
+				"JWT-based authentication",
+				"Role and permission-based authorization",
+				"Integration with SQLAlchemy or SQLModel",
+				"Data modeling and relationships",
+				"Database migrations with Alembic",
+				"Deployment with Uvicorn / Gunicorn (ASGI servers)",
+				"Background tasks and asynchronous processes"
+			],
+			"relations": ["Python"],
+			"tags": ["Web", "Backend"]
 		},
 		"Framer Motion": {
 			"category": "Framework",
@@ -384,16 +349,8 @@
 				"Optimization techniques to avoid unnecessary re-renders",
 				"Dynamic and reactive animations"
 			],
-			"relations": [
-				"TypeScript",
-				"CSS",
-				"NextJS",
-				"React"
-			],
-			"tags": [
-				"Web",
-				"Frontend"
-			]
+			"relations": ["TypeScript", "CSS", "NextJS", "React"],
+			"tags": ["Web", "Frontend"]
 		},
 		"React": {
 			"category": "Library",
@@ -429,10 +386,7 @@
 				"NodeJS",
 				"JWT"
 			],
-			"tags": [
-				"Web",
-				"Frontend"
-			]
+			"tags": ["Web", "Frontend"]
 		},
 		"MaterialUI": {
 			"category": "Library",
@@ -465,10 +419,7 @@
 				"NextJS",
 				"CSS"
 			],
-			"tags": [
-				"Web",
-				"Frontend"
-			]
+			"tags": ["Web", "Frontend"]
 		},
 		"Zustand": {
 			"category": "Library",
@@ -490,10 +441,7 @@
 				"React",
 				"NodeJS"
 			],
-			"tags": [
-				"Web",
-				"Frontend"
-			]
+			"tags": ["Web", "Frontend"]
 		},
 		"Redux Toolkit": {
 			"category": "Library",
@@ -508,16 +456,8 @@
 				"Middleware",
 				"TypeScript Integration"
 			],
-			"relations": [
-				"JavaScript",
-				"TypeScript",
-				"React",
-				"NodeJS"
-			],
-			"tags": [
-				"Web",
-				"Frontend"
-			]
+			"relations": ["JavaScript", "TypeScript", "React", "NodeJS"],
+			"tags": ["Web", "Frontend"]
 		},
 		"PassportJS": {
 			"category": "Library",
@@ -550,10 +490,7 @@
 				"NestJS",
 				"JWT"
 			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"tags": ["Web", "Backend"]
 		},
 		"JWT": {
 			"category": "Library",
@@ -585,11 +522,25 @@
 				"NestJS",
 				"PassportJS"
 			],
-			"tags": [
-				"Web",
-				"Frontend",
-				"Backend"
-			]
+			"tags": ["Web", "Frontend", "Backend"]
+		},
+		"PostgreSQL": {
+			"category": "Databases",
+			"percentage": "80",
+			"note": "PostgreSQL is the database engine I am most familiar with and the one I use most frequently. I have successfully integrated it into real-world projects, particularly in web applications, where it has played a key role in managing data efficiently and reliably.",
+			"knowledge": [
+				"Queries and Table Operations (SELECT, INSERT, UPDATE, DELETE)",
+				"Functions (COUNT, SUM, AVG, etc.)",
+				"Joins (INNER, LEFT, RIGHT, FULL OUTER)",
+				"Subqueries",
+				"UNION, UNION ALL",
+				"Table Creation and Manipulation (CREATE, ALTER, DROP, Constraints)",
+				"Indexes",
+				"Views",
+				"Normalization"
+			],
+			"relations": ["SQL"],
+			"tags": ["Web", "Backend"]
 		},
 		"MySQL": {
 			"category": "Databases",
@@ -606,13 +557,8 @@
 				"Views",
 				"Normalization"
 			],
-			"relations": [
-				"SQL"
-			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"relations": ["SQL"],
+			"tags": ["Web", "Backend"]
 		},
 		"SQL Server": {
 			"category": "Databases",
@@ -633,13 +579,8 @@
 				"Cursors",
 				"Loops"
 			],
-			"relations": [
-				"SQL"
-			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"relations": ["SQL"],
+			"tags": ["Web", "Backend"]
 		},
 		"MongoDB": {
 			"category": "Databases",
@@ -656,16 +597,8 @@
 				"Installation and Configuration",
 				"Application Integration"
 			],
-			"relations": [
-				"TypeScript",
-				"MongooseJS",
-				"ExpressJS",
-				"NodeJS"
-			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"relations": ["TypeScript", "MongooseJS", "ExpressJS", "NodeJS"],
+			"tags": ["Web", "Backend"]
 		},
 		"MongooseJS": {
 			"category": "ORM",
@@ -687,10 +620,7 @@
 				"ExpressJS",
 				"NodeJS"
 			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"tags": ["Web", "Backend"]
 		},
 		"Prisma": {
 			"category": "ORM",
@@ -706,17 +636,8 @@
 				"Prisma Client",
 				"TypeScript Integration"
 			],
-			"relations": [
-				"TypeScript",
-				"SQL",
-				"ExpressJS",
-				"NodeJS",
-				"NestJS"
-			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"relations": ["TypeScript", "SQL", "ExpressJS", "NodeJS", "NestJS"],
+			"tags": ["Web", "Backend"]
 		},
 		"Sequelize": {
 			"category": "ORM",
@@ -750,10 +671,7 @@
 				"NodeJS",
 				"NestJS"
 			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"tags": ["Web", "Backend"]
 		},
 		"TypeORM": {
 			"category": "ORM",
@@ -781,17 +699,8 @@
 				"Conditional and Filtered Relations",
 				"NestJS Integration with InjectRepository"
 			],
-			"relations": [
-				"TypeScript",
-				"SQL",
-				"ExpressJS",
-				"NodeJS",
-				"NestJS"
-			],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"relations": ["TypeScript", "SQL", "ExpressJS", "NodeJS", "NestJS"],
+			"tags": ["Web", "Backend"]
 		},
 		"Git": {
 			"category": "Tools",
@@ -824,11 +733,7 @@
 				"Optimize repository"
 			],
 			"relations": [],
-			"tags": [
-				"Web",
-				"Frontend",
-				"Backend"
-			]
+			"tags": ["Web", "Frontend", "Backend"]
 		},
 		"Vercel": {
 			"category": "Tools",
@@ -840,9 +745,7 @@
 				"Environment Variables"
 			],
 			"relations": [],
-			"tags": [
-				"Web"
-			]
+			"tags": ["Web"]
 		},
 		"NodeJS": {
 			"category": "Tools",
@@ -863,11 +766,7 @@
 				"ExpressJS",
 				"React"
 			],
-			"tags": [
-				"Web",
-				"Frontend",
-				"Backend"
-			]
+			"tags": ["Web", "Frontend", "Backend"]
 		},
 		"Docker": {
 			"category": "Tools",
@@ -884,10 +783,7 @@
 				"Environment Variables"
 			],
 			"relations": [],
-			"tags": [
-				"Web",
-				"Backend"
-			]
+			"tags": ["Web", "Backend"]
 		},
 		"DBeaver": {
 			"category": "Tools",
@@ -900,14 +796,8 @@
 				"Using ER Diagrams",
 				"Setting Up Data Source Connections"
 			],
-			"relations": [
-				"SQL",
-				"MySQL",
-				"SQL Server"
-			],
-			"tags": [
-				"Backend"
-			]
+			"relations": ["SQL", "MySQL", "SQL Server"],
+			"tags": ["Backend"]
 		}
 	}
 }
