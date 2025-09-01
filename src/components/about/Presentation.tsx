@@ -167,7 +167,7 @@ function Presentation() {
 						}
 					/>
 					<p className="px-5 md:pr-16">
-						Edinson Noriega, I am 20 years old and I am a{' '}
+						Edinson Noriega, I am 21 years old and I am a{' '}
 						<span className="font-bold">self-taught</span>,
 						<span className="font-bold"> active</span> and{' '}
 						<span className="font-bold">creative</span> person. I
