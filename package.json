@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/nodemailer": "^6.4.15",
     "framer-motion": "^11.2.12",
     "next": "14.2.4",
     "nodemailer": "^6.9.14",
@@ -19,6 +18,7 @@
     "zustand": "^4.5.4"
   },
   "devDependencies": {
+    "@types/nodemailer": "^6.4.15",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
