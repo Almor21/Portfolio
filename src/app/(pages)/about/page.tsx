@@ -18,7 +18,10 @@ function AboutPage() {
 					>
 						<div>
 							<h2 className="font-bold text-sm">
-								Fullstack Web Developer (Present)
+								Fullstack Web Developer
+							</h2>
+							<h2 className="font-bold text-xs">
+								Feb 2025 - Agu 2025
 							</h2>
 							<h3 className="font-medium text-sm">
 								<Link
@@ -33,23 +36,27 @@ function AboutPage() {
 								<li>
 									Developed modern web applications using
 									TypeScript, Next.js, NestJS, React, and
-									Express.js.
+									Express.js, with responsive UIs built in MUI
+									and Tailwind CSS, focused on performance and
+									accessibility.
 								</li>
 								<li>
-									Built dynamic, accessible, and responsive
-									user interfaces with MUI and Tailwind CSS,
-									focusing on performance and user experience.
+									Designed and implemented secure, scalable
+									RESTful APIs with NestJS, JWT and Passport,
+									and managed PostgreSQL databases using
+									TypeORM and Sequelize.
 								</li>
 								<li>
-									Designed and implemented robust RESTful APIs
-									using JWT and Passport for secure
-									authentication and scalability.
+									Deployed Docker containers to set up and
+									manage databases in local and testing
+									environments, optimizing configuration and
+									project deployment.
 								</li>
 								<li>
-									Managed PostgreSQL databases with TypeORM
-									and Sequelize, and performed direct data
-									analysis using raw SQL for insights and
-									troubleshooting.
+									Delivered projects both independently and in
+									teams, leading development efforts, managing
+									teams, and directly engaging with clients to
+									analyze requirements and plan projects.
 								</li>
 							</ul>
 						</div>
@@ -57,24 +64,27 @@ function AboutPage() {
 							<h2 className="font-bold text-sm">
 								Frontend & Backend Developer - CRM Project
 							</h2>
+							<h2 className="font-bold text-xs">
+								May 2024 - Sep 2024
+							</h2>
 							<h3 className="font-medium text-sm">Freelance</h3>
 							<ul>
 								<li>
-									Designed and developed frontend interfaces
-									using React and Next.js, implementing
-									accessible and responsive layouts from a
-									prototype and consuming API routes to
-									retrieve backend information.
+									Worked directly with the client to gather
+									requirements, propose solutions, and define
+									the project scope and planning.
 								</li>
 								<li>
-									Built REST API routes with Express.js on the
-									backend to access, process, and filter data
-									from a database.
+									Developed responsive and accessible frontend
+									interfaces with React and Next.js,
+									transforming prototypes into functional
+									views and integrating backend APIs.
 								</li>
 								<li>
-									Analyzed and cleaned data directly in the
-									database using SQL, optimizing data access
-									and management from the backend.
+									Built REST API routes with Express.js and
+									optimized database interactions with SQL
+									through data cleaning, analysis, and
+									efficient queries.
 								</li>
 							</ul>
 						</div>
@@ -108,8 +118,7 @@ function AboutPage() {
 								<span className="font-bold">
 									Universidad del Norte.{' '}
 								</span>{' '}
-								Barranquilla, Colombia | Jan 2021 - present (10th
-								semester).
+								Barranquilla, Colombia | 2021 - 2025
 							</p>
 						</div>
 					</Section>
